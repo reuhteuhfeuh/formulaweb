@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="TrouverFichier">
+</Property><Property Name="Fichier solution" Value="C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\TrouverFichier.sln">
+</Property><Property Name="Fichier d'options utilisateur" Value="C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\TrouverFichier.suo">
+</Property><Property Name="Date" Value="dimanche 23 octobre 2011">
+</Property><Property Name="Time" Value="08:46">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="TrouverFichier.sln" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier.sln">
+</Event><Event ErrorLevel="0" Project="" Source="TrouverFichier.suo" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier.suo">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\TrouverFichier.csproj" Description="Fichier projet correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\TrouverFichier.csproj">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\EcranControle.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\EcranControle.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\EcranControle.Designer.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\EcranControle.Designer.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Program.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Program.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Properties\AssemblyInfo.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Properties\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Properties\Resources.Designer.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Properties\Resources.Designer.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Properties\Settings.Designer.cs" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Properties\Settings.Designer.cs">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Properties\Settings.settings" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Properties\Settings.settings">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\EcranControle.resx" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\EcranControle.resx">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\Properties\Resources.resx" Description="Fichier correctement sauvegardé en tant que C:\Users\Reuhteuhfeuh\Dropbox\PERSO_FDE_NON_PARTAGE\test VC#\TrouverFichier\Backup\TrouverFichier\Properties\Resources.resx">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\TrouverFichier.csproj" Description="Projet correctement converti">
+</Event><Event ErrorLevel="3" Project="TrouverFichier" Source="TrouverFichier\TrouverFichier.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="TrouverFichier.sln" Description="Solution correctement convertie">
+</Event><Event ErrorLevel="3" Project="" Source="TrouverFichier.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="TrouverFichier" Source="TrouverFichier\TrouverFichier.csproj" Description="Analyse terminée : la mise à niveau n'est pas requise pour les fichiers projet.">
+</Event></UpgradeLog>
