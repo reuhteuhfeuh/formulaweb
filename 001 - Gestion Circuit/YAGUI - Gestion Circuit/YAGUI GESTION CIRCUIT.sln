@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C# Express 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YAGUI GESTION CIRCUIT", "TrouverFichier\YAGUI GESTION CIRCUIT.csproj", "{1A73B097-834F-48EF-B461-0D3959933C6A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4} = {E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B} = {384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Voiture", "..\..\002 - Gestion Voiture\Gestion_Voiture\Gestion_Voiture\Gestion_Voiture.csproj", "{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Circuit", "..\Gestion_Circuit\Gestion_Circuit\Gestion_Circuit.csproj", "{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1A73B097-834F-48EF-B461-0D3959933C6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A73B097-834F-48EF-B461-0D3959933C6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A73B097-834F-48EF-B461-0D3959933C6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A73B097-834F-48EF-B461-0D3959933C6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
