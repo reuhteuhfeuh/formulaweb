@@ -9,12 +9,10 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 
-
 namespace XNA_FormulaWeb
 {
     public class FormulaWeb : Microsoft.Xna.Framework.Game
     {
-
         // Création du graphique manager, lien avec la carte graphique
         GraphicsDeviceManager graphics;
 

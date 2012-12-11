@@ -76,9 +76,9 @@ namespace Gestion_Circuit
             Case_Numero = Numero ;
             Case_Classement = Classement ;
             Case_Occupee = 0 ;
-            Case_Droite = 0;
-            Case_Gauche = 0;
-            Case_EnFace = 0;
+            Case_Droite = 0 ;
+            Case_Gauche = 0 ;
+            Case_EnFace = 0 ;
             return true;
         }
         public bool Test_Colision(Int32 Numero_Case_A_Tester)

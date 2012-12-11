@@ -142,7 +142,9 @@ namespace Gestion_Graphique
             int circuitlargeur = Sprite_Circuit.Get_Largeur_Sprite();
             int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
 
-            // Calcul du ratio
+            // Calcul du ratio pour le bon positionnement de la voiture sur le circuit
+            //int VoituretestWidth = 8//Voiture_Test.Width;
+            //int VoituretestHeight = 8//Voiture_Test.Height;
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
@@ -162,7 +164,13 @@ namespace Gestion_Graphique
 
         public virtual void AffichageNonFixe()
         {
-            // Calcul du ratio
+            // Récupération de la taille du circuit
+            int circuitlargeur = Sprite_Circuit.Get_Largeur_Sprite();
+            int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
+
+            // Calcul du ratio pour le bon positionnement de la voiture sur le circuit
+            //int VoituretestWidth = 8//Voiture_Test.Width;
+            //int VoituretestHeight = 8//Voiture_Test.Height;
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
@@ -193,6 +201,7 @@ namespace Gestion_Graphique
         {
             return Affichage_Generale.Set_Message(Message);
         }
+        //public void
 
     }
 }
