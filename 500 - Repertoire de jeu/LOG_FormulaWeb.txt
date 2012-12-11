@@ -155,3 +155,7 @@
 2012-11-09 09:05:05.1108|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
 2012-11-18 08:27:06.7860|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
 2012-11-18 08:27:07.1600|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2012-12-07 08:01:02.3422|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2012-12-07 08:01:02.7532|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2012-12-11 08:58:11.0731|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2012-12-11 08:58:11.4141|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
