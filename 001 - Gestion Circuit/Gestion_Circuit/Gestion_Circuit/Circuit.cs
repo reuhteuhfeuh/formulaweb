@@ -174,6 +174,9 @@ namespace Gestion_Circuit
                                     }// Fin parcout noeud XML Case                              
                                 }
                             }// Fin parcourt noeud XML Circuit_Case
+
+                            // Lancement du calcul des angles de rotation !
+
                         }
                     }// Fin parcourt noeud XML Circuit_Definition
                 }

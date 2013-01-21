@@ -159,3 +159,31 @@
 2012-12-07 08:01:02.7532|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
 2012-12-11 08:58:11.0731|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
 2012-12-11 08:58:11.4141|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-16 10:33:12.4739|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-16 10:33:12.8739|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-16 15:03:24.3622|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-16 15:03:24.8502|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-16 15:03:28.3222|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-16 15:03:28.8712|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-16 15:03:29.3902|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-16 15:03:30.9902|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-16 15:03:33.7172|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-16 15:03:37.1212|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-18 14:26:04.6913|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-18 14:26:05.2303|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-18 14:26:18.0933|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-18 14:26:18.7093|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-18 14:26:19.1433|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-18 14:26:19.5433|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-18 14:26:19.9143|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-18 14:26:20.2803|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-18 14:26:20.8233|TRACE|Gestion_Graphique|Desactivation Panneau affichage generale
+2013-01-18 14:26:46.3923|TRACE|Gestion_Graphique|Activitation Panneau affichage generale
+2013-01-21 12:33:03.2574|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-21 12:33:03.5984|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-21 12:36:40.5935|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-21 12:36:40.8595|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-21 12:38:01.0765|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-21 12:38:01.3405|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-21 12:41:54.2315|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-21 12:41:54.4925|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940

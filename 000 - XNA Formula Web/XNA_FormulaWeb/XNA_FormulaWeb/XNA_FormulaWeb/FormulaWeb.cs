@@ -42,7 +42,7 @@ namespace XNA_FormulaWeb
         // Création Texture2D pour la voiture de test
         private Texture2D Voiture_Test = null;
         protected Rectangle rectangle_destination_voitureTest;
-        double Angle;
+
 
         // classe principale
         public FormulaWeb()
@@ -150,6 +150,8 @@ namespace XNA_FormulaWeb
                 Moteur_Graphique.Set_Position_Voiture(Moteur_Circuit.Get_Coordonnees_X(Moteur_Voiture.Get_Numero_Case()), Moteur_Circuit.Get_Coordonnees_Y(Moteur_Voiture.Get_Numero_Case()));
             }
 
+            Moteur_Graphique.Set_Angle_Voiture(Math.Atan2(Moteur_Circuit.Get_Coordonnees_Y(Moteur_Voiture.Get_Numero_Case()) - Moteur_Circuit.Get_Coordonnees_Y(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case())), Moteur_Circuit.Get_Coordonnees_X(Moteur_Voiture.Get_Numero_Case()) - Moteur_Circuit.Get_Coordonnees_X(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case()))));
+
             // Gestion de l'affichage générale
             if (ClavierEtat.IsKeyDown(Keys.F12) && ClavierEtatPrecedent.IsKeyUp(Keys.F12))
             {
@@ -164,7 +166,7 @@ namespace XNA_FormulaWeb
             //Angle = acos(X_distance / sqrt(X_distance * X_distance + Y_distance * Y_distance)) * 180 / 3.1415927;
             //float Distance_X = Moteur_Circuit.Get_Coordonnees_X(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case())) - Moteur_Circuit.Get_Coordonnees_X(Moteur_Voiture.Get_Numero_Case());
             //float Distance_Y = Moteur_Circuit.Get_Coordonnees_Y(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case())) - Moteur_Circuit.Get_Coordonnees_Y(Moteur_Voiture.Get_Numero_Case());
-            Angle = Math.Atan2(Moteur_Circuit.Get_Coordonnees_X(Moteur_Voiture.Get_Numero_Case()) - Moteur_Circuit.Get_Coordonnees_X(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case())), Moteur_Circuit.Get_Coordonnees_Y(Moteur_Voiture.Get_Numero_Case())-Moteur_Circuit.Get_Coordonnees_Y(Moteur_Circuit.Get_Case_EnFace(Moteur_Voiture.Get_Numero_Case())));
+            
             //Angle = 0;
 
             // calcul de l'angle en radian en fonction de deux point avec Arc Tan
