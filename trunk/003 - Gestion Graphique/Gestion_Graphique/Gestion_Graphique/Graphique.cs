@@ -50,6 +50,7 @@ namespace Gestion_Graphique
         bool Affichage_Sprite_Voiture_1;
         int V1;
         int Y1;
+        double A1;
 
 
 
@@ -103,6 +104,7 @@ namespace Gestion_Graphique
             Affichage_Generale.Set_Font("Panneau_Affichage");
             Sprite_Souris.Set_Image("Pointeur_Souris");
             Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
+            //Sprite_Voiture_1.Set_Image("RondRouge");
         }
 
         public bool Charger_Image_Circuit()
@@ -133,6 +135,12 @@ namespace Gestion_Graphique
             V1 = V1X;
             Y1 = V1Y;
             //logger.Trace("Coordonnées voiture mise à X:"+V1+" Y:"+Y1);
+            return true;
+        }
+
+        public bool Set_Angle_Voiture(double A1X)
+        {
+            A1 = A1X;
             return true;
         }
 
@@ -192,6 +200,7 @@ namespace Gestion_Graphique
             {
                 float Position_X_recalculee = (float)V1 * ratioWidth;
                 float Position_Y_recalculee = (float)Y1 * ratioHeight;
+                Sprite_Voiture_1.Set_Angle(A1);
                 Sprite_Voiture_1.Set_Destination(new Rectangle((int)Position_X_recalculee - 4, (int)Position_Y_recalculee - 4, 20, 12));
                 Sprite_Voiture_1.Afficher_Sprite();
             }

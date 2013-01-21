@@ -62,6 +62,12 @@ namespace Gestion_Graphique
             return true;
         }
 
+        public bool Set_Angle(double Angle_A_Afficher)
+        {
+            Angle = Angle_A_Afficher;
+            return true;
+        }
+
         public bool Charger_Image(string Image_Externe)
         {
             FormulaWeb_Sprite = LoadTexture(Image_Externe);
@@ -70,6 +76,7 @@ namespace Gestion_Graphique
 
         public bool Afficher_Sprite()
         {
+
             if (rectangle_destination.IsEmpty)
             {
                 spriteBatch.Draw(FormulaWeb_Sprite, FormulaWeb_Sprite_Position, Color.White);
