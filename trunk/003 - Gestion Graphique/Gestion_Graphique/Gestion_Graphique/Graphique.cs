@@ -39,6 +39,9 @@ namespace Gestion_Graphique
         int Hauteur = 0;
         int Largeur = 0;
 
+        // Ratio sur le calcul taille voiture
+        double Ratio_Dimension_Voiture = 1;
+
         // Création des Sprite
         Sprite Sprite_Circuit ;
         bool Affichage_Sprite_Circuit ;
@@ -104,7 +107,7 @@ namespace Gestion_Graphique
             Affichage_Generale.Set_Font("Panneau_Affichage");
             Sprite_Souris.Set_Image("Pointeur_Souris");
             Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
-            //Sprite_Voiture_1.Set_Image("RondRouge");
+            Sprite_Voiture_1.Set_Image("RondRouge");
         }
 
         public bool Charger_Image_Circuit()
@@ -121,6 +124,12 @@ namespace Gestion_Graphique
             Hauteur = Ecran_Hauteur;
             Largeur = Ecran_Largeur;
             //logger.Trace("Taille Ecran X:"+Hauteur+"Y:"+Largeur);
+            return true;
+        }
+
+        public bool Set_Ratio_Voiture(double ratio)
+        {
+            Ratio_Dimension_Voiture = ratio;
             return true;
         }
 
@@ -200,8 +209,9 @@ namespace Gestion_Graphique
             {
                 float Position_X_recalculee = (float)V1 * ratioWidth;
                 float Position_Y_recalculee = (float)Y1 * ratioHeight;
+                
                 Sprite_Voiture_1.Set_Angle(A1);
-                Sprite_Voiture_1.Set_Destination(new Rectangle((int)Position_X_recalculee - 4, (int)Position_Y_recalculee - 4, 20, 12));
+                Sprite_Voiture_1.Set_Destination(new Rectangle((int)Position_X_recalculee, (int)Position_Y_recalculee, 20, 12));
                 Sprite_Voiture_1.Afficher_Sprite();
             }
         }

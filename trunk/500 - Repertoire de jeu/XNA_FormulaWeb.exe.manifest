@@ -100,19 +100,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>0i3rf9nF+nY1W1DY7RHUa9tCcEM=</dsig:DigestValue>
+        <dsig:DigestValue>bYrvAeiqfepfnAidpyQy72h7K/s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion_Graphique.dll" size="10240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Gestion_Graphique.dll" size="10752">
       <assemblyIdentity name="Gestion_Graphique" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>AkAm1IWF6q65zGCekiJ+s69647c=</dsig:DigestValue>
+        <dsig:DigestValue>T8xF2tMSGkFC4uuE3rZNDJ8SOOw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -148,7 +148,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>F12h/79lso0NlQBoHNPJn50ljxo=</dsig:DigestValue>
+        <dsig:DigestValue>uBVqUY5Sy0DTH4XOTbgIgomLxA8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
