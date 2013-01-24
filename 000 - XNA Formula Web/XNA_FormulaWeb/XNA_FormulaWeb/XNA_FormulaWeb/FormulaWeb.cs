@@ -40,7 +40,7 @@ namespace XNA_FormulaWeb
         private KeyboardState ClavierEtatPrecedent;
 
         // Création Texture2D pour la voiture de test
-        private Texture2D Voiture_Test = null;
+        // private Texture2D Voiture_Test = null;
         protected Rectangle rectangle_destination_voitureTest;
 
 
@@ -74,7 +74,7 @@ namespace XNA_FormulaWeb
 
             // TODO: use this.Content to load your game content here
 
-            Voiture_Test = Content.Load<Texture2D>("Voiture_Test");
+            //Voiture_Test = Content.Load<Texture2D>("Voiture_Test");
         }
 
         // Appeler à la fermeture du jeu pour vider la mémoire 
@@ -106,6 +106,7 @@ namespace XNA_FormulaWeb
                 Moteur_Graphique.Initialize(graphics, spriteBatch, Content, this);
                 Moteur_Graphique.Set_Acces_Image(Acces_Circuit + "Zandvoort_01" + "\\zandvoort1_neu_avec_notation.jpg");
                 Moteur_Graphique.Charger_Image_Circuit();
+                Moteur_Graphique.Set_Ratio_Voiture(Moteur_Circuit.Get_Ratio_Voiture());
 
                 Moteur_Graphique.Set_Message_Principal("Viendez tous au masters 2012, NORTH MEN TEAM EN FORCE !!!!");
                 Moteur_Voiture.Set_Numero_Case(1);

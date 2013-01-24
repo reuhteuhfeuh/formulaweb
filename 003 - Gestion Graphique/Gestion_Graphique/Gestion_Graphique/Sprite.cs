@@ -34,6 +34,7 @@ namespace Gestion_Graphique
         private Vector2 FormulaWeb_Sprite_Position;
         private Rectangle rectangle_destination;
         private Double Angle;
+        private Double Ratio = 1;
 
         public bool Initialize(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con, Game gam)
         {
@@ -49,6 +50,12 @@ namespace Gestion_Graphique
         public int Get_Hauteur_Sprite()
         {
             return FormulaWeb_Sprite.Height;
+        }
+
+        public bool Set_Ratio_Sprite(double Ratio_Sprite)
+        {
+            Ratio = Ratio_Sprite ;
+            return true;
         }
 
         public int Get_Largeur_Sprite()

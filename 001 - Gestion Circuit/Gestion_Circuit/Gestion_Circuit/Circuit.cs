@@ -22,6 +22,7 @@ namespace Gestion_Circuit
         private string Nom_Image_Circuit;
         private string Chemin_Access_Image;
         private Int32 Nombre_Case;
+        private double Ratio_Voiture;
         private Case[] Case_Circuit;
         private bool Mode_debug = false;
 
@@ -51,6 +52,7 @@ namespace Gestion_Circuit
         public Int32 Get_Case_Gauche(Int32 Numero_Case) { return Case_Circuit[Numero_Case].Get_Case_Gauche(); }
         public Int32 Get_Case_Droite(Int32 Numero_Case) { return Case_Circuit[Numero_Case].Get_Case_Droite(); }
         public Int32 Get_Case_EnFace(Int32 Numero_Case) { return Case_Circuit[Numero_Case].Get_Case_EnFace(); }
+        public double Get_Ratio_Voiture() { return Ratio_Voiture; }
 
         //-----------------------------------//
         // Declaration des fonctions privees //
@@ -103,6 +105,10 @@ namespace Gestion_Circuit
                         {
                             Nombre_Case = Int32.Parse(lectureXML_Niveau_1.InnerText);
                             Case_Circuit = new Case[Nombre_Case + 1];
+                        }
+                        if (lectureXML_Niveau_1.Name == "Circuit_Ratio_Voiture")
+                        {
+                            Ratio_Voiture = double.Parse(lectureXML_Niveau_1.InnerText);                       
                         }
                         
                         // on parcout le noeud Circuit_Case
