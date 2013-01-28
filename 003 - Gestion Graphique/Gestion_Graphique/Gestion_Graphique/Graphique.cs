@@ -107,7 +107,7 @@ namespace Gestion_Graphique
             Affichage_Generale.Set_Font("Panneau_Affichage");
             Sprite_Souris.Set_Image("Pointeur_Souris");
             Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
-            Sprite_Voiture_1.Set_Image("RondRouge");
+            //Sprite_Voiture_1.Set_Image("RondRouge");
         }
 
         public bool Charger_Image_Circuit()
@@ -186,8 +186,6 @@ namespace Gestion_Graphique
             int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
 
             // Calcul du ratio pour le bon positionnement de la voiture sur le circuit
-            //int VoituretestWidth = 8//Voiture_Test.Width;
-            //int VoituretestHeight = 8//Voiture_Test.Height;
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
@@ -196,14 +194,9 @@ namespace Gestion_Graphique
             if (Affichage_Sprite_Circuit)
             {
                 //Sprite_Circuit.Set_Position(new Vector2());
-                Sprite_Circuit.Set_Destination(new Rectangle(0, 0, Largeur, Hauteur));
+                Sprite_Circuit.Set_Destination(new Rectangle(Largeur / 2, Hauteur/2, Largeur, Hauteur));
                 Sprite_Circuit.Afficher_Sprite();
             }
-
-            // Voiture sans rotation
-            //spriteBatch.Draw(Voiture_Test, rectangle_destination_voitureTest,null, Color.Red);
-            // Voiture avec rotation -- en test --
-            //spriteBatch.Draw(Voiture_Test, rectangle_destination_voitureTest, null, Color.White,(float)Angle,new Vector2(Voiture_Test.Width/2,Voiture_Test.Height/2),SpriteEffects.None,0);
 
             if (Affichage_Sprite_Voiture_1)
             {

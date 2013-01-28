@@ -90,14 +90,7 @@ namespace Gestion_Graphique
             }
             else 
             {
-                if (Angle == 0)
-                {
-                    spriteBatch.Draw(FormulaWeb_Sprite, rectangle_destination, null, Color.White);
-                }
-                else
-                {
                     spriteBatch.Draw(FormulaWeb_Sprite, rectangle_destination, null, Color.White,(float)Angle,new Vector2(FormulaWeb_Sprite.Width/2,FormulaWeb_Sprite.Height/2),SpriteEffects.None,0);
-                }
             }
             return true;
         }
