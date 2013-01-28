@@ -203,3 +203,11 @@
 2013-01-24 09:40:36.8329|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
 2013-01-24 10:03:33.2039|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
 2013-01-24 10:03:33.4999|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-28 09:44:54.1468|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-28 09:44:55.1568|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-28 09:47:45.2788|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-28 09:47:45.7958|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-28 09:51:29.1478|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-28 09:51:29.4398|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-01-28 09:52:07.1858|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-01-28 09:52:07.4788|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
