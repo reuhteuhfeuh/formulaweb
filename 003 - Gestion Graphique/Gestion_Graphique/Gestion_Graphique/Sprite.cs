@@ -33,6 +33,8 @@ namespace Gestion_Graphique
         private Texture2D FormulaWeb_Sprite = null;
         private Vector2 FormulaWeb_Sprite_Position;
         private Rectangle rectangle_destination;
+        private Int32 Position_X ;
+        private Int32 Position_Y;
         private Double Angle;
         private Double Ratio = 1;
 
@@ -50,6 +52,18 @@ namespace Gestion_Graphique
         public int Get_Hauteur_Sprite()
         {
             return FormulaWeb_Sprite.Height;
+        }
+
+        public bool Set_Position_X(Int32 PosX)
+        {
+            Position_X = PosX;
+            return true ;
+        }
+
+        public bool Set_Position_Y(Int32 PosY)
+        {
+            Position_Y = PosY;
+            return true;
         }
 
         public bool Set_Ratio_Sprite(double Ratio_Sprite)
@@ -90,7 +104,16 @@ namespace Gestion_Graphique
             }
             else 
             {
-                    spriteBatch.Draw(FormulaWeb_Sprite, rectangle_destination, null, Color.White,(float)Angle,new Vector2(FormulaWeb_Sprite.Width/2,FormulaWeb_Sprite.Height/2),SpriteEffects.None,0);
+                    //rectangle_destination =  new Rectangle(Position_X, Position_Y, (int)(FormulaWeb_Sprite.Width * Ratio), (int)(FormulaWeb_Sprite.Height * Ratio));
+                    spriteBatch.Draw(
+                                        FormulaWeb_Sprite, 
+                                        rectangle_destination,
+                                        null, Color.White,
+                                        (float)Angle,
+                                        new Vector2(FormulaWeb_Sprite.Width/2,FormulaWeb_Sprite.Height/2),
+                                        SpriteEffects.None,
+                                        0
+                                    );
             }
             return true;
         }
