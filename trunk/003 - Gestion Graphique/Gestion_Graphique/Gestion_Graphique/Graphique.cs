@@ -204,6 +204,8 @@ namespace Gestion_Graphique
                 float Position_Y_recalculee = (float)Y1 * ratioHeight;
                 
                 Sprite_Voiture_1.Set_Angle(A1);
+                Sprite_Voiture_1.Set_Position_X((int)Position_X_recalculee);
+                Sprite_Voiture_1.Set_Position_Y((int)Position_Y_recalculee);
                 Sprite_Voiture_1.Set_Destination(new Rectangle((int)Position_X_recalculee, (int)Position_Y_recalculee, 20, 12));
                 Sprite_Voiture_1.Afficher_Sprite();
             }
