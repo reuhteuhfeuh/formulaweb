@@ -13,7 +13,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Gestion_Graphique
 {
-    class Sprite
+    class Sprite : Graphique
     {
         // Variables utilisées pour versionning
         private string Version = "0.0.0.5";
@@ -25,7 +25,7 @@ namespace Gestion_Graphique
         SpriteBatch spriteBatch;
 
         // Création du content manager 
-        ContentManager Content;
+        ContentManager content;
 
         // Création du Game
         Game game;
@@ -38,15 +38,23 @@ namespace Gestion_Graphique
         private Double Angle;
         private Double Ratio = 1;
 
-        public bool Initialize(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con, Game gam)
+        public void Init(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con, Game gam)
         {
+            
             graphics = gra;
+            //graphics = Graphique.
             spriteBatch = spr;
-            Content = con;
+            content = con;
             game = gam;
+            //graphics = new GraphicsDeviceManager(game);
+            //content = game.Content;
+            //spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
+            //riteBatch = game.Content.
+
             rectangle_destination = new Rectangle();
             Angle = 0;
-            return true;
+            //return true;
+            //base.Initialize();
         }
 
         public int Get_Hauteur_Sprite()
@@ -79,7 +87,7 @@ namespace Gestion_Graphique
 
         public bool Set_Image(string Image_A_Charger)
         {
-            FormulaWeb_Sprite = Content.Load<Texture2D>(Image_A_Charger);
+            FormulaWeb_Sprite = content.Load<Texture2D>(Image_A_Charger);
             return true;
         }
 

@@ -21,7 +21,10 @@ namespace Gestion_Graphique
         SpriteBatch spriteBatch;
 
         // Création du content manager 
-        ContentManager Content;
+        ContentManager content;
+
+        // Création du Game
+        Game game;
 
         // Variable du message a afficher
         private String Message;
@@ -42,12 +45,12 @@ namespace Gestion_Graphique
         // Variable pour l'afichage du Panneau LCD
         private Texture2D Panneau_LCD;
 
-        public void Initialize(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con)
+        public void Init(Game gam)
         {
-            graphics = gra;
-            spriteBatch = spr;
-            Content = con;
-            Panneau_LCD = Content.Load<Texture2D>("Panneau_LCD");
+            game = gam;
+            //graphics = new GraphicsDeviceManager(game);
+            content = game.Content;
+            Panneau_LCD = content.Load<Texture2D>("Panneau_LCD");
         }
 
         public bool Set_Message(string Message, int Vitesse, int Caractere, Color couleur)
@@ -77,7 +80,7 @@ namespace Gestion_Graphique
         public void Set_Font(string lafont)
         {
             //spriteBatch = new SpriteBatch(GraphicsDevice);
-            Panneau_Affichage_Font = Content.Load<SpriteFont>(lafont);
+            Panneau_Affichage_Font = content.Load<SpriteFont>(lafont);
         }
 
         public bool Set_Vitesse(int Vitesse)

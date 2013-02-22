@@ -12,7 +12,7 @@ using NLog;
 
 namespace Gestion_Graphique
 {
-    public class Graphique
+    public class Graphique : Microsoft.Xna.Framework.Game
     {
         // Création de l'instance Nlog
         Logger logger = LogManager.GetLogger("Gestion_Graphique");
@@ -90,6 +90,8 @@ namespace Gestion_Graphique
             content = con;
             game = gam;
 
+            //content = game.Content;
+
             Affichage_Sprite_Circuit = true ;
             Affichage_Sprite_Souris = true;
             Affichage_Sprite_Voiture_1 = true;
@@ -99,10 +101,10 @@ namespace Gestion_Graphique
             Sprite_Circuit = new Sprite();
             Sprite_Voiture_1 = new Sprite();
 
-            Affichage_Generale.Initialize(graphics, spriteBatch, content);
-            Sprite_Souris.Initialize(graphics, spriteBatch, content,game);
-            Sprite_Circuit.Initialize(graphics, spriteBatch, content,game);
-            Sprite_Voiture_1.Initialize(graphics, spriteBatch, content, game);
+            Affichage_Generale.Init(game);
+            Sprite_Souris.Init(graphics,spriteBatch,content,game);
+            Sprite_Circuit.Init(graphics, spriteBatch, content, game);
+            Sprite_Voiture_1.Init(graphics, spriteBatch, content, game);
 
             Affichage_Generale.Set_Font("Panneau_Affichage");
             Sprite_Souris.Set_Image("Pointeur_Souris");

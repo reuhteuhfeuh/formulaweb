@@ -61,6 +61,9 @@ namespace XNA_FormulaWeb
         // Initialize est la premiere methode appeller par le program.cs
         protected override void Initialize()
         {
+            // Create a new SpriteBatch, which can be used to draw textures.
+            spriteBatch = new SpriteBatch(GraphicsDevice);
+            //this.Services.AddService(typeof(SpriteBatch), this.spriteBatch);
             // TODO: Add your initialization logic here
             Window.AllowUserResizing = true;
             base.Initialize();
@@ -69,8 +72,7 @@ namespace XNA_FormulaWeb
         // LoadContent est la seconde méthode appelé, elle charge en RAM tous les objets du content
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
-            spriteBatch = new SpriteBatch(GraphicsDevice);
+
 
             // TODO: use this.Content to load your game content here
 
