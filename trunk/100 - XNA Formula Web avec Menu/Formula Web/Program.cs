@@ -10,7 +10,7 @@ namespace Gestiondesmenus
     {
         static void Main(string[] args)
         {
-            using (GameStateManagementGame game = new GameStateManagementGame())
+            using (MenuFormulaWeb game = new MenuFormulaWeb())
                 game.Run();
         }
     }

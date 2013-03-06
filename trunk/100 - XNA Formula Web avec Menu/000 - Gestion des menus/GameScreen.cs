@@ -12,7 +12,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input.Touch;
 
-namespace GameStateManagement
+namespace Gestiondesmenus
 {
     /// <summary>
     /// Enum describes the screen transition state.
@@ -157,6 +157,16 @@ namespace GameStateManagement
         }
 
         ScreenManager screenManager;
+
+        
+        public Gestion_Langage.Langage LangageGameScreen
+        {
+            get { return langageGameScreen; }
+            internal set { langageGameScreen = value; }
+        }
+
+        Gestion_Langage.Langage langageGameScreen;
+        
 
 
         /// <summary>

@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using GameStateManagement;
+using Gestiondesmenus;
 #endregion
 
 namespace Gestiondesmenus
@@ -32,7 +32,7 @@ namespace Gestiondesmenus
         SpriteFont gameFont;
 
         // Création du graphique manager, lien avec la carte graphique
-        GraphicsDeviceManager graphics ;//= ScreenManager.gra
+        // GraphicsDeviceManager graphics ;//= ScreenManager.gra
 
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
         SpriteBatch spriteBatch; 
@@ -58,7 +58,7 @@ namespace Gestiondesmenus
 
         // Création Texture2D pour la voiture de test
         // private Texture2D Voiture_Test = null;
-        protected Rectangle rectangle_destination_voitureTest;
+        // protected Rectangle rectangle_destination_voitureTest;
 
 
 
@@ -144,7 +144,7 @@ namespace Gestiondesmenus
                     // Echec du chargement du fichier XML
                 }
 
-                Moteur_Graphique.Initialize(graphics, spriteBatch, content, ScreenManager.Game);//, this);
+                Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);//, this);
                 Moteur_Graphique.Set_Acces_Image(Acces_Circuit + "Zandvoort_01" + "\\zandvoort1_neu_avec_notation.jpg");
                 Moteur_Graphique.Charger_Image_Circuit();
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Circuit.Get_Ratio_Voiture());

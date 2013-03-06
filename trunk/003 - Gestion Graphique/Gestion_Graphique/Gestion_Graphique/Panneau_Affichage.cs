@@ -15,10 +15,10 @@ namespace Gestion_Graphique
     class Panneau_Affichage
     {
         // Création du graphique manager, lien avec la carte graphique
-        GraphicsDeviceManager graphics;
+        // GraphicsDeviceManager graphics;
 
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
-        SpriteBatch spriteBatch;
+        // SpriteBatch spriteBatch;
 
         // Création du content manager 
         ContentManager content;

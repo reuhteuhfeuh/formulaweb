@@ -67,7 +67,7 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject />
+    <StartupObject>Gestiondesmenus.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
@@ -151,9 +151,18 @@
       <Project>{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}</Project>
       <Name>Gestion_Graphique</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\004 - Gestion Langage\Gestion_Langage\Gestion_Langage\Gestion_Langage.csproj">
+      <Project>{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}</Project>
+      <Name>Gestion_Langage</Name>
+    </ProjectReference>
     <ProjectReference Include="..\000 - Gestion des menus\Gestion des Menus.csproj">
       <Project>{0A551D79-F37E-4529-9CA0-3FD2E9EA715E}</Project>
       <Name>Gestion des Menus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content\Content.contentproj">
+      <Project>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</Project>
+      <Name>Content</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

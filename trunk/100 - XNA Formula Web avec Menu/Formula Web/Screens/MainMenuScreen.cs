@@ -20,18 +20,18 @@ namespace Gestiondesmenus
     {
         #region Initialization
 
-
+        //Gestion_Langage.Langage LangageMainMenuScreen ;
         /// <summary>
         /// Constructor fills in the menu contents.
         /// </summary>
         public MainMenuScreen()
-            : base("Main Menu")
+            : base("FormulaWeb !")
         {
-            // Create our menu entries.
-            MenuEntry playGameMenuEntry = new MenuEntry("Play Game");
-            MenuEntry optionsMenuEntry = new MenuEntry("Options");
-            MenuEntry exitMenuEntry = new MenuEntry("Exit");
-            MenuEntry monculEntry = new MenuEntry("MON CUL :::");
+            //LangageMainMenuScreen = lang;
+            // Create our menu entries.            
+            MenuEntry playGameMenuEntry = new MenuEntry("Menu_Jouer");
+            MenuEntry optionsMenuEntry = new MenuEntry("Menu_Options");
+            MenuEntry exitMenuEntry = new MenuEntry("Menu_Quitter");
 
             // Hook up menu event handlers.
             playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
@@ -42,7 +42,7 @@ namespace Gestiondesmenus
             MenuEntries.Add(playGameMenuEntry);
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
-            MenuEntries.Add(monculEntry);
+ 
         }
 
 

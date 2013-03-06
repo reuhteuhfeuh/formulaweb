@@ -16,10 +16,7 @@ namespace Gestion_Graphique
     class Sprite : Graphique
     {
         // Variables utilisées pour versionning
-        private string Version = "0.0.0.5";
-
-        // Création du graphique manager, lien avec la carte graphique
-        GraphicsDeviceManager graphics;
+        // private string Version = "0.0.0.5";
 
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
         SpriteBatch spriteBatch;
@@ -38,23 +35,13 @@ namespace Gestion_Graphique
         private Double Angle;
         private Double Ratio = 1;
 
-        public void Init(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con, Game gam)
+        public void Init(SpriteBatch spr, ContentManager con, Game gam)
         {
-            
-            graphics = gra;
-            //graphics = Graphique.
             spriteBatch = spr;
             content = con;
             game = gam;
-            //graphics = new GraphicsDeviceManager(game);
-            //content = game.Content;
-            //spriteBatch = new SpriteBatch(graphics.GraphicsDevice);
-            //riteBatch = game.Content.
-
             rectangle_destination = new Rectangle();
             Angle = 0;
-            //return true;
-            //base.Initialize();
         }
 
         public int Get_Hauteur_Sprite()
@@ -112,7 +99,6 @@ namespace Gestion_Graphique
             }
             else 
             {
-                    //rectangle_destination =  new Rectangle(Position_X, Position_Y, (int)(FormulaWeb_Sprite.Width * Ratio), (int)(FormulaWeb_Sprite.Height * Ratio));
                     spriteBatch.Draw(
                                         FormulaWeb_Sprite, 
                                         rectangle_destination,
@@ -141,12 +127,9 @@ namespace Gestion_Graphique
         
         public Texture2D LoadTexture(string path)
         {
-            //using (Stream stream = new File.Open(path, FileMode.Open)) //On ouvre un stream vers notre image
-            //{
             Texture2D texture;
             Stream stream;
             stream = null;
-            //filestream = File.Open(path, FileMode.Open);
             stream = new FileStream(path, FileMode.Open);
             texture = Texture2D.FromStream(game.GraphicsDevice, stream); //On charge la texture via le stream
             PremultiplyYourAlpha(texture); //On pré-multiplie l'alpha pour la transparence

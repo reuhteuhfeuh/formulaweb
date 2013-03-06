@@ -14,7 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
-using GameStateManagement;
+using Gestiondesmenus;
 #endregion
 
 namespace Gestiondesmenus
@@ -35,6 +35,15 @@ namespace Gestiondesmenus
         InputAction menuDown;
         InputAction menuSelect;
         InputAction menuCancel;
+        //Gestion_Langage.Langage LangageMenuScreen;
+
+        public Gestion_Langage.Langage LangageMenuScreen
+        {
+            get { return langageMenuScreen; }
+            internal set { langageMenuScreen = value; }
+        }
+
+        Gestion_Langage.Langage langageMenuScreen;
 
         #endregion
 
@@ -65,6 +74,9 @@ namespace Gestiondesmenus
 
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
+
+            //this.langageMenuScreen = LangageGameScreen;
+            //langageMenuScreen = ScreenManager.langScreenManager;
 
             menuUp = new InputAction(
                 new Buttons[] { Buttons.DPadUp, Buttons.LeftThumbstickUp }, 
@@ -238,7 +250,7 @@ namespace Gestiondesmenus
                 MenuEntry menuEntry = menuEntries[i];
 
                 bool isSelected = IsActive && (i == selectedEntry);
-
+                this.langageMenuScreen = ScreenManager.langScreenManager;
                 menuEntry.Draw(this, isSelected, gameTime);
             }
 
