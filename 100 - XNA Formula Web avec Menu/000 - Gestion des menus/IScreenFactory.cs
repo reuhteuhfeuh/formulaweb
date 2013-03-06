@@ -9,7 +9,7 @@
 
 using System;
 
-namespace GameStateManagement
+namespace Gestiondesmenus
 {
     /// <summary>
     /// Defines an object that can create a screen when given its type.

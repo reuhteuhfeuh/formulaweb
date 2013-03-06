@@ -8,7 +8,7 @@
 #endregion
 
 using System;
-using GameStateManagement;
+using Gestiondesmenus;
 
 namespace Gestiondesmenus
 {

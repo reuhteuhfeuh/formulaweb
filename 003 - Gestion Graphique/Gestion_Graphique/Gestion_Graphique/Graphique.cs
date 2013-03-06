@@ -18,7 +18,7 @@ namespace Gestion_Graphique
         Logger logger = LogManager.GetLogger("Gestion_Graphique");
 
         // Création du graphique manager, lien avec la carte graphique
-        GraphicsDeviceManager graphics;
+        // GraphicsDeviceManager graphics;
 
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
         SpriteBatch spriteBatch;
@@ -29,11 +29,8 @@ namespace Gestion_Graphique
         // Création du Game
         Game game;
 
-        // Typologie Affichage
-        Int16 Typologie;
-        // 1 - Ecran de chargement du jeu
-        // 2 - Menu général
-        // 3 - 
+        // Gestion des langues
+        Gestion_Langage.Langage Langage_Graphique;
 
         // Taille Ecran de jeu
         int Hauteur = 0;
@@ -55,13 +52,10 @@ namespace Gestion_Graphique
         int Y1;
         double A1;
 
-
-
         // Sprite Souris
         private MouseState SourisEtat ;
         Sprite Sprite_Souris ;
         bool Affichage_Sprite_Souris ;
-   
 
         // Création des panneaux d'affichage
         Panneau_Affichage Affichage_Generale;
@@ -82,10 +76,9 @@ namespace Gestion_Graphique
             return true;
         }
 
-        public virtual void Initialize(GraphicsDeviceManager gra, SpriteBatch spr, ContentManager con, Game gam)
+        public virtual void Initialize(/*GraphicsDeviceManager gra,*/ SpriteBatch spr, ContentManager con, Game gam)
         {
             logger.Trace("Lancement de l'initialisation de la Gestion Graphique");
-            graphics = gra;
             spriteBatch = spr;
             content = con;
             game = gam;
@@ -102,14 +95,19 @@ namespace Gestion_Graphique
             Sprite_Voiture_1 = new Sprite();
 
             Affichage_Generale.Init(game);
-            Sprite_Souris.Init(graphics,spriteBatch,content,game);
-            Sprite_Circuit.Init(graphics, spriteBatch, content, game);
-            Sprite_Voiture_1.Init(graphics, spriteBatch, content, game);
+            Sprite_Souris.Init(spriteBatch,content,game);
+            Sprite_Circuit.Init(spriteBatch, content, game);
+            Sprite_Voiture_1.Init(spriteBatch, content, game);
 
             Affichage_Generale.Set_Font("Panneau_Affichage");
             Sprite_Souris.Set_Image("Pointeur_Souris");
             Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
-            //Sprite_Voiture_1.Set_Image("RondRouge");
+        }
+
+        public bool set_Langage_Affichage(Gestion_Langage.Langage lang)
+        {
+            Langage_Graphique = lang;
+            return true;
         }
 
         public bool Charger_Image_Circuit()
@@ -125,7 +123,6 @@ namespace Gestion_Graphique
         {
             Hauteur = Ecran_Hauteur;
             Largeur = Ecran_Largeur;
-            //logger.Trace("Taille Ecran X:"+Hauteur+"Y:"+Largeur);
             return true;
         }
 
@@ -145,7 +142,6 @@ namespace Gestion_Graphique
         {
             V1 = V1X;
             Y1 = V1Y;
-            //logger.Trace("Coordonnées voiture mise à X:"+V1+" Y:"+Y1);
             return true;
         }
 
@@ -162,8 +158,6 @@ namespace Gestion_Graphique
             int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
 
             // Calcul du ratio pour le bon positionnement de la voiture sur le circuit
-            //int VoituretestWidth = 8//Voiture_Test.Width;
-            //int VoituretestHeight = 8//Voiture_Test.Height;
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
@@ -195,7 +189,6 @@ namespace Gestion_Graphique
             // On affiche dans l'ordre les sprites
             if (Affichage_Sprite_Circuit)
             {
-                //Sprite_Circuit.Set_Position(new Vector2());
                 Sprite_Circuit.Set_Destination(new Rectangle(Largeur / 2, Hauteur/2, Largeur, Hauteur));
                 Sprite_Circuit.Afficher_Sprite();
             }
@@ -217,7 +210,5 @@ namespace Gestion_Graphique
         {
             return Affichage_Generale.Set_Message(Message);
         }
-        //public void
-
     }
 }

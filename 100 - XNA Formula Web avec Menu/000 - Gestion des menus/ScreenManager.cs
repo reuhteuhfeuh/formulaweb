@@ -20,7 +20,7 @@ using System.IO.IsolatedStorage;
 using System.Xml.Linq;
 #endregion
 
-namespace GameStateManagement
+namespace Gestiondesmenus
 {
     /// <summary>
     /// The screen manager is a component which manages one or more GameScreen
@@ -42,7 +42,7 @@ namespace GameStateManagement
         SpriteBatch spriteBatch;
         SpriteFont font;
         Texture2D blankTexture;
-        GraphicsDeviceManager graphics;
+        Gestion_Langage.Langage LangScreenManager;
 
         bool isInitialized;
 
@@ -52,6 +52,7 @@ namespace GameStateManagement
 
         #region Properties
 
+        public void Set_Langage(Gestion_Langage.Langage LangueScreen) { LangScreenManager = LangueScreen; }
 
         /// <summary>
         /// A default SpriteBatch shared by all the screens. This saves
@@ -60,6 +61,11 @@ namespace GameStateManagement
         public SpriteBatch SpriteBatch
         {
             get { return spriteBatch; }
+        }
+
+        public Gestion_Langage.Langage langScreenManager
+        {
+            get { return LangScreenManager; }
         }
 
 
@@ -257,6 +263,8 @@ namespace GameStateManagement
             screen.ControllingPlayer = controllingPlayer;
             screen.ScreenManager = this;
             screen.IsExiting = false;
+            screen.LangageGameScreen = LangScreenManager;
+
 
             // If we have a graphics device, tell the screen to load content.
             if (isInitialized)

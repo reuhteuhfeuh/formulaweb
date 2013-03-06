@@ -27335,3 +27335,25 @@
 2013-02-22 11:18:22.0443|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
 2013-02-22 11:19:40.8421|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
 2013-02-22 11:19:41.1521|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-23 19:31:49.0624|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-23 19:31:49.5984|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-23 19:32:53.3214|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-23 19:32:53.8144|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-23 19:35:17.8724|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-23 19:35:18.2534|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-23 19:37:13.2484|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-23 19:37:13.7954|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-23 20:09:05.3354|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-23 20:09:05.8404|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-25 08:19:19.4872|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-25 08:19:19.7002|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-02-25 10:56:14.2172|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-02-25 10:56:14.5142|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-03-01 14:08:55.7138|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-03-01 14:08:56.0669|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-03-01 14:38:56.6339|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-03-01 14:38:56.8740|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-03-03 10:19:19.9678|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-03-03 10:19:20.6508|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940
+2013-03-04 13:34:38.1687|TRACE|Gestion_Graphique|Lancement de l'initialisation de la Gestion Graphique
+2013-03-04 13:34:38.4807|TRACE|Gestion_Graphique|Circuit chargé dimension X:1601 Y:940

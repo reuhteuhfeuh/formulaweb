@@ -11,7 +11,7 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using GameStateManagement;
+using Gestiondesmenus;
 #endregion
 
 namespace Gestiondesmenus
@@ -164,7 +164,11 @@ namespace Gestiondesmenus
 
             Vector2 origin = new Vector2(0, font.LineSpacing / 2);
 
-            spriteBatch.DrawString(font, text, position, color, 0,
+            // Traduction en live pour bien prendre en compte les changements de langue.
+            string text_traduit;
+            text_traduit = screenManager.langScreenManager.Get_Traduction(text);
+
+            spriteBatch.DrawString(font, text_traduit, position, color, 0,
                                    origin, scale, SpriteEffects.None, 0);
         }
 

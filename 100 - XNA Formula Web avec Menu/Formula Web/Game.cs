@@ -8,8 +8,9 @@
 #endregion
 
 using System;
-using GameStateManagement;
+using Gestiondesmenus;
 using Microsoft.Xna.Framework;
+
 
 namespace Gestiondesmenus
 {
@@ -19,18 +20,21 @@ namespace Gestiondesmenus
     /// menu. This main game class is extremely simple: all the interesting
     /// stuff happens in the ScreenManager component.
     /// </summary>
-    public class GameStateManagementGame : Microsoft.Xna.Framework.Game
+    public class MenuFormulaWeb : Microsoft.Xna.Framework.Game
     {
         GraphicsDeviceManager graphics;
         ScreenManager screenManager;
         ScreenFactory screenFactory;
+        Gestion_Langage.Langage Lang;
 
         /// <summary>
         /// The main game constructor.
         /// </summary>
-        public GameStateManagementGame()
+        public MenuFormulaWeb()
         {
             Content.RootDirectory = "Content";
+            Lang = new Gestion_Langage.Langage();
+            Lang.set_Langage("FR");
 
             graphics = new GraphicsDeviceManager(this);
             Window.AllowUserResizing = true;
@@ -48,9 +52,11 @@ namespace Gestiondesmenus
             // Create the screen factory and add it to the Services
             screenFactory = new ScreenFactory();
             Services.AddService(typeof(IScreenFactory), screenFactory);
+            Services.AddService(typeof(Gestion_Langage.Langage),Lang);
 
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
+            screenManager.Set_Langage(Lang);
             Components.Add(screenManager);
 
 #if WINDOWS_PHONE
