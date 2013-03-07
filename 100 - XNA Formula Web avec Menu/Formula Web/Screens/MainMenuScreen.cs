@@ -75,7 +75,7 @@ namespace Gestiondesmenus
         /// </summary>
         protected override void OnCancel(PlayerIndex playerIndex)
         {
-            const string message = "Are you sure you want to exit this sample?";
+            const string message = "Menu_Quitter_Validation";
 
             MessageBoxScreen confirmExitMessageBox = new MessageBoxScreen(message);
 

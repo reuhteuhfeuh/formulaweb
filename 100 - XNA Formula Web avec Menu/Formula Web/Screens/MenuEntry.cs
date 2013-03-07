@@ -144,12 +144,23 @@ namespace Gestiondesmenus
             isSelected = false;
 #endif
 
+
+
+            // Draw text, centered on the middle of each line.
+            ScreenManager screenManager = screen.ScreenManager;
+            SpriteBatch spriteBatch = screenManager.SpriteBatch;
+            SpriteFont font = screenManager.Font;
+
+            // Traduction en live pour bien prendre en compte les changements de langue.
+            string text_traduit;
+            text_traduit = screenManager.langScreenManager.Get_Traduction(text);
+
             // Draw the selected entry in yellow, otherwise white.
             Color color = isSelected ? Color.Yellow : Color.White;
 
             // Pulsate the size of the selected menu entry.
             double time = gameTime.TotalGameTime.TotalSeconds;
-            
+
             float pulsate = (float)Math.Sin(time * 6) + 1;
 
             float scale = 1 + pulsate * 0.05f * selectionFade;
@@ -157,16 +168,7 @@ namespace Gestiondesmenus
             // Modify the alpha to fade text out during transitions.
             color *= screen.TransitionAlpha;
 
-            // Draw text, centered on the middle of each line.
-            ScreenManager screenManager = screen.ScreenManager;
-            SpriteBatch spriteBatch = screenManager.SpriteBatch;
-            SpriteFont font = screenManager.Font;
-
             Vector2 origin = new Vector2(0, font.LineSpacing / 2);
-
-            // Traduction en live pour bien prendre en compte les changements de langue.
-            string text_traduit;
-            text_traduit = screenManager.langScreenManager.Get_Traduction(text);
 
             spriteBatch.DrawString(font, text_traduit, position, color, 0,
                                    origin, scale, SpriteEffects.None, 0);
@@ -187,7 +189,10 @@ namespace Gestiondesmenus
         /// </summary>
         public virtual int GetWidth(MenuScreen screen)
         {
-            return (int)screen.ScreenManager.Font.MeasureString(Text).X;
+            // On donne la dimension de la traduction
+            ScreenManager screenManager = screen.ScreenManager;
+            string text_traduit;
+            return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
         }
 
 

@@ -263,7 +263,6 @@ namespace Gestiondesmenus
             screen.ControllingPlayer = controllingPlayer;
             screen.ScreenManager = this;
             screen.IsExiting = false;
-            screen.LangageGameScreen = LangScreenManager;
 
 
             // If we have a graphics device, tell the screen to load content.

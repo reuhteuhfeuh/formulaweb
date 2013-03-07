@@ -157,16 +157,7 @@ namespace Gestiondesmenus
         }
 
         ScreenManager screenManager;
-
-        
-        public Gestion_Langage.Langage LangageGameScreen
-        {
-            get { return langageGameScreen; }
-            internal set { langageGameScreen = value; }
-        }
-
-        Gestion_Langage.Langage langageGameScreen;
-        
+   
 
 
         /// <summary>
