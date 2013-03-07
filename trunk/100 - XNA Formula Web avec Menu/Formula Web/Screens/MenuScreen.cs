@@ -35,15 +35,6 @@ namespace Gestiondesmenus
         InputAction menuDown;
         InputAction menuSelect;
         InputAction menuCancel;
-        //Gestion_Langage.Langage LangageMenuScreen;
-
-        public Gestion_Langage.Langage LangageMenuScreen
-        {
-            get { return langageMenuScreen; }
-            internal set { langageMenuScreen = value; }
-        }
-
-        Gestion_Langage.Langage langageMenuScreen;
 
         #endregion
 
@@ -250,7 +241,6 @@ namespace Gestiondesmenus
                 MenuEntry menuEntry = menuEntries[i];
 
                 bool isSelected = IsActive && (i == selectedEntry);
-                this.langageMenuScreen = ScreenManager.langScreenManager;
                 menuEntry.Draw(this, isSelected, gameTime);
             }
 

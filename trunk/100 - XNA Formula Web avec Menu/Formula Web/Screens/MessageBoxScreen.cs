@@ -27,6 +27,7 @@ namespace Gestiondesmenus
         #region Fields
 
         string message;
+        bool MessageInclu = false;
         Texture2D gradientTexture;
 
         InputAction menuSelect;
@@ -59,13 +60,9 @@ namespace Gestiondesmenus
         /// </summary>
         public MessageBoxScreen(string message, bool includeUsageText)
         {
-            const string usageText = "\nA button, Space, Enter = ok" +
-                                     "\nB button, Esc = cancel"; 
-            
-            if (includeUsageText)
-                this.message = message + usageText;
-            else
-                this.message = message;
+
+            this.message = message;
+            MessageInclu = includeUsageText;
 
             IsPopup = true;
 
@@ -151,10 +148,21 @@ namespace Gestiondesmenus
             // Darken down any other screens that were drawn beneath the popup.
             ScreenManager.FadeBackBufferToBlack(TransitionAlpha * 2 / 3);
 
+
+            // Tentative de traduction des Message Box
+            string usageText = "\n"+ScreenManager.langScreenManager.Get_Traduction("Menu_Quitter_Validation_Ligne1")+
+                                     "\n" + ScreenManager.langScreenManager.Get_Traduction("Menu_Quitter_Validation_Ligne2");
+            string message_traduit;
+            message_traduit = ScreenManager.langScreenManager.Get_Traduction(message);
+
+            if (this.MessageInclu)
+                message_traduit = message_traduit + usageText;
+
+
             // Center the message text in the viewport.
             Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
             Vector2 viewportSize = new Vector2(viewport.Width, viewport.Height);
-            Vector2 textSize = font.MeasureString(message);
+            Vector2 textSize = font.MeasureString(message_traduit);
             Vector2 textPosition = (viewportSize - textSize) / 2;
 
             // The background includes a border somewhat larger than the text itself.
@@ -175,7 +183,7 @@ namespace Gestiondesmenus
             spriteBatch.Draw(gradientTexture, backgroundRectangle, color);
 
             // Draw the message box text.
-            spriteBatch.DrawString(font, message, textPosition, color);
+            spriteBatch.DrawString(font, message_traduit, textPosition, color);
 
             spriteBatch.End();
         }
