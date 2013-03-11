@@ -14,10 +14,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input.Touch;
 using Microsoft.Xna.Framework.Input;
-using Gestiondesmenus;
+using FormulaWeb;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// Base class for screens that contain a menu of options. The user can
@@ -250,14 +250,16 @@ namespace Gestiondesmenus
             float transitionOffset = (float)Math.Pow(TransitionPosition, 2);
 
             // Draw the menu title centered on the screen
+            string titre_traduit;
+            titre_traduit = ScreenManager.langScreenManager.Get_Traduction(menuTitle);
             Vector2 titlePosition = new Vector2(graphics.Viewport.Width / 2, 80);
-            Vector2 titleOrigin = font.MeasureString(menuTitle) / 2;
+            Vector2 titleOrigin = font.MeasureString(titre_traduit) / 2;
             Color titleColor = new Color(192, 192, 192) * TransitionAlpha;
             float titleScale = 1.25f;
 
             titlePosition.Y -= transitionOffset * 100;
 
-            spriteBatch.DrawString(font, menuTitle, titlePosition, titleColor, 0,
+            spriteBatch.DrawString(font, titre_traduit, titlePosition, titleColor, 0,
                                    titleOrigin, titleScale, SpriteEffects.None, 0);
 
             spriteBatch.End();

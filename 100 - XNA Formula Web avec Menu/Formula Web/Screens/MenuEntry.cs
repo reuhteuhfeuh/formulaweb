@@ -11,10 +11,10 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Gestiondesmenus;
+using FormulaWeb;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// Helper class represents a single entry in a MenuScreen. By default this
@@ -44,12 +44,33 @@ namespace Gestiondesmenus
         /// each frame in Update.
         /// </summary>
         Vector2 position;
+  
+        bool traduction = true;
+
+        bool chgt_lang = false;
+        string chgt_lang_choix = "FR" ;
 
         #endregion
 
         #region Properties
 
+        public bool Chgt_lang
+        {
+            get { return chgt_lang; }
+            set { chgt_lang = value; }
+        }
 
+        public string Chgt_lang_choix
+        {
+            get { return chgt_lang_choix; }
+            set { chgt_lang_choix = value; }
+        }
+
+        public bool Traduction
+        {
+            get { return traduction; }
+            set { traduction = value; }
+        }
         /// <summary>
         /// Gets or sets the text of this menu entry.
         /// </summary>
@@ -102,6 +123,7 @@ namespace Gestiondesmenus
         public MenuEntry(string text)
         {
             this.text = text;
+            traduction = true;
         }
 
 
@@ -151,9 +173,23 @@ namespace Gestiondesmenus
             SpriteBatch spriteBatch = screenManager.SpriteBatch;
             SpriteFont font = screenManager.Font;
 
+            if (chgt_lang)
+            {
+                screenManager.langScreenManager.set_Langage(chgt_lang_choix);
+                Chgt_lang = false ;
+            }
+
             // Traduction en live pour bien prendre en compte les changements de langue.
             string text_traduit;
-            text_traduit = screenManager.langScreenManager.Get_Traduction(text);
+
+            if (traduction)
+            {
+                text_traduit = screenManager.langScreenManager.Get_Traduction(text);
+            }
+            else
+            {
+                text_traduit = text.Trim();
+            }
 
             // Draw the selected entry in yellow, otherwise white.
             Color color = isSelected ? Color.Yellow : Color.White;

@@ -12,10 +12,10 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-using Gestiondesmenus;
+using FormulaWeb;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The background screen sits behind all the other menu screens.

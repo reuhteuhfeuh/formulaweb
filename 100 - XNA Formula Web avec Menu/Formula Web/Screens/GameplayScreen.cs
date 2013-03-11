@@ -14,10 +14,10 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Gestiondesmenus;
+using FormulaWeb;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// This screen implements the actual game logic. It is just a
@@ -94,7 +94,6 @@ namespace Gestiondesmenus
             Moteur_Voiture = new Gestion_Voiture.Voiture();
             Moteur_Graphique = new Gestion_Graphique.Graphique();
 
-            //graphics = ScreenManager.GraphicsDevice();
         }
 
 
@@ -225,6 +224,7 @@ namespace Gestiondesmenus
                 int screenHeight = ScreenManager.GraphicsDevice.Viewport.Height;
 
                 Moteur_Graphique.Set_Taille_Ecran(ScreenManager.GraphicsDevice.Viewport.Height, ScreenManager.GraphicsDevice.Viewport.Width);
+                Moteur_Graphique.Set_Langage_Affichage(ScreenManager.langScreenManager);
 
                 // On test que la touche vient d'être appuyé
                 // Attention ne sont pas gérer les mauvais déplacement
@@ -257,23 +257,6 @@ namespace Gestiondesmenus
 
                 ClavierEtatPrecedent = ClavierEtat;
 
-
-
-                // Apply some random jitter to make the enemy move around.
-                const float randomization = 10;
-
-                enemyPosition.X += (float)(random.NextDouble() - 0.5) * randomization;
-                enemyPosition.Y += (float)(random.NextDouble() - 0.5) * randomization;
-
-                // Apply a stabilizing force to stop the enemy moving off the screen.
-                Vector2 targetPosition = new Vector2(
-                    ScreenManager.GraphicsDevice.Viewport.Width / 2 - gameFont.MeasureString("Insert Gameplay Here").X / 2, 
-                    200);
-
-                enemyPosition = Vector2.Lerp(enemyPosition, targetPosition, 0.05f);
-
-                // TODO: this game isn't very fun! You could probably improve
-                // it by inserting something more interesting in this space :-)
             }
         }
 
@@ -359,7 +342,7 @@ namespace Gestiondesmenus
 
             // Our player and enemy are both actually just text strings.
             // SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
-
+            /*
             spriteBatch.Begin();
 
             spriteBatch.DrawString(gameFont, "// TODO", playerPosition, Color.Green);
@@ -367,7 +350,7 @@ namespace Gestiondesmenus
             spriteBatch.DrawString(gameFont, "Insert Gameplay Here",
                                    enemyPosition, Color.DarkRed);
 
-            spriteBatch.End();
+            spriteBatch.End();*/
 
             // Affichage de la partie NonFixe
             spriteBatch.Begin();

@@ -20,7 +20,7 @@ using System.IO.IsolatedStorage;
 using System.Xml.Linq;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The screen manager is a component which manages one or more GameScreen

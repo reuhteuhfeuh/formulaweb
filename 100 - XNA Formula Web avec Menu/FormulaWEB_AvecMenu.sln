@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menus", "Formula Web\Menus.csproj", "{CE4C1E0D-7E54-4BF6-9959-FB4BCC16B68E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulaWeb", "Formula Web\FormulaWeb.csproj", "{CE4C1E0D-7E54-4BF6-9959-FB4BCC16B68E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Content", "Content\Content.contentproj", "{44459A75-F2CF-4B58-89EA-79154AF5C1AF}"
 EndProject
@@ -60,6 +60,7 @@ Global
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Debug|x86.Build.0 = Debug|Any CPU
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E1720C30-EBD6-4637-A3FA-CCDC157BBCB4}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
@@ -71,6 +72,7 @@ Global
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Debug|x86.Build.0 = Debug|Any CPU
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{384E1A5C-4B65-4FC7-9CDA-71D40B36E67B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
@@ -92,6 +94,7 @@ Global
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Debug|x86.Build.0 = Debug|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU

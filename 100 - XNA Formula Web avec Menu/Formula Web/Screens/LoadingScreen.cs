@@ -11,10 +11,10 @@
 using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Gestiondesmenus;
+using FormulaWeb;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The loading screen coordinates transitions between the menu system and the
@@ -140,19 +140,22 @@ namespace Gestiondesmenus
                 SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
                 SpriteFont font = ScreenManager.Font;
 
-                const string message = "Loading...";
+                string message = "Chargement";
+
+                string message_traduit;
+                message_traduit = ScreenManager.langScreenManager.Get_Traduction(message);
 
                 // Center the text in the viewport.
                 Viewport viewport = ScreenManager.GraphicsDevice.Viewport;
                 Vector2 viewportSize = new Vector2(viewport.Width, viewport.Height);
-                Vector2 textSize = font.MeasureString(message);
+                Vector2 textSize = font.MeasureString(message_traduit);
                 Vector2 textPosition = (viewportSize - textSize) / 2;
 
                 Color color = Color.White * TransitionAlpha;
 
                 // Draw the text.
                 spriteBatch.Begin();
-                spriteBatch.DrawString(font, message, textPosition, color);
+                spriteBatch.DrawString(font, message_traduit, textPosition, color);
                 spriteBatch.End();
             }
         }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
 #if WINDOWS || XBOX
     static class Program

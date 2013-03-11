@@ -11,7 +11,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The pause menu comes up over the top of the game,
@@ -26,11 +26,11 @@ namespace Gestiondesmenus
         /// Constructor.
         /// </summary>
         public PauseMenuScreen()
-            : base("Paused")
+            : base("Menu_Jeu_Pause")
         {
             // Create our menu entries.
-            MenuEntry resumeGameMenuEntry = new MenuEntry("Resume Game");
-            MenuEntry quitGameMenuEntry = new MenuEntry("Quit Game");
+            MenuEntry resumeGameMenuEntry = new MenuEntry("Menu_Jeu_Pause_Reprendre");
+            MenuEntry quitGameMenuEntry = new MenuEntry("Menu_Quitter");
             
             // Hook up menu event handlers.
             resumeGameMenuEntry.Selected += OnCancel;
@@ -52,7 +52,7 @@ namespace Gestiondesmenus
         /// </summary>
         void QuitGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            const string message = "Are you sure you want to quit this game?";
+            const string message = "Menu_Quitter_Validation";
 
             MessageBoxScreen confirmQuitMessageBox = new MessageBoxScreen(message);
 

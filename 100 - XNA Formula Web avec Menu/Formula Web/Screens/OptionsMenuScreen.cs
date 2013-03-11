@@ -11,7 +11,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The options screen is brought up over the top of the main menu
@@ -37,7 +37,6 @@ namespace Gestiondesmenus
         static Ungulate currentUngulate = Ungulate.Dromedary;
 
         static string[] languages = { "C#", "French", "Deoxyribonucleic acid" };
-        static int currentLanguage = 0;
 
         static bool frobnicate = true;
 
@@ -52,17 +51,17 @@ namespace Gestiondesmenus
         /// Constructor.
         /// </summary>
         public OptionsMenuScreen()
-            : base("Options")
+            : base("Titre_Menu_Option")
         {
             // Create our menu entries.
             ungulateMenuEntry = new MenuEntry(string.Empty);
-            languageMenuEntry = new MenuEntry(string.Empty);
+            languageMenuEntry = new MenuEntry("Menu_Options_Langage");
             frobnicateMenuEntry = new MenuEntry(string.Empty);
             elfMenuEntry = new MenuEntry(string.Empty);
 
             SetMenuEntryText();
 
-            MenuEntry back = new MenuEntry("Back");
+            MenuEntry back = new MenuEntry("Menu_Retour");
 
             // Hook up menu event handlers.
             ungulateMenuEntry.Selected += UngulateMenuEntrySelected;
@@ -86,7 +85,6 @@ namespace Gestiondesmenus
         void SetMenuEntryText()
         {
             ungulateMenuEntry.Text = "Preferred ungulate: " + currentUngulate;
-            languageMenuEntry.Text = "Language: " + languages[currentLanguage];
             frobnicateMenuEntry.Text = "Frobnicate: " + (frobnicate ? "on" : "off");
             elfMenuEntry.Text = "elf: " + elf;
         }
@@ -116,9 +114,7 @@ namespace Gestiondesmenus
         /// </summary>
         void LanguageMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            currentLanguage = (currentLanguage + 1) % languages.Length;
-
-            SetMenuEntryText();
+            ScreenManager.AddScreen(new OptionsLangageMenuScreen(), e.PlayerIndex);
         }
 
 

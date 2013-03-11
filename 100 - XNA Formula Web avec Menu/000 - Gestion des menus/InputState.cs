@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// Helper for reading input from keyboard, gamepad, and touch input. This class 
