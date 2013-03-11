@@ -8,11 +8,10 @@
 #endregion
 
 using System;
-using Gestiondesmenus;
 using Microsoft.Xna.Framework;
 
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// Sample showing how to manage different game states, with transitions
@@ -35,7 +34,6 @@ namespace Gestiondesmenus
             Content.RootDirectory = "Content";
             Lang = new Gestion_Langage.Langage();
             Lang.set_Langage("FR");
-
             graphics = new GraphicsDeviceManager(this);
             Window.AllowUserResizing = true;
 

@@ -83,8 +83,6 @@ namespace Gestion_Graphique
             content = con;
             game = gam;
 
-            //content = game.Content;
-
             Affichage_Sprite_Circuit = true ;
             Affichage_Sprite_Souris = true;
             Affichage_Sprite_Voiture_1 = true;
@@ -104,7 +102,7 @@ namespace Gestion_Graphique
             Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
         }
 
-        public bool set_Langage_Affichage(Gestion_Langage.Langage lang)
+        public bool Set_Langage_Affichage(Gestion_Langage.Langage lang)
         {
             Langage_Graphique = lang;
             return true;

@@ -11,7 +11,7 @@
 using Microsoft.Xna.Framework;
 #endregion
 
-namespace Gestiondesmenus
+namespace FormulaWeb
 {
     /// <summary>
     /// The main menu screen is the first thing displayed when the game starts up.
@@ -25,7 +25,7 @@ namespace Gestiondesmenus
         /// Constructor fills in the menu contents.
         /// </summary>
         public MainMenuScreen()
-            : base("FormulaWeb !")
+            : base("Titre_Menu_Principal")
         {
             //LangageMainMenuScreen = lang;
             // Create our menu entries.            
