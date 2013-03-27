@@ -228,7 +228,14 @@ namespace FormulaWeb
             // On donne la dimension de la traduction
             ScreenManager screenManager = screen.ScreenManager;
             string text_traduit;
-            return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
+            if (Traduction)
+            {
+                return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
+            }
+            else
+            {
+                return (int)screen.ScreenManager.Font.MeasureString(text).X;
+            }
         }
 
 
