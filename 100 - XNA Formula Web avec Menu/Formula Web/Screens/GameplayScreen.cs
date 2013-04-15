@@ -41,7 +41,7 @@ namespace FormulaWeb
         bool Initialisation_Moteur = true;
 
         // Création du moteur circuit
-        Gestion_Circuit.Circuit Moteur_Circuit;
+        Gestion_Plateau.Plateau Moteur_Circuit;
 
         // Création du moteur voiture
         Gestion_Vehicule.Vehicule Moteur_Voiture;
@@ -90,7 +90,7 @@ namespace FormulaWeb
                 true);
 
             // Initialisation des moteurs de jeu
-            Moteur_Circuit = new Gestion_Circuit.Circuit();
+            Moteur_Circuit = new Gestion_Plateau.Plateau();
             Moteur_Voiture = new Gestion_Vehicule.Vehicule();
             Moteur_Graphique = new Gestion_Graphique.Graphique();
 
