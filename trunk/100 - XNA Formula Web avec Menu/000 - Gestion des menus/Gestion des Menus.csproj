@@ -35,7 +35,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
-    <OutputPath>bin\x86\Release</OutputPath>
+    <OutputPath>..\..\500 - Repertoire de jeu\</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoStdLib>true</NoStdLib>
@@ -111,6 +111,11 @@
     <ProjectReference Include="..\..\004 - Gestion Langage\Gestion_Langage\Gestion_Langage\Gestion_Langage.csproj">
       <Project>{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}</Project>
       <Name>Gestion_Langage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content\Content.contentproj">
+      <Project>{44459A75-F2CF-4B58-89EA-79154AF5C1AF}</Project>
+      <Name>Content</Name>
+      <XnaReferenceType>Content</XnaReferenceType>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
