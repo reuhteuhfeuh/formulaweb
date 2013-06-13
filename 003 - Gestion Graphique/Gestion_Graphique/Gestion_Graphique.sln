@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Graphique", "Gestion_Graphique\Gestion_Graphique.csproj", "{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Graphique", "Gestion_Graphique\Gestion_Graphique.csproj", "{967F5FC7-AAF8-4B69-813F-166DA1D06E1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Debug|x86.ActiveCfg = Debug|x86
-		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Debug|x86.Build.0 = Debug|x86
-		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Release|x86.ActiveCfg = Release|x86
-		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Release|x86.Build.0 = Release|x86
+		{967F5FC7-AAF8-4B69-813F-166DA1D06E1C}.Debug|x86.ActiveCfg = Debug|x86
+		{967F5FC7-AAF8-4B69-813F-166DA1D06E1C}.Debug|x86.Build.0 = Debug|x86
+		{967F5FC7-AAF8-4B69-813F-166DA1D06E1C}.Release|x86.ActiveCfg = Release|x86
+		{967F5FC7-AAF8-4B69-813F-166DA1D06E1C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

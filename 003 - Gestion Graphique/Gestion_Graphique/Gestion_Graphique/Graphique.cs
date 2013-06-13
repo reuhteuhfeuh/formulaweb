@@ -1,32 +1,31 @@
+ï»¿#region Using Statements
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
-using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Media;
-using NLog;
+using Microsoft.Xna.Framework.Storage;
+using Microsoft.Xna.Framework.GamerServices;
+#endregion
 
 namespace Gestion_Graphique
 {
-    public class Graphique : Microsoft.Xna.Framework.Game
+    public class Graphique
     {
-        // Création de l'instance Nlog
-        Logger logger = LogManager.GetLogger("Gestion_Graphique");
+        // CrÃ©ation de l'instance Nlog
+        // Logger logger = LogManager.GetLogger("Gestion_Graphique");
 
-        // Création du graphique manager, lien avec la carte graphique
+        // CrÃ©ation du graphique manager, lien avec la carte graphique
         // GraphicsDeviceManager graphics;
 
-        // Création du sprite Batch objet pour dessiner sur l'écran de jeu
+        // CrÃ©ation du sprite Batch objet pour dessiner sur l'Ã©cran de jeu
         SpriteBatch spriteBatch;
 
-        // Création du content manager 
+        // CrÃ©ation du content manager 
         ContentManager content;
 
-        // Création du Game
+        // CrÃ©ation du Game
         Game game;
 
         // Gestion des langues
@@ -39,9 +38,9 @@ namespace Gestion_Graphique
         // Ratio sur le calcul taille voiture
         double Ratio_Dimension_Voiture = 1;
 
-        // Création des Sprite
-        Sprite Sprite_Circuit ;
-        bool Affichage_Sprite_Circuit ;
+        // CrÃ©ation des Sprite
+        Sprite Sprite_Circuit;
+        bool Affichage_Sprite_Circuit;
         string Acces_Image;
         int Circuit_Hauteur;
         int Circuit_Largeur;
@@ -53,11 +52,11 @@ namespace Gestion_Graphique
         double A1;
 
         // Sprite Souris
-        private MouseState SourisEtat ;
-        Sprite Sprite_Souris ;
-        bool Affichage_Sprite_Souris ;
+        private MouseState SourisEtat;
+        Sprite Sprite_Souris;
+        bool Affichage_Sprite_Souris;
 
-        // Création des panneaux d'affichage
+        // CrÃ©ation des panneaux d'affichage
         Panneau_Affichage Affichage_Generale;
         bool Panneau_Affichage_Generale = true;
 
@@ -66,24 +65,24 @@ namespace Gestion_Graphique
             if (Panneau_Affichage_Generale)
             {
                 Panneau_Affichage_Generale = false;
-                logger.Trace("Desactivation Panneau affichage generale");
+                //logger.Trace("Desactivation Panneau affichage generale");
             }
             else
             {
                 Panneau_Affichage_Generale = true;
-                logger.Trace("Activitation Panneau affichage generale");
+                //logger.Trace("Activitation Panneau affichage generale");
             }
             return true;
         }
 
         public virtual void Initialize(/*GraphicsDeviceManager gra,*/ SpriteBatch spr, ContentManager con, Game gam)
         {
-            logger.Trace("Lancement de l'initialisation de la Gestion Graphique");
+            //logger.Trace("Lancement de l'initialisation de la Gestion Graphique");
             spriteBatch = spr;
             content = con;
             game = gam;
 
-            Affichage_Sprite_Circuit = true ;
+            Affichage_Sprite_Circuit = true;
             Affichage_Sprite_Souris = true;
             Affichage_Sprite_Voiture_1 = true;
 
@@ -93,7 +92,7 @@ namespace Gestion_Graphique
             Sprite_Voiture_1 = new Sprite();
 
             Affichage_Generale.Init(game);
-            Sprite_Souris.Init(spriteBatch,content,game);
+            Sprite_Souris.Init(spriteBatch, content, game);
             Sprite_Circuit.Init(spriteBatch, content, game);
             Sprite_Voiture_1.Init(spriteBatch, content, game);
 
@@ -113,7 +112,7 @@ namespace Gestion_Graphique
             Sprite_Circuit.Charger_Image(Acces_Image);
             Circuit_Hauteur = Sprite_Circuit.Get_Hauteur_Sprite();
             Circuit_Largeur = Sprite_Circuit.Get_Largeur_Sprite();
-            logger.Trace("Circuit chargé dimension X:"+Circuit_Largeur+" Y:"+Circuit_Hauteur);
+            //logger.Trace("Circuit chargÃ© dimension X:" + Circuit_Largeur + " Y:" + Circuit_Hauteur);
             return true;
         }
 
@@ -151,7 +150,7 @@ namespace Gestion_Graphique
 
         public virtual void AffichageFixe()
         {
-            // Récupération de la taille du circuit
+            // RÃ©cupÃ©ration de la taille du circuit
             int circuitlargeur = Sprite_Circuit.Get_Largeur_Sprite();
             int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
 
@@ -175,7 +174,7 @@ namespace Gestion_Graphique
 
         public virtual void AffichageNonFixe()
         {
-            // Récupération de la taille du circuit
+            // RÃ©cupÃ©ration de la taille du circuit
             int circuitlargeur = Sprite_Circuit.Get_Largeur_Sprite();
             int circuithauteur = Sprite_Circuit.Get_Hauteur_Sprite();
 
@@ -187,7 +186,7 @@ namespace Gestion_Graphique
             // On affiche dans l'ordre les sprites
             if (Affichage_Sprite_Circuit)
             {
-                Sprite_Circuit.Set_Destination(new Rectangle(Largeur / 2, Hauteur/2, Largeur, Hauteur));
+                Sprite_Circuit.Set_Destination(new Rectangle(Largeur / 2, Hauteur / 2, Largeur, Hauteur));
                 Sprite_Circuit.Afficher_Sprite();
             }
 
@@ -195,7 +194,7 @@ namespace Gestion_Graphique
             {
                 float Position_X_recalculee = (float)V1 * ratioWidth;
                 float Position_Y_recalculee = (float)Y1 * ratioHeight;
-                
+
                 Sprite_Voiture_1.Set_Angle(A1);
                 Sprite_Voiture_1.Set_Position_X((int)Position_X_recalculee);
                 Sprite_Voiture_1.Set_Position_Y((int)Position_Y_recalculee);
