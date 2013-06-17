@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Langage>
+	<Code_Langage>FR</Code_Langage>
+	<Description_Langage>Francais</Description_Langage>
+	<Numero_Revision>DEV</Numero_Revision>
+	<Nom_Traducteur>RTF</Nom_Traducteur>
+	<Chargement>Chargement ...</Chargement>
+	<Titre_Menu_Principal>FoRmUlaWeB ... !</Titre_Menu_Principal>
+	<Titre_Menu_Option>Option</Titre_Menu_Option>
+	<Titre_Menu_Option_Langage>Choix de la langue</Titre_Menu_Option_Langage>
+	<Menu_Jouer>Jouer</Menu_Jouer>
+	<Menu_Options>Options</Menu_Options>
+	<Menu_Options_Langage>choix langue</Menu_Options_Langage>
+	<Menu_Retour>Retour</Menu_Retour>
+	<Menu_Quitter>Quitter</Menu_Quitter>
+	<Menu_Quitter_Validation>Voulez-vous quitter le jeu ?</Menu_Quitter_Validation>
+	<Menu_Quitter_Validation_Ligne1>Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
+	<Menu_Quitter_Validation_Ligne2>Echap = Retour au jeu</Menu_Quitter_Validation_Ligne2>
+	<Menu_Jeu_Pause>Pause !</Menu_Jeu_Pause>
+	<Menu_Jeu_Pause_Reprendre>Reprendre le jeu</Menu_Jeu_Pause_Reprendre>
+</Langage>
