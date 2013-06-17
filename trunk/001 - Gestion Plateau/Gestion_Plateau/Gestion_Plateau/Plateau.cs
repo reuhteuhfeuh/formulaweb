@@ -15,7 +15,7 @@ namespace Gestion_Plateau
         // Variables utilisées pour versionning
         private string Version = "0.0.0.3";
 
-        // Declaration des variables
+        // Declaration des variables standards
         private string Chemin_Access;
         private string Nom_Fichier_XML;
         private string Nom_Plateau;
