@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Langage>
+	<Code_Langage>EN</Code_Langage>
+	<Description_Langage>English</Description_Langage>
+	<Numero_Revision>DEV</Numero_Revision>
+	<Nom_Traducteur>RTF</Nom_Traducteur>
+	<Chargement>Loading...</Chargement>
+	<Titre_Menu_Principal>FormulaWeb ... !</Titre_Menu_Principal>
+	<Titre_Menu_Option>Option</Titre_Menu_Option>
+	<Titre_Menu_Option_Langage>Langage</Titre_Menu_Option_Langage>
+	<Menu_Jouer>Play</Menu_Jouer>
+	<Menu_Options>Options</Menu_Options>
+	<Menu_Options_Langage>Langage choice</Menu_Options_Langage>
+	<Menu_Retour>Back</Menu_Retour>
+	<Menu_Quitter>Quit</Menu_Quitter>
+	<Menu_Quitter_Validation>Left the game ?</Menu_Quitter_Validation>
+	<Menu_Quitter_Validation_Ligne1>Boutton A, Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
+	<Menu_Quitter_Validation_Ligne2>Boutton B, Echap = return to game</Menu_Quitter_Validation_Ligne2>
+	<Menu_Jeu_Pause>Pause !</Menu_Jeu_Pause>
+	<Menu_Jeu_Pause_Reprendre>Continue</Menu_Jeu_Pause_Reprendre>
+</Langage>
