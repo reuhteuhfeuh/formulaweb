@@ -68,7 +68,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\..\..\..\..\..\..\Program Files %28x86%29\MonoGame\v3.0\Assemblies\WindowsGL\SDL.dll">
+      <Link>SDL.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
+    <Content Include="OpenAL32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -87,6 +94,10 @@
     <ProjectReference Include="..\..\..\004 - Gestion Langage\Gestion_Langage\Gestion_Langage\Gestion_Langage.csproj">
       <Project>{3b2feb76-5b4c-4254-99ce-9c19cea23576}</Project>
       <Name>Gestion_Langage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\006 - Gestion Son\Gestion_Son\Gestion_Son.csproj">
+      <Project>{8da5e141-1f4e-43d9-97a2-be54ce379e6e}</Project>
+      <Name>Gestion_Son</Name>
     </ProjectReference>
     <ProjectReference Include="..\GestionMenus\Gestion_Menus.csproj">
       <Project>{de69c0c2-d16a-4fe8-8b40-05de80dc514b}</Project>
@@ -124,6 +135,7 @@
     <None Include="Content\Pointeur_Souris.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Song_01.xnb" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

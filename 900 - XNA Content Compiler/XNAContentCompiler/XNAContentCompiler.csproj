@@ -82,7 +82,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\validation_anim.gif" />
+    <None Include="Resources\validation_anim.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\lol choix Fabian_01.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
