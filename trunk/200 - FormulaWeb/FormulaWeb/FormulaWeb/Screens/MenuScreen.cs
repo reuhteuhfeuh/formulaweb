@@ -66,9 +66,6 @@ namespace FormulaWeb
             TransitionOnTime = TimeSpan.FromSeconds(0.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
 
-            //this.langageMenuScreen = LangageGameScreen;
-            //langageMenuScreen = ScreenManager.langScreenManager;
-
             menuUp = new InputAction(
                 new Buttons[] { Buttons.DPadUp, Buttons.LeftThumbstickUp }, 
                 new Keys[] { Keys.Up },

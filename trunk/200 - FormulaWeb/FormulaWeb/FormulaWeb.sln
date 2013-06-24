@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula Web", "FormulaWeb\Formula Web.csproj", "{FDD7D8E4-1837-4B1D-9773-2C5EF8BFBE3A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E} = {8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Plateau", "..\..\001 - Gestion Plateau\Gestion_Plateau\Gestion_Plateau\Gestion_Plateau.csproj", "{4A92FDA9-B313-4432-9447-1DB57E45891E}"
 EndProject
@@ -12,6 +15,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Graphique", "..\..\003 - Gestion Graphique\Gestion_Graphique\Gestion_Graphique\Gestion_Graphique.csproj", "{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Menus", "GestionMenus\Gestion_Menus.csproj", "{DE69C0C2-D16A-4FE8-8B40-05DE80DC514B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Son", "..\..\006 - Gestion Son\Gestion_Son\Gestion_Son.csproj", "{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +92,16 @@ Global
 		{DE69C0C2-D16A-4FE8-8B40-05DE80DC514B}.Release|Mixed Platforms.Build.0 = Release|x86
 		{DE69C0C2-D16A-4FE8-8B40-05DE80DC514B}.Release|x86.ActiveCfg = Release|x86
 		{DE69C0C2-D16A-4FE8-8B40-05DE80DC514B}.Release|x86.Build.0 = Release|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Debug|x86.ActiveCfg = Debug|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Debug|x86.Build.0 = Debug|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|Any CPU.ActiveCfg = Release|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|x86.ActiveCfg = Release|x86
+		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -26,7 +26,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\WindowsGL\Release\</OutputPath>
+    <OutputPath>..\..\..\500 - Repertoire de jeu\Ressources\Dll\</OutputPath>
     <DefineConstants>TRACE;WINDOWS</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -75,6 +75,10 @@
     <ProjectReference Include="..\..\..\004 - Gestion Langage\Gestion_Langage\Gestion_Langage\Gestion_Langage.csproj">
       <Project>{3b2feb76-5b4c-4254-99ce-9c19cea23576}</Project>
       <Name>Gestion_Langage</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\006 - Gestion Son\Gestion_Son\Gestion_Son.csproj">
+      <Project>{8da5e141-1f4e-43d9-97a2-be54ce379e6e}</Project>
+      <Name>Gestion_Son</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

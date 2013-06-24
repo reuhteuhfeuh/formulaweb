@@ -9,6 +9,7 @@
 
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Media;
 using Gestion_Langage;
 
 
@@ -26,6 +27,9 @@ namespace FormulaWeb
         ScreenManager screenManager;
         ScreenFactory screenFactory;
         Gestion_Langage.Langage Lang;
+        Gestion_Son.SoundMachine Musique;
+
+        
 
         /// <summary>
         /// The main game constructor.
@@ -34,9 +38,15 @@ namespace FormulaWeb
         {
             Content.RootDirectory = "Content";
             Lang = new Gestion_Langage.Langage();
+            Musique = new Gestion_Son.SoundMachine();
+
             Lang.set_Langage("FR");
+            
             graphics = new GraphicsDeviceManager(this);
             Window.AllowUserResizing = true;
+
+            Musique.Allumage_ampli(Content,graphics);
+
 
             TargetElapsedTime = TimeSpan.FromTicks(333333);
 
@@ -49,7 +59,9 @@ namespace FormulaWeb
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
             screenManager.Set_Langage(Lang);
+            screenManager.SonScreenManager = Musique;
             Components.Add(screenManager);
+           
 
             // On Windows and Xbox we just add the initial screens
             AddInitialScreens();

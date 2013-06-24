@@ -14,6 +14,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Gestion_Son;
 using FormulaWeb;
 #endregion
 
@@ -49,18 +50,15 @@ namespace FormulaWeb
         // Création du moteur graphique
         Gestion_Graphique.Graphique Moteur_Graphique;
 
+        // Création du moteur son
+        Gestion_Son.SoundMachine Moteur_Son;
+
         // Declaration des chemins acces
         String Acces_Circuit = ".\\Ressources\\Plateaux\\Circuit_FDE\\";
 
         // Création pour le clavier
         private KeyboardState ClavierEtat;
         private KeyboardState ClavierEtatPrecedent;
-
-        // Création Texture2D pour la voiture de test
-        // private Texture2D Voiture_Test = null;
-        // protected Rectangle rectangle_destination_voitureTest;
-
-
 
         Vector2 playerPosition = new Vector2(100, 100);
         Vector2 enemyPosition = new Vector2(100, 100);
@@ -94,6 +92,7 @@ namespace FormulaWeb
             Moteur_Vehicule = new Gestion_Vehicule.Vehicule();
             Moteur_Graphique = new Gestion_Graphique.Graphique();
 
+
         }
 
 
@@ -110,6 +109,7 @@ namespace FormulaWeb
                 gameFont = content.Load<SpriteFont>("gamefont");
 
                 GraphicsDevice gra = ScreenManager.Game.GraphicsDevice;
+                Moteur_Son = ScreenManager.SonScreenManager;
                 //graphics = ScreenManager.Game.GraphicsDevice;
 
                 // A real game would probably have more content than this sample, so
@@ -131,9 +131,11 @@ namespace FormulaWeb
             {
                 string Fichier_Image_Circuit;
                 string Access_XML;
+                Moteur_Son.Ecouter_musique("Song_01");
                 Access_XML = Acces_Circuit + "Zandvoort_01";
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit_Zandvoort_N1_Officiel_002.xml");
+
                 if (Moteur_Plateau.Lecture_Fichier_XML() == "Chargementxmlok")
                 {
                     Fichier_Image_Circuit = Moteur_Plateau.Get_Image_Circuit();
@@ -149,6 +151,7 @@ namespace FormulaWeb
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Plateau.Get_Ratio_Voiture());
 
                 Moteur_Graphique.Set_Message_Principal("Viendez tous au masters 2013, NORTH MEN TEAM EN FORCE !!!!");
+
                 Moteur_Vehicule.Set_Numero_Case(1);
                 Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
 
