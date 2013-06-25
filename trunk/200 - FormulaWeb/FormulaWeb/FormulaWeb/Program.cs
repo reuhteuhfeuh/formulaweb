@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+
 #endregion
 
 namespace FormulaWeb
@@ -19,7 +20,7 @@ namespace FormulaWeb
         static void Main()
         {
             using (var game = new MenuFormulaWeb())
-
+                
                 game.Run();
         }
     }

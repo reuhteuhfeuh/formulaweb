@@ -133,8 +133,8 @@ namespace Gestion_Graphique
             stream = new FileStream(path, FileMode.Open);
             texture = Texture2D.FromStream(game.GraphicsDevice, stream); //On charge la texture via le stream
             PremultiplyYourAlpha(texture); //On pré-multiplie l'alpha pour la transparence
+            stream.Close(); // On libère le fichier
             return texture;
-            //}
         }
 
         public static void PremultiplyYourAlpha(Texture2D texture)
