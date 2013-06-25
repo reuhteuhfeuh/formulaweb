@@ -80,6 +80,13 @@
       <Project>{8da5e141-1f4e-43d9-97a2-be54ce379e6e}</Project>
       <Name>Gestion_Son</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
+      <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
+      <Name>Traceur</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

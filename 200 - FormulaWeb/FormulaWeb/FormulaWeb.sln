@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula Web", "FormulaWeb\Formula Web.csproj", "{FDD7D8E4-1837-4B1D-9773-2C5EF8BFBE3A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E} = {8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}
@@ -17,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Menus", "GestionMenus\Gestion_Menus.csproj", "{DE69C0C2-D16A-4FE8-8B40-05DE80DC514B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Son", "..\..\006 - Gestion Son\Gestion_Son\Gestion_Son.csproj", "{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traceur", "..\..\400 - Traceur\Traceur\Traceur.csproj", "{FEBD5730-E4A2-4910-A105-E7058BE4EB60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +50,7 @@ Global
 		{4A92FDA9-B313-4432-9447-1DB57E45891E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4A92FDA9-B313-4432-9447-1DB57E45891E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4A92FDA9-B313-4432-9447-1DB57E45891E}.Release|x86.ActiveCfg = Release|Any CPU
+		{4A92FDA9-B313-4432-9447-1DB57E45891E}.Release|x86.Build.0 = Release|Any CPU
 		{ACC5AA73-D25C-444F-9B0C-09B43BCC4637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACC5AA73-D25C-444F-9B0C-09B43BCC4637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACC5AA73-D25C-444F-9B0C-09B43BCC4637}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
@@ -102,6 +105,17 @@ Global
 		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|x86.ActiveCfg = Release|x86
 		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}.Release|x86.Build.0 = Release|x86
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|x86.ActiveCfg = Release|Any CPU
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

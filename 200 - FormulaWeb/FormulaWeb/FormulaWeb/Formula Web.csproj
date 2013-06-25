@@ -72,6 +72,9 @@
       <Link>SDL.dll</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Song_01.wma">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
     <Content Include="OpenAL32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -98,6 +101,10 @@
     <ProjectReference Include="..\..\..\006 - Gestion Son\Gestion_Son\Gestion_Son.csproj">
       <Project>{8da5e141-1f4e-43d9-97a2-be54ce379e6e}</Project>
       <Name>Gestion_Son</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
+      <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
+      <Name>Traceur</Name>
     </ProjectReference>
     <ProjectReference Include="..\GestionMenus\Gestion_Menus.csproj">
       <Project>{de69c0c2-d16a-4fe8-8b40-05de80dc514b}</Project>

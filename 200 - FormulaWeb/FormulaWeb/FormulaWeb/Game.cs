@@ -11,6 +11,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using Gestion_Langage;
+using Traceur;
 
 
 namespace FormulaWeb
@@ -28,6 +29,7 @@ namespace FormulaWeb
         ScreenFactory screenFactory;
         Gestion_Langage.Langage Lang;
         Gestion_Son.SoundMachine Musique;
+        Traceur.Traceur Logger;
 
         
 
@@ -37,8 +39,12 @@ namespace FormulaWeb
         public MenuFormulaWeb()
         {
             Content.RootDirectory = "Content";
+            Logger = new Traceur.Traceur();
+            Logger.Init();
+            Logger.Trace("Info", "Initialisation Traceur !");
             Lang = new Gestion_Langage.Langage();
             Musique = new Gestion_Son.SoundMachine();
+
 
             Lang.set_Langage("FR");
             
@@ -46,6 +52,7 @@ namespace FormulaWeb
             Window.AllowUserResizing = true;
 
             Musique.Allumage_ampli(Content,graphics);
+            
 
 
             TargetElapsedTime = TimeSpan.FromTicks(333333);
@@ -54,15 +61,16 @@ namespace FormulaWeb
             // Create the screen factory and add it to the Services
             screenFactory = new ScreenFactory();
             Services.AddService(typeof(IScreenFactory), screenFactory);
-            Services.AddService(typeof(Gestion_Langage.Langage), Lang);
+            //Services.AddService(typeof(Gestion_Langage.Langage), Lang);
 
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
             screenManager.Set_Langage(Lang);
             screenManager.SonScreenManager = Musique;
+            screenManager.loggerScreenManager = Logger;
             Components.Add(screenManager);
-           
 
+            
             // On Windows and Xbox we just add the initial screens
             AddInitialScreens();
         }

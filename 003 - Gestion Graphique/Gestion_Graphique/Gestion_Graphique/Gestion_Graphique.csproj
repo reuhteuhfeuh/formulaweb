@@ -70,9 +70,7 @@
   <ItemGroup>
     <None Include="Content\background.xnb" />
     <None Include="Content\blank.xnb" />
-    <None Include="Content\FWEB_Voiture_001.xnb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="Content\FWEB_Voiture_001.xnb" />
     <None Include="Content\gamefont.xnb" />
     <None Include="Content\gradient.xnb" />
     <None Include="Content\menufont.xnb" />
