@@ -29,7 +29,7 @@ namespace FormulaWeb
         ScreenFactory screenFactory;
         Gestion_Langage.Langage Lang;
         Gestion_Son.SoundMachine Musique;
-        Traceur.Traceur Logger;
+        Traceur.Traceur logger;
 
         
 
@@ -39,9 +39,9 @@ namespace FormulaWeb
         public MenuFormulaWeb()
         {
             Content.RootDirectory = "Content";
-            Logger = new Traceur.Traceur();
-            Logger.Init();
-            Logger.Trace("Info", "Initialisation Traceur !");
+            logger = new Traceur.Traceur();
+            logger.Init();
+            logger.Trace("Info", "Initialisation Traceur !");
             Lang = new Gestion_Langage.Langage();
             Musique = new Gestion_Son.SoundMachine();
 
@@ -51,7 +51,7 @@ namespace FormulaWeb
             graphics = new GraphicsDeviceManager(this);
             Window.AllowUserResizing = true;
 
-            Musique.Allumage_ampli(Content,graphics);
+            Musique.Allumage_ampli(Content,graphics,logger);
             
 
 
@@ -67,7 +67,7 @@ namespace FormulaWeb
             screenManager = new ScreenManager(this);
             screenManager.Set_Langage(Lang);
             screenManager.SonScreenManager = Musique;
-            screenManager.loggerScreenManager = Logger;
+            screenManager.loggerScreenManager = logger;
             Components.Add(screenManager);
 
             

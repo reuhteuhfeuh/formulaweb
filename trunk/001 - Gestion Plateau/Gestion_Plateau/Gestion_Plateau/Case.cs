@@ -80,7 +80,7 @@ namespace Gestion_Plateau
         private Int32 Case_Gauche;
         private Int32 Case_Droite;
         private Int32 Case_EnFace;
-        private Int32 Case_Occupee;
+        //private Int32 Case_Occupee;
         private string Case_Adjacente = "";
         private string Case_Muret;
 
@@ -120,7 +120,7 @@ namespace Gestion_Plateau
         {
             Case_Numero = Numero ;
             Case_Classement = Classement ;
-            Case_Occupee = 0 ;
+            //Case_Occupee = 0 ;
             Case_Droite = 0 ;
             Case_Gauche = 0 ;
             Case_EnFace = 0 ;

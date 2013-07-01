@@ -147,7 +147,6 @@ namespace Gestion_Graphique
                 pixels[i] = new Color(p.R, p.G, p.B) * (p.A / 255f);
             }
             texture.SetData(pixels);
-        }
-         
+        }   
     }
 }
