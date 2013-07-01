@@ -56,10 +56,6 @@ namespace FormulaWeb
         // Declaration des chemins acces
         String Acces_Circuit = ".\\Ressources\\Plateaux\\Circuit_FDE\\";
 
-        // Création pour le clavier
-        private KeyboardState ClavierEtat;
-        private KeyboardState ClavierEtatPrecedent;
-
         Vector2 playerPosition = new Vector2(100, 100);
         Vector2 enemyPosition = new Vector2(100, 100);
 
@@ -158,23 +154,11 @@ namespace FormulaWeb
                 Initialisation_Moteur = false;
             }
 
-#if WINDOWS_PHONE
-            if (Microsoft.Phone.Shell.PhoneApplicationService.Current.State.ContainsKey("PlayerPosition"))
-            {
-                playerPosition = (Vector2)Microsoft.Phone.Shell.PhoneApplicationService.Current.State["PlayerPosition"];
-                enemyPosition = (Vector2)Microsoft.Phone.Shell.PhoneApplicationService.Current.State["EnemyPosition"];
-            }
-#endif
         }
 
 
         public override void Deactivate()
         {
-#if WINDOWS_PHONE
-            Microsoft.Phone.Shell.PhoneApplicationService.Current.State["PlayerPosition"] = playerPosition;
-            Microsoft.Phone.Shell.PhoneApplicationService.Current.State["EnemyPosition"] = enemyPosition;
-#endif
-
             base.Deactivate();
         }
 
@@ -185,11 +169,6 @@ namespace FormulaWeb
         public override void Unload()
         {
             content.Unload();
-
-#if WINDOWS_PHONE
-            Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("PlayerPosition");
-            Microsoft.Phone.Shell.PhoneApplicationService.Current.State.Remove("EnemyPosition");
-#endif
         }
 
 
@@ -216,50 +195,12 @@ namespace FormulaWeb
 
             if (IsActive)
             {
-
-
-
-                // Gestion du clavier
-                ClavierEtat = Keyboard.GetState();
-
                 // Récupération de la taille de la fenêtre
                 int screenWidth = ScreenManager.GraphicsDevice.Viewport.Width;
                 int screenHeight = ScreenManager.GraphicsDevice.Viewport.Height;
 
                 Moteur_Graphique.Set_Taille_Ecran(ScreenManager.GraphicsDevice.Viewport.Height, ScreenManager.GraphicsDevice.Viewport.Width);
                 Moteur_Graphique.Set_Langage_Affichage(ScreenManager.langScreenManager);
-
-                // On test que la touche vient d'être appuyé
-                // Attention ne sont pas gérer les mauvais déplacement
-                if (ClavierEtat.IsKeyDown(Keys.Up) && ClavierEtatPrecedent.IsKeyUp(Keys.Up))
-                {
-                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()));
-                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
-                }
-
-                if (ClavierEtat.IsKeyDown(Keys.Left) && ClavierEtatPrecedent.IsKeyUp(Keys.Left))
-                {
-                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_Gauche(Moteur_Vehicule.Get_Numero_Case()));
-                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
-                }
-
-                if (ClavierEtat.IsKeyDown(Keys.Right) && ClavierEtatPrecedent.IsKeyUp(Keys.Right))
-                {
-                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_Droite(Moteur_Vehicule.Get_Numero_Case()));
-                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
-                }
-
-                Moteur_Graphique.Set_Angle_Voiture(Math.Atan2(Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_Y(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case())), Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_X(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()))));
-
-                // Gestion de l'affichage générale
-                if (ClavierEtat.IsKeyDown(Keys.F12) && ClavierEtatPrecedent.IsKeyUp(Keys.F12))
-                {
-                    Moteur_Graphique.Set_Affichage_Generale();
-                }
-
-
-                ClavierEtatPrecedent = ClavierEtat;
-
             }
         }
 
@@ -277,8 +218,10 @@ namespace FormulaWeb
             // Look up inputs for the active player profile.
             int playerIndex = (int)ControllingPlayer.Value;
 
-            KeyboardState keyboardState = input.CurrentKeyboardStates[playerIndex];
+            KeyboardState EtatClavierencours = input.CurrentKeyboardStates[playerIndex];
+            KeyboardState EtatClavierprecedent = input.LastKeyboardStates[playerIndex];
             GamePadState gamePadState = input.CurrentGamePadStates[playerIndex];
+            MouseState EtatSouris = input.CurrentMouseStates;
 
             // The game pauses either if the user presses the pause button, or if
             // they unplug the active gamepad. This requires us to keep track of
@@ -301,17 +244,36 @@ namespace FormulaWeb
                 // Otherwise move the player position.
                 Vector2 movement = Vector2.Zero;
 
-                if (keyboardState.IsKeyDown(Keys.Left))
-                    movement.X--;
+                if (EtatClavierencours.IsKeyDown(Keys.Left) & EtatClavierprecedent.IsKeyUp(Keys.Left))
+                {
+                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_Gauche(Moteur_Vehicule.Get_Numero_Case()));
+                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
+                }
 
-                if (keyboardState.IsKeyDown(Keys.Right))
-                    movement.X++;
+                if (EtatClavierencours.IsKeyDown(Keys.Right) & EtatClavierprecedent.IsKeyUp(Keys.Right))
+                {
+                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_Droite(Moteur_Vehicule.Get_Numero_Case()));
+                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
+                }
 
-                if (keyboardState.IsKeyDown(Keys.Up))
-                    movement.Y--;
+                if (EtatClavierencours.IsKeyDown(Keys.Up) & EtatClavierprecedent.IsKeyUp(Keys.Up))
+                {
+                    Moteur_Vehicule.Set_Numero_Case(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()));
+                    Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
+                }
 
-                if (keyboardState.IsKeyDown(Keys.Down))
-                    movement.Y++;
+                if (EtatClavierencours.IsKeyDown(Keys.Down) & EtatClavierprecedent.IsKeyUp(Keys.Down))
+                {
+
+                }
+
+                // Gestion de l'affichage générale
+                if (EtatClavierencours.IsKeyDown(Keys.F12) && EtatClavierprecedent.IsKeyUp(Keys.F12))
+                {
+                    Moteur_Graphique.Set_Affichage_Generale();
+                }
+
+                Moteur_Graphique.Set_Angle_Voiture(Math.Atan2(Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_Y(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case())), Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_X(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()))));
 
                 Vector2 thumbstick = gamePadState.ThumbSticks.Left;
 
@@ -343,17 +305,7 @@ namespace FormulaWeb
             ScreenManager.GraphicsDevice.Clear(ClearOptions.Target,
                                                Color.CornflowerBlue, 0, 0);
 
-            // Our player and enemy are both actually just text strings.
-            // SpriteBatch spriteBatch = ScreenManager.SpriteBatch;
-            /*
-            spriteBatch.Begin();
 
-            spriteBatch.DrawString(gameFont, "// TODO", playerPosition, Color.Green);
-
-            spriteBatch.DrawString(gameFont, "Insert Gameplay Here",
-                                   enemyPosition, Color.DarkRed);
-
-            spriteBatch.End();*/
 
             // Affichage de la partie NonFixe
             spriteBatch.Begin();

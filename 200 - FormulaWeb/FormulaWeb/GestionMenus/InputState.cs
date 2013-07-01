@@ -22,13 +22,16 @@ namespace FormulaWeb
     /// </summary>
     public class InputState
     {
+        /// le MaxInputs représente le nombre de joueur max, attention il n'est pas géré au niveau du jeu pour le moment.
         public const int MaxInputs = 4;
 
         public readonly KeyboardState[] CurrentKeyboardStates;
         public readonly GamePadState[] CurrentGamePadStates;
+        public MouseState CurrentMouseStates;
 
         public readonly KeyboardState[] LastKeyboardStates;
         public readonly GamePadState[] LastGamePadStates;
+        public MouseState LastMouseStates;
 
         public readonly bool[] GamePadWasConnected;
 
@@ -44,9 +47,11 @@ namespace FormulaWeb
         {
             CurrentKeyboardStates = new KeyboardState[MaxInputs];
             CurrentGamePadStates = new GamePadState[MaxInputs];
+            CurrentMouseStates = new MouseState();
 
             LastKeyboardStates = new KeyboardState[MaxInputs];
             LastGamePadStates = new GamePadState[MaxInputs];
+            LastMouseStates = new MouseState();
 
             GamePadWasConnected = new bool[MaxInputs];
         }
@@ -60,9 +65,11 @@ namespace FormulaWeb
             {
                 LastKeyboardStates[i] = CurrentKeyboardStates[i];
                 LastGamePadStates[i] = CurrentGamePadStates[i];
+                LastMouseStates = CurrentMouseStates;
 
                 CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex)i);
                 CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex)i);
+                CurrentMouseStates = Mouse.GetState();
 
                 // Keep track of whether a gamepad has ever been
                 // connected, so we can detect if it is unplugged.
