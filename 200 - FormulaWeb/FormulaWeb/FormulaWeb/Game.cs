@@ -30,7 +30,7 @@ namespace FormulaWeb
         Gestion_Langage.Langage Lang;
         Gestion_Son.SoundMachine Musique;
         Traceur.Traceur logger;
-
+        Gestion_Regles.Regles regles;
         
 
         /// <summary>
@@ -44,7 +44,9 @@ namespace FormulaWeb
             logger.Trace("Info", "Initialisation Traceur !");
             Lang = new Gestion_Langage.Langage();
             Musique = new Gestion_Son.SoundMachine();
-
+            regles = new Gestion_Regles.Regles();
+            regles.Trace(logger);
+            regles.Listing_Jeux();
 
             Lang.set_Langage("FR");
             
@@ -66,8 +68,9 @@ namespace FormulaWeb
             // Create the screen manager component.
             screenManager = new ScreenManager(this);
             screenManager.Set_Langage(Lang);
-            screenManager.SonScreenManager = Musique;
+            screenManager.sonScreenManager = Musique;
             screenManager.loggerScreenManager = logger;
+            screenManager.regleScreenManager = regles;
             Components.Add(screenManager);
 
             
