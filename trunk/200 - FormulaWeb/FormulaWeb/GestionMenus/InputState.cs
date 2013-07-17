@@ -69,7 +69,7 @@ namespace FormulaWeb
 
                 CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex)i);
                 CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex)i);
-                CurrentMouseStates = Mouse.GetState();
+                
 
                 // Keep track of whether a gamepad has ever been
                 // connected, so we can detect if it is unplugged.
@@ -81,6 +81,9 @@ namespace FormulaWeb
 
             // Get the raw touch state from the TouchPanel
             TouchState = TouchPanel.GetState();
+
+            // Acquisition de l'etat souris
+            CurrentMouseStates = Mouse.GetState();
 
             // Read in any detected gestures into our list for the screens to later process
             Gestures.Clear();

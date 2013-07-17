@@ -52,7 +52,7 @@ namespace Gestion_Graphique
         double A1;
 
         // Sprite Souris
-        private MouseState SourisEtat;
+        public MouseState SourisEtat { get; set; }
         Sprite Sprite_Souris;
         bool Affichage_Sprite_Souris;
 
@@ -157,8 +157,6 @@ namespace Gestion_Graphique
             // Calcul du ratio pour le bon positionnement de la voiture sur le circuit
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
-
-            SourisEtat = Mouse.GetState();
 
             if (Panneau_Affichage_Generale)
             {

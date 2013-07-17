@@ -30,16 +30,19 @@ namespace FormulaWeb
             //LangageMainMenuScreen = lang;
             // Create our menu entries.            
             MenuEntry playGameMenuEntry = new MenuEntry("Menu_Jouer");
+            MenuEntry playGameMenuEntryComplex = new MenuEntry("Menu_jouer");
             MenuEntry optionsMenuEntry = new MenuEntry("Menu_Options");
             MenuEntry exitMenuEntry = new MenuEntry("Menu_Quitter");
 
             // Hook up menu event handlers.
             playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
+            playGameMenuEntryComplex.Selected += playGameMenuEntryComplexSelected;
             optionsMenuEntry.Selected += OptionsMenuEntrySelected;
             exitMenuEntry.Selected += OnCancel;
 
             // Add entries to the menu.
             MenuEntries.Add(playGameMenuEntry);
+            MenuEntries.Add(playGameMenuEntryComplex);
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
  
@@ -60,7 +63,10 @@ namespace FormulaWeb
                                new GameplayScreen());
         }
 
-
+        void playGameMenuEntryComplexSelected(object sender, PlayerIndexEventArgs e)
+        {
+            ScreenManager.AddScreen(new GameplayComplexScreen(), e.PlayerIndex);
+        }
         /// <summary>
         /// Event handler for when the Options menu entry is selected.
         /// </summary>

@@ -71,6 +71,8 @@ namespace FormulaWeb
             get { return traduction; }
             set { traduction = value; }
         }
+
+        public string centrage { get; set; } //Center ou Left
         /// <summary>
         /// Gets or sets the text of this menu entry.
         /// </summary>

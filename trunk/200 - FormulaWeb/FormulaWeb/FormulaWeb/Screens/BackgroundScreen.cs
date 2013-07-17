@@ -5,10 +5,16 @@
 // Microsoft XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
 //-----------------------------------------------------------------------------
+//
+// 20130716 FC : Ajout possibilité de chargement fichier en lieu et place du content
+//                  Texture2D LoadTexture(string path)                 
+//
+
 #endregion
 
 #region Using Statements
 using System;
+using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -62,6 +68,15 @@ namespace FormulaWeb
             }
         }
 
+        public override void Chargement_background(string Nom_Complet_Acces_Fichier)
+        {
+            if (Nom_Complet_Acces_Fichier == "ORIGINAL")
+                backgroundTexture = content.Load<Texture2D>("background");
+            else
+                backgroundTexture = LoadTexture(Nom_Complet_Acces_Fichier);
+        }
+
+
 
         /// <summary>
         /// Unloads graphics content for this screen.
@@ -107,6 +122,30 @@ namespace FormulaWeb
 
             spriteBatch.End();
         }
+
+        public Texture2D LoadTexture(string path)
+        {
+            Texture2D texture;
+            Stream stream;
+            stream = null;
+            stream = new FileStream(path, FileMode.Open);
+            texture = Texture2D.FromStream(ScreenManager.Game.GraphicsDevice, stream); //On charge la texture via le stream
+            PremultiplyYourAlpha(texture); //On pré-multiplie l'alpha pour la transparence
+            stream.Close(); // On libère le fichier
+            return texture;
+        }
+
+        public static void PremultiplyYourAlpha(Texture2D texture)
+        {
+            Color[] pixels = new Color[texture.Width * texture.Height];
+            texture.GetData(pixels);
+            for (int i = 0; i < pixels.Length; i++)
+            {
+                Color p = pixels[i];
+                pixels[i] = new Color(p.R, p.G, p.B) * (p.A / 255f);
+            }
+            texture.SetData(pixels);
+        }  
 
 
         #endregion

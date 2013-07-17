@@ -56,6 +56,7 @@ namespace FormulaWeb
             // Create our menu entries.
             ungulateMenuEntry = new MenuEntry(string.Empty);
             languageMenuEntry = new MenuEntry("Menu_Options_Langage");
+            //ungulateMenuEntry.centrage = "Left";
             frobnicateMenuEntry = new MenuEntry(string.Empty);
             elfMenuEntry = new MenuEntry(string.Empty);
 

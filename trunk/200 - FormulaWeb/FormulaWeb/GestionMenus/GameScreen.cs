@@ -50,6 +50,10 @@ namespace FormulaWeb
 
         bool isPopup = false;
 
+        public bool Chgt_Fond_Background {get; set;}
+        public string Fichier_fond_background { get; set; }
+        
+
 
         /// <summary>
         /// Indicates how long the screen takes to
@@ -290,6 +294,12 @@ namespace FormulaWeb
                     screenState = ScreenState.Active;
                 }
             }
+
+            if (Chgt_Fond_Background)
+            {
+                ScreenManager.Background.Chargement_background(Fichier_fond_background);
+                Chgt_Fond_Background = false;
+            }
         }
 
 
@@ -334,6 +344,8 @@ namespace FormulaWeb
         /// This is called when the screen should draw itself.
         /// </summary>
         public virtual void Draw(GameTime gameTime) { }
+
+        public virtual void Chargement_background(string Nom_Complet_Acces_Fichier) { }
 
 
         /// <summary>

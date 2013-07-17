@@ -5,7 +5,7 @@
     <Circuit_Graphique>zandvoort1_neu.jpg</Circuit_Graphique>
     <Circuit_Nombre_Case>49</Circuit_Nombre_Case>
 	<!-- Le ratio doit être fournis par rapport à la taille standard d'une voiture -->
-	<Circuit_Ratio_Voiture>0,5</Circuit_Ratio_Voiture>
+	<Circuit_Ratio_Voiture>5</Circuit_Ratio_Voiture>
     <!-- Description des cases -->
     <Circuit_Case>
         <Case>

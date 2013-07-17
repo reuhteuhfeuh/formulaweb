@@ -46,6 +46,7 @@ namespace FormulaWeb
         
         public Gestion_Son.SoundMachine SonScreenManager {get; set;}
         public Traceur.Traceur loggerScreenManager { get; set; }
+        public GameScreen Background { get; set; }
 
         bool isInitialized;
 
