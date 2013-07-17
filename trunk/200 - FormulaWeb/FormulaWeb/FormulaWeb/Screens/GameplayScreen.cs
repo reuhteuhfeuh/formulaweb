@@ -105,7 +105,7 @@ namespace FormulaWeb
                 gameFont = content.Load<SpriteFont>("gamefont");
 
                 GraphicsDevice gra = ScreenManager.Game.GraphicsDevice;
-                Moteur_Son = ScreenManager.SonScreenManager;
+                Moteur_Son = ScreenManager.sonScreenManager;
                 //graphics = ScreenManager.Game.GraphicsDevice;
 
                 // A real game would probably have more content than this sample, so

@@ -43,8 +43,9 @@ namespace FormulaWeb
         SpriteFont font;
         Texture2D blankTexture;
         Gestion_Langage.Langage LangScreenManager;
-        
-        public Gestion_Son.SoundMachine SonScreenManager {get; set;}
+
+        public Gestion_Regles.Regles regleScreenManager { get; set; }
+        public Gestion_Son.SoundMachine sonScreenManager {get; set;}
         public Traceur.Traceur loggerScreenManager { get; set; }
         public GameScreen Background { get; set; }
 
