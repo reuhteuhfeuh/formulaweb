@@ -56,8 +56,8 @@ namespace FormulaWeb
         // Declaration des chemins acces
         String Acces_Circuit = ".\\Ressources\\Plateaux\\Circuit_FDE\\";
 
-        Vector2 playerPosition = new Vector2(100, 100);
-        Vector2 enemyPosition = new Vector2(100, 100);
+       /* Vector2 playerPosition = new Vector2(100, 100);
+        Vector2 enemyPosition = new Vector2(100, 100);*/
 
         Random random = new Random();
 
@@ -233,11 +233,7 @@ namespace FormulaWeb
             PlayerIndex player;
             if (pauseAction.Evaluate(input, ControllingPlayer, out player) || gamePadDisconnected)
             {
-#if WINDOWS_PHONE
-                ScreenManager.AddScreen(new PhonePauseScreen(), ControllingPlayer);
-#else
                 ScreenManager.AddScreen(new PauseMenuScreen(), ControllingPlayer);
-#endif
             }
             else
             {
@@ -274,8 +270,8 @@ namespace FormulaWeb
                 }
 
                 Moteur_Graphique.Set_Angle_Voiture(Math.Atan2(Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_Y(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case())), Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_X(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()))));
-
-                Vector2 thumbstick = gamePadState.ThumbSticks.Left;
+                Moteur_Graphique.SourisEtat = EtatSouris;
+                /*Vector2 thumbstick = gamePadState.ThumbSticks.Left;
 
                 movement.X += thumbstick.X;
                 movement.Y -= thumbstick.Y;
@@ -291,7 +287,7 @@ namespace FormulaWeb
                 if (movement.Length() > 1)
                     movement.Normalize();
 
-                playerPosition += movement * 8f;
+                playerPosition += movement * 8f;*/
             }
         }
 

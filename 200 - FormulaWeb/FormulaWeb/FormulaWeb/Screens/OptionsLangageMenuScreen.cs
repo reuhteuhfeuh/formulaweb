@@ -66,7 +66,7 @@ namespace FormulaWeb
             languageMenuEntry.Text = affichage_langage;
             languageMenuEntry.Traduction = false;
             languageMenuEntry.Chgt_lang = true;
-            languageMenuEntry.Chgt_lang_choix = affichage_langage;
+            languageMenuEntry.Chgt_lang_choix = affichage_langage;      
         }
 
 

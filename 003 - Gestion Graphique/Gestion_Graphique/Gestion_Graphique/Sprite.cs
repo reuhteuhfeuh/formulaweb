@@ -27,6 +27,9 @@ namespace Gestion_Graphique
         // Création du Game
         Game game;
 
+        // Le sprite peux comporter des sous-sprite
+        Sprite[] Sous_Sprite;
+
         private Texture2D FormulaWeb_Sprite = null;
         private Vector2 FormulaWeb_Sprite_Position;
         private Rectangle rectangle_destination;
@@ -34,6 +37,7 @@ namespace Gestion_Graphique
         private Int32 Position_Y;
         private Double Angle;
         private Double Ratio = 1;
+        private Int32 Nb_Sous_Sprite { get; set; }
 
         public void Init(SpriteBatch spr, ContentManager con, Game gam)
         {
@@ -42,6 +46,14 @@ namespace Gestion_Graphique
             game = gam;
             rectangle_destination = new Rectangle();
             Angle = 0;
+            Nb_Sous_Sprite = 0;
+        }
+
+        public bool Set_Sous_Sprite(Int32 Nb_Ss_Sprite)
+        {
+            Sous_Sprite = new Sprite[Nb_Ss_Sprite];
+            Nb_Sous_Sprite = Nb_Ss_Sprite;
+            return true;
         }
 
         public int Get_Hauteur_Sprite()
@@ -109,6 +121,14 @@ namespace Gestion_Graphique
                                         0
                                     );
             }
+
+            Int32 Compteur_Sous_Sprite = 1 ;
+            while ( Compteur_Sous_Sprite < Nb_Sous_Sprite)
+            {
+                Sous_Sprite[Compteur_Sous_Sprite].Afficher_Sprite();
+                Compteur_Sous_Sprite++;
+            };
+
             return true;
         }
 
