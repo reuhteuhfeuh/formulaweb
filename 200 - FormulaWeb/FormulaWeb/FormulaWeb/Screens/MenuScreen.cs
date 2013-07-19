@@ -4,6 +4,7 @@
 //
 // XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
+// 20130719 - Ajout menuLeft et menuRight pour défilement des langues et des jeux
 //-----------------------------------------------------------------------------
 #endregion
 
@@ -35,6 +36,8 @@ namespace FormulaWeb
         InputAction menuDown;
         InputAction menuSelect;
         InputAction menuCancel;
+        InputAction menuLeft;
+        InputAction menuRight;
 
         #endregion
 
@@ -81,6 +84,14 @@ namespace FormulaWeb
             menuCancel = new InputAction(
                 new Buttons[] { Buttons.B, Buttons.Back },
                 new Keys[] { Keys.Escape },
+                true);
+            menuLeft = new InputAction(
+                new Buttons[] { Buttons.DPadLeft, Buttons.LeftThumbstickLeft },
+                new Keys[] { Keys.Left },
+                true);
+            menuRight = new InputAction(
+                new Buttons[] { Buttons.DPadRight, Buttons.LeftThumbstickRight },
+                new Keys[] { Keys.Right },
                 true);
         }
 
@@ -129,6 +140,16 @@ namespace FormulaWeb
             {
                 OnCancel(playerIndex);
             }
+
+            if (menuLeft.Evaluate(input, ControllingPlayer, out playerIndex))
+            {
+                OnMenuLeftEntry(selectedEntry, playerIndex);
+            }
+
+            if (menuRight.Evaluate(input, ControllingPlayer, out playerIndex))
+            {
+                OnMenuRightEntry(selectedEntry, playerIndex);
+            }
         }
 
 
@@ -138,6 +159,16 @@ namespace FormulaWeb
         protected virtual void OnSelectEntry(int entryIndex, PlayerIndex playerIndex)
         {
             menuEntries[entryIndex].OnSelectEntry(playerIndex);
+        }
+
+        protected virtual void OnMenuLeftEntry(int entryIndex, PlayerIndex playerIndex)
+        {
+            menuEntries[entryIndex].OnMenuLeftEntry(playerIndex);
+        }
+
+        protected virtual void OnMenuRightEntry(int entryIndex, PlayerIndex playerIndex)
+        {
+            menuEntries[entryIndex].OnMenuRightEntry(playerIndex);
         }
 
 

@@ -100,17 +100,32 @@ namespace FormulaWeb
 
         /// <summary>
         /// Event raised when the menu entry is selected.
+        /// Création d'un event personnalise
         /// </summary>
         public event EventHandler<PlayerIndexEventArgs> Selected;
 
-
         /// <summary>
         /// Method for raising the Selected event.
+        /// Methode assigne à l'event personnalise
         /// </summary>
         protected internal virtual void OnSelectEntry(PlayerIndex playerIndex)
         {
             if (Selected != null)
                 Selected(this, new PlayerIndexEventArgs(playerIndex));
+        }
+
+        public event EventHandler<PlayerIndexEventArgs> MenuLeft_Selected;
+        protected internal virtual void OnMenuLeftEntry(PlayerIndex playerIndex)
+        {
+            if (MenuLeft_Selected != null)
+                MenuLeft_Selected(this, new PlayerIndexEventArgs(playerIndex));
+        }
+
+        public event EventHandler<PlayerIndexEventArgs> MenuRight_Selected;
+        protected internal virtual void OnMenuRightEntry(PlayerIndex playerIndex)
+        {
+            if (MenuRight_Selected != null)
+                MenuRight_Selected(this, new PlayerIndexEventArgs(playerIndex));
         }
 
 

@@ -45,7 +45,7 @@ namespace FormulaWeb
             Lang = new Gestion_Langage.Langage();
             Musique = new Gestion_Son.SoundMachine();
             regles = new Gestion_Regles.Regles();
-            regles.Trace(logger);
+            regles.Initialisation(logger);
             regles.Listing_Jeux();
 
             Lang.set_Langage("FR");
