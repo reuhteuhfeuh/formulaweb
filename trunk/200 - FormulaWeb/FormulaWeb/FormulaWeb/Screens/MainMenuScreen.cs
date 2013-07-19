@@ -29,19 +29,19 @@ namespace FormulaWeb
         {
             //LangageMainMenuScreen = lang;
             // Create our menu entries.            
-            MenuEntry playGameMenuEntry = new MenuEntry("Menu_Jouer");
-            MenuEntry playGameMenuEntryComplex = new MenuEntry("Menu_jouer");
+            //MenuEntry playGameMenuEntry = new MenuEntry("Menu_Jouer");
+            MenuEntry playGameMenuEntryComplex = new MenuEntry("Menu_Jouer");
             MenuEntry optionsMenuEntry = new MenuEntry("Menu_Options");
             MenuEntry exitMenuEntry = new MenuEntry("Menu_Quitter");
 
             // Hook up menu event handlers.
-            playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
+            //playGameMenuEntry.Selected += PlayGameMenuEntrySelected;
             playGameMenuEntryComplex.Selected += playGameMenuEntryComplexSelected;
             optionsMenuEntry.Selected += OptionsMenuEntrySelected;
             exitMenuEntry.Selected += OnCancel;
 
             // Add entries to the menu.
-            MenuEntries.Add(playGameMenuEntry);
+            //MenuEntries.Add(playGameMenuEntry);
             MenuEntries.Add(playGameMenuEntryComplex);
             MenuEntries.Add(optionsMenuEntry);
             MenuEntries.Add(exitMenuEntry);
@@ -57,16 +57,20 @@ namespace FormulaWeb
         /// <summary>
         /// Event handler for when the Play Game menu entry is selected.
         /// </summary>
-        void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+        /*void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
                                new GameplayScreen());
-        }
+        }*/
 
         void playGameMenuEntryComplexSelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new GameplayComplexScreen(), e.PlayerIndex);
+            GameplayComplexScreen gameplaycomplexscreen;
+            gameplaycomplexscreen = new GameplayComplexScreen();
+            ScreenManager.AddScreen(gameplaycomplexscreen, e.PlayerIndex);
+            //gameplaycomplexscreen.ScreenManagerGameComplexScreen = ScreenManager;
         }
+
         /// <summary>
         /// Event handler for when the Options menu entry is selected.
         /// </summary>

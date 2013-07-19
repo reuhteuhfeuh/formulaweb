@@ -130,7 +130,7 @@ namespace FormulaWeb
             stream = null;
             stream = new FileStream(path, FileMode.Open);
             texture = Texture2D.FromStream(ScreenManager.Game.GraphicsDevice, stream); //On charge la texture via le stream
-            PremultiplyYourAlpha(texture); //On pré-multiplie l'alpha pour la transparence
+            //PremultiplyYourAlpha(texture); //On pré-multiplie l'alpha pour la transparence
             stream.Close(); // On libère le fichier
             return texture;
         }
