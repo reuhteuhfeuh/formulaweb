@@ -76,7 +76,9 @@ namespace FormulaWeb
         /// </summary>
         void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new OptionsMenuScreen(), e.PlayerIndex);
+            OptionsMenuScreen optionsmenuscreen;
+            optionsmenuscreen = new OptionsMenuScreen();
+            ScreenManager.AddScreen(optionsmenuscreen, e.PlayerIndex);
         }
 
 

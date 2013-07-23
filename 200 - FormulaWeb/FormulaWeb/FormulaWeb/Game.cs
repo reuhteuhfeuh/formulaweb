@@ -11,6 +11,8 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Media;
 using Gestion_Langage;
+using System.IO;
+using System.Xml;
 using Traceur;
 
 
@@ -43,12 +45,48 @@ namespace FormulaWeb
             logger.Init();
             logger.Trace("Info", "Initialisation Traceur !");
             Lang = new Gestion_Langage.Langage();
+            Lang.tracelangage = logger;
+            Lang.listing_langage();
+            //Lang.listing_langage();
             Musique = new Gestion_Son.SoundMachine();
             regles = new Gestion_Regles.Regles();
             regles.Initialisation(logger);
             regles.Listing_Jeux();
 
-            Lang.set_Langage("FR");
+            // Par défaut il faudra fournir au jeu le langage par défaut stocké dans le config.xml du jeu
+            // On commencera donc par lire le XML et ensuite à prendre les informations nécessaires
+            // Niveau de trace à prendre
+            // Langage par défaut
+            // ...
+            try
+            {
+                XmlDocument FichierXmlConfig = new XmlDocument();
+                FichierXmlConfig.Load(".\\Ressources\\Config\\Config.xml");
+                foreach (XmlNode lectureXML_Racine in FichierXmlConfig.ChildNodes)
+                {
+                    // on parcout le noeud Langage
+                    if (lectureXML_Racine.Name == "Config")
+                    {
+                        foreach (XmlNode lectureXML_Niveau_1 in FichierXmlConfig.DocumentElement.ChildNodes)
+                        {
+                            if (lectureXML_Niveau_1.Name == "niveau_trace")
+                            {
+                                logger.level = lectureXML_Niveau_1.InnerText;
+                            }
+                            if (lectureXML_Niveau_1.Name == "langage_defaut")
+                            {
+                                logger.Trace("Info", "Langage chargé : " + Lang.set_Langage(lectureXML_Niveau_1.InnerText));
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                logger.Trace("ERREUR", "Ca merde severe sur la lecture du config");
+            }
+
+           
             
             graphics = new GraphicsDeviceManager(this);
             Window.AllowUserResizing = true;
