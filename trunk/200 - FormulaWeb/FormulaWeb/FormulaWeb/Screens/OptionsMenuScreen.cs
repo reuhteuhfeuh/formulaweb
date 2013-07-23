@@ -54,28 +54,28 @@ namespace FormulaWeb
             : base("Titre_Menu_Option")
         {
             // Create our menu entries.
-            ungulateMenuEntry = new MenuEntry(string.Empty);
+            //ungulateMenuEntry = new MenuEntry(string.Empty);
             languageMenuEntry = new MenuEntry("Menu_Options_Langage");
             //ungulateMenuEntry.centrage = "Left";
-            frobnicateMenuEntry = new MenuEntry(string.Empty);
-            elfMenuEntry = new MenuEntry(string.Empty);
+            //frobnicateMenuEntry = new MenuEntry(string.Empty);
+            //elfMenuEntry = new MenuEntry(string.Empty);
 
-            SetMenuEntryText();
+            //SetMenuEntryText();
 
             MenuEntry back = new MenuEntry("Menu_Retour");
 
             // Hook up menu event handlers.
-            ungulateMenuEntry.Selected += UngulateMenuEntrySelected;
+            //ungulateMenuEntry.Selected += UngulateMenuEntrySelected;
             languageMenuEntry.Selected += LanguageMenuEntrySelected;
-            frobnicateMenuEntry.Selected += FrobnicateMenuEntrySelected;
-            elfMenuEntry.Selected += ElfMenuEntrySelected;
+            //frobnicateMenuEntry.Selected += FrobnicateMenuEntrySelected;
+            //elfMenuEntry.Selected += ElfMenuEntrySelected;
             back.Selected += OnCancel;
             
             // Add entries to the menu.
-            MenuEntries.Add(ungulateMenuEntry);
+           // MenuEntries.Add(ungulateMenuEntry);
             MenuEntries.Add(languageMenuEntry);
-            MenuEntries.Add(frobnicateMenuEntry);
-            MenuEntries.Add(elfMenuEntry);
+           // MenuEntries.Add(frobnicateMenuEntry);
+            //MenuEntries.Add(elfMenuEntry);
             MenuEntries.Add(back);
         }
 
@@ -90,6 +90,10 @@ namespace FormulaWeb
             elfMenuEntry.Text = "elf: " + elf;
         }
 
+        public override void Activate(bool instancePreserved)
+        {
+
+        }
 
         #endregion
 
@@ -115,7 +119,9 @@ namespace FormulaWeb
         /// </summary>
         void LanguageMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new OptionsLangageMenuScreen(), e.PlayerIndex);
+            OptionsLangageMenuScreen optionslangagemenuscreen;
+            optionslangagemenuscreen = new OptionsLangageMenuScreen();
+            ScreenManager.AddScreen(optionslangagemenuscreen, e.PlayerIndex);
         }
 
 

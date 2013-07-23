@@ -190,11 +190,11 @@ namespace FormulaWeb
             SpriteBatch spriteBatch = screenManager.SpriteBatch;
             SpriteFont font = screenManager.Font;
 
-            if (chgt_lang)
+            /*if (chgt_lang)
             {
                 screenManager.langScreenManager.set_Langage(chgt_lang_choix);
                 Chgt_lang = false ;
-            }
+            }*/
 
             // Traduction en live pour bien prendre en compte les changements de langue.
             string text_traduit;

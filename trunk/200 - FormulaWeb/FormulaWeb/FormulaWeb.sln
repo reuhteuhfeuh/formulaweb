@@ -11,6 +11,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Vehicule", "..\..\002 - Gestion Vehicule\Gestion_Vehicule\Gestion_Vehicule\Gestion_Vehicule.csproj", "{ACC5AA73-D25C-444F-9B0C-09B43BCC4637}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Langage", "..\..\004 - Gestion Langage\Gestion_Langage\Gestion_Langage\Gestion_Langage.csproj", "{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FEBD5730-E4A2-4910-A105-E7058BE4EB60} = {FEBD5730-E4A2-4910-A105-E7058BE4EB60}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Graphique", "..\..\003 - Gestion Graphique\Gestion_Graphique\Gestion_Graphique\Gestion_Graphique.csproj", "{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}"
 EndProject
@@ -82,10 +85,10 @@ Global
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Debug|x86.Build.0 = Debug|x86
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Mixed Platforms.Build.0 = Release|x86
-		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|x86.ActiveCfg = Release|x86
-		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|x86.Build.0 = Release|x86
+		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|x86.ActiveCfg = Release|Any CPU
+		{3B2FEB76-5B4C-4254-99CE-9C19CEA23576}.Release|x86.Build.0 = Release|Any CPU
 		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{F9FE81C1-CEBC-4440-993B-3A0C211C2C95}.Debug|Mixed Platforms.Build.0 = Debug|x86

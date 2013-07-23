@@ -26,6 +26,8 @@ namespace FormulaWeb
 
         public string[] languages_fichiers ;
         public int currentLanguage = 0;
+        ScreenManager screenmanagermenuoption;
+        Gestion_Langage.Langage langagemenulangage;
 
         #endregion
 
@@ -39,14 +41,16 @@ namespace FormulaWeb
             : base("Titre_Menu_Option_Langage")
         {
             // On récupère la liste des fichiers présent dans le répertoire langages des ressources
-            languages_fichiers = System.IO.Directory.GetFiles(".\\Ressources\\Langages\\");
+            // languages_fichiers = System.IO.Directory.GetFiles(".\\Ressources\\Langages\\");
             // Create our menu entries.
             languageMenuEntry = new MenuEntry(string.Empty);
-            SetMenuEntryText();
+
             MenuEntry back = new MenuEntry("Menu_Retour");
 
             // Hook up menu event handlers.
             languageMenuEntry.Selected += LanguageMenuEntrySelected;
+            languageMenuEntry.MenuLeft_Selected += LanguageMenuEntryLeftSelected;
+            languageMenuEntry.MenuRight_Selected += LanguageMenuEntryRightSelected;
             back.Selected += OnCancel;
             
             // Add entries to the menu.
@@ -54,23 +58,27 @@ namespace FormulaWeb
             MenuEntries.Add(back);
         }
 
+        public override void Activate(bool instancePreserved)
+        {
+            screenmanagermenuoption = ScreenManager;
+            langagemenulangage = screenmanagermenuoption.langScreenManager;
+            //langagemenulangage.listing_langage();
+            SetMenuEntryText();
+        }
+
+        #endregion
 
         /// <summary>
         /// Fills in the latest values for the options screen menu text.
         /// </summary>
         void SetMenuEntryText()
         {
-            string affichage_langage = languages_fichiers[currentLanguage].Substring(22,2).ToString().Trim();
-            // A Ajouter un ou des tests sur la validite du fichier selectionné dans le cas ou on le retiens pas, on rajoute par exemple EN - Fichier non valide et on 
-            // assigne pas une nouvelle langue à la gestion langage ...
+            string affichage_langage = langagemenulangage.Get_libelle_langage(langagemenulangage.langage_en_cours);
             languageMenuEntry.Text = affichage_langage;
             languageMenuEntry.Traduction = false;
             languageMenuEntry.Chgt_lang = true;
             languageMenuEntry.Chgt_lang_choix = affichage_langage;      
         }
-
-
-        #endregion
 
         #region Handle Input
 
@@ -80,7 +88,18 @@ namespace FormulaWeb
         /// </summary>
         void LanguageMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            currentLanguage = (currentLanguage + 1) % languages_fichiers.Length;
+            langagemenulangage.set_Langage();
+        }
+
+        void LanguageMenuEntryLeftSelected(object sender, PlayerIndexEventArgs e)
+        {
+            langagemenulangage.Get_libelle_langage_precedent();
+            SetMenuEntryText();
+        }
+
+        void LanguageMenuEntryRightSelected(object sender, PlayerIndexEventArgs e)
+        {
+            langagemenulangage.Get_libelle_langage_suivant();
             SetMenuEntryText();
         }
 
