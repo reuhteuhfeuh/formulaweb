@@ -41,10 +41,10 @@ namespace FormulaWeb
         // booleen premier passage
         bool Initialisation_Moteur = true;
 
-        // Création du moteur circuit
+        // Création du moteur Plateau
         Gestion_Plateau.Plateau Moteur_Plateau;
 
-        // Création du moteur voiture
+        // Création du moteur pion de jeu
         Gestion_Vehicule.Vehicule Moteur_Vehicule;
 
         // Création du moteur graphique
@@ -52,6 +52,12 @@ namespace FormulaWeb
 
         // Création du moteur son
         Gestion_Son.SoundMachine Moteur_Son;
+
+        // Création du moteur regle
+        Gestion_Regles.Regles Moteur_Regle;
+
+        // Création du traceur
+        Traceur.Traceur Moteur_Trace;
 
         // Declaration des chemins acces
         String Acces_Circuit = ".\\Ressources\\Plateaux\\Circuit_FDE\\";
@@ -106,6 +112,8 @@ namespace FormulaWeb
 
                 GraphicsDevice gra = ScreenManager.Game.GraphicsDevice;
                 Moteur_Son = ScreenManager.sonScreenManager;
+                Moteur_Regle = ScreenManager.regleScreenManager;
+                Moteur_Trace = ScreenManager.loggerScreenManager;
                 //graphics = ScreenManager.Game.GraphicsDevice;
 
                 // A real game would probably have more content than this sample, so

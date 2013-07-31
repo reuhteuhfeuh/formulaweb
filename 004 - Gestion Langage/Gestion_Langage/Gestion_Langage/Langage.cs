@@ -175,6 +175,9 @@ namespace Gestion_Langage
 
 
         // A regrouper les deux get par un delegate (et oui c'est comme ca qu'on apprend !)
+
+        // public delegate string Get_langage();
+
         public string Get_libelle_langage_suivant()
         {
             //if (nombre_jeu == 0) return "Aucun jeu" ;
