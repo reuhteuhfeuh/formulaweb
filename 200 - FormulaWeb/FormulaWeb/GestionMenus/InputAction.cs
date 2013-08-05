@@ -29,12 +29,14 @@ namespace FormulaWeb
     {
         private readonly Buttons[] buttons;
         private readonly Keys[] keys;
+
         private readonly bool newPressOnly;
 
         // These delegate types map to the methods on InputState. We use these to simplify the evalute method
         // by allowing us to map the appropriate delegates and invoke them, rather than having two separate code paths.
         private delegate bool ButtonPress(Buttons button, PlayerIndex? controllingPlayer, out PlayerIndex player);
         private delegate bool KeyPress(Keys key, PlayerIndex? controllingPlayer, out PlayerIndex player);
+
 
         /// <summary>
         /// Initializes a new InputAction.

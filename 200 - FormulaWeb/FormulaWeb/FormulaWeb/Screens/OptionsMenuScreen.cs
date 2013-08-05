@@ -22,10 +22,10 @@ namespace FormulaWeb
     {
         #region Fields
 
-        MenuEntry ungulateMenuEntry;
+       // MenuEntry ungulateMenuEntry;
         MenuEntry languageMenuEntry;
-        MenuEntry frobnicateMenuEntry;
-        MenuEntry elfMenuEntry;
+        //MenuEntry frobnicateMenuEntry;
+        //MenuEntry elfMenuEntry;
 
         enum Ungulate
         {
@@ -34,13 +34,13 @@ namespace FormulaWeb
             Llama,
         }
 
-        static Ungulate currentUngulate = Ungulate.Dromedary;
+        //static Ungulate currentUngulate = Ungulate.Dromedary;
 
-        static string[] languages = { "C#", "French", "Deoxyribonucleic acid" };
+        //static string[] languages = { "C#", "French", "Deoxyribonucleic acid" };
 
-        static bool frobnicate = true;
+        //static bool frobnicate = true;
 
-        static int elf = 23;
+        //static int elf = 23;
 
         #endregion
 
@@ -83,12 +83,12 @@ namespace FormulaWeb
         /// <summary>
         /// Fills in the latest values for the options screen menu text.
         /// </summary>
-        void SetMenuEntryText()
+       /* void SetMenuEntryText()
         {
             ungulateMenuEntry.Text = "Preferred ungulate: " + currentUngulate;
             frobnicateMenuEntry.Text = "Frobnicate: " + (frobnicate ? "on" : "off");
             elfMenuEntry.Text = "elf: " + elf;
-        }
+        }*/
 
         public override void Activate(bool instancePreserved)
         {
@@ -103,7 +103,7 @@ namespace FormulaWeb
         /// <summary>
         /// Event handler for when the Ungulate menu entry is selected.
         /// </summary>
-        void UngulateMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+       /* void UngulateMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
             currentUngulate++;
 
@@ -111,7 +111,7 @@ namespace FormulaWeb
                 currentUngulate = 0;
 
             SetMenuEntryText();
-        }
+        }*/
 
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace FormulaWeb
             ScreenManager.AddScreen(optionslangagemenuscreen, e.PlayerIndex);
         }
 
-
+        /*
         /// <summary>
         /// Event handler for when the Frobnicate menu entry is selected.
         /// </summary>
@@ -145,7 +145,7 @@ namespace FormulaWeb
 
             SetMenuEntryText();
         }
-
+        */
 
         #endregion
     }

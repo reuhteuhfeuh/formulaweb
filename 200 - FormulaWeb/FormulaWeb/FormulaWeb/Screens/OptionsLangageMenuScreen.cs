@@ -24,7 +24,7 @@ namespace FormulaWeb
 
         MenuEntry languageMenuEntry;
 
-        public string[] languages_fichiers ;
+        //public string[] languages_fichiers ;
         public int currentLanguage = 0;
         ScreenManager screenmanagermenuoption;
         Gestion_Langage.Langage langagemenulangage;
