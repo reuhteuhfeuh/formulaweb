@@ -184,7 +184,12 @@ namespace FormulaWeb
 
             if ((menuDefilUp.Evaluate(input, ControllingPlayer, out playerIndex)) | (input.CurrentMouseStates.ScrollWheelValue > input.LastMouseStates.ScrollWheelValue ))
             {
-                OnMenuDefilUpEntry(selectedEntry, playerIndex);
+                OnMenuDefilUpEntry(selectedEntry, playerIndex);                
+            }
+
+            if ((menuDefilDown.Evaluate(input, ControllingPlayer, out playerIndex)) | (input.CurrentMouseStates.ScrollWheelValue < input.LastMouseStates.ScrollWheelValue))
+            {
+                OnMenuDefilDownEntry(selectedEntry, playerIndex);
             }
         }
 
