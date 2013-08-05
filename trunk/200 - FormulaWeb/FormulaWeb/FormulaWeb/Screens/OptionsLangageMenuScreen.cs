@@ -51,6 +51,8 @@ namespace FormulaWeb
             languageMenuEntry.Selected += LanguageMenuEntrySelected;
             languageMenuEntry.MenuLeft_Selected += LanguageMenuEntryLeftSelected;
             languageMenuEntry.MenuRight_Selected += LanguageMenuEntryRightSelected;
+            languageMenuEntry.MenuDefilUpEntry_Selected += LanguageMenuEntryLeftSelected;
+            languageMenuEntry.MenuDefilDownEntry_Selected += LanguageMenuEntryRightSelected;
             back.Selected += OnCancel;
             
             // Add entries to the menu.

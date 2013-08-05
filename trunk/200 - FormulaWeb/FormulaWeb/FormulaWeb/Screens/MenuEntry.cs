@@ -128,6 +128,19 @@ namespace FormulaWeb
                 MenuRight_Selected(this, new PlayerIndexEventArgs(playerIndex));
         }
 
+        public event EventHandler<PlayerIndexEventArgs> MenuDefilUpEntry_Selected;
+        protected internal virtual void OnMenuDefilUpEntry(PlayerIndex playerIndex)
+        {
+            if (MenuDefilUpEntry_Selected != null)
+                MenuDefilUpEntry_Selected(this, new PlayerIndexEventArgs(playerIndex));
+        }
+
+        public event EventHandler<PlayerIndexEventArgs> MenuDefilDownEntry_Selected;
+        protected internal virtual void OnMenuDefilDownEntry(PlayerIndex playerIndex)
+        {
+            if (MenuDefilDownEntry_Selected != null)
+                MenuDefilDownEntry_Selected(this, new PlayerIndexEventArgs(playerIndex));
+        }
 
         #endregion
 
@@ -257,5 +270,6 @@ namespace FormulaWeb
 
 
         #endregion
+
     }
 }
