@@ -42,8 +42,13 @@ namespace Gestion_Graphique
         // Variable pour utilisation de la Font
         private SpriteFont Panneau_Affichage_Font;
 
-        // Variable pour l'afichage du Panneau LCD
+        // Variable pour l'affichage du Panneau LCD
         private Texture2D Panneau_LCD;
+        public Vector2 Pos_Panneau { get; set; }
+        public Rectangle Rect_Panneau { get; set; }
+        public int Ecart_X { get; set; }
+        public int Ecart_Y { get; set; }
+        public bool deplacement_en_cours { get; set; }
 
         public void Init(Game gam)
         {
@@ -51,6 +56,9 @@ namespace Gestion_Graphique
             //graphics = new GraphicsDeviceManager(game);
             content = game.Content;
             Panneau_LCD = content.Load<Texture2D>("Panneau_LCD");
+            Pos_Panneau = new Vector2(10, 20);
+            Rect_Panneau = new Rectangle();
+            deplacement_en_cours = false ;
         }
 
         public bool Set_Message(string Message, int Vitesse, int Caractere, Color couleur)
@@ -147,8 +155,9 @@ namespace Gestion_Graphique
             {
                 Compteur_Frame++;
             }
-            spriteBatch.Draw(Panneau_LCD, new Rectangle(10, 20, Nombre_Caractere*10, 20), Color.White);
-            spriteBatch.DrawString(Panneau_Affichage_Font, Message_en_cours, new Vector2(10, 20), CouleurFont);
+            Rect_Panneau = new Rectangle((int)Pos_Panneau.X, (int)Pos_Panneau.Y, Nombre_Caractere * 10, 20);
+            spriteBatch.Draw(Panneau_LCD, Rect_Panneau, Color.White);
+            spriteBatch.DrawString(Panneau_Affichage_Font, Message_en_cours, Pos_Panneau, CouleurFont);
         }
     }
 }

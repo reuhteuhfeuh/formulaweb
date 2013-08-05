@@ -53,12 +53,14 @@ namespace Gestion_Graphique
 
         // Sprite Souris
         public MouseState SourisEtat { get; set; }
+        public MouseState OldSourisEtat { get; set; }
         Sprite Sprite_Souris;
         bool Affichage_Sprite_Souris;
 
         // Création des panneaux d'affichage
         Panneau_Affichage Affichage_Generale;
         bool Panneau_Affichage_Generale = true;
+        bool acquisition_ecart = true ;
 
         public bool Set_Affichage_Generale()
         {
@@ -159,7 +161,31 @@ namespace Gestion_Graphique
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
             if (Panneau_Affichage_Generale)
-            {
+            {             
+                if ((Affichage_Generale.Rect_Panneau.Contains(SourisEtat.X, SourisEtat.Y)) & (SourisEtat.RightButton == ButtonState.Pressed) & (OldSourisEtat.RightButton == ButtonState.Pressed))
+                {
+                    if (acquisition_ecart)
+                    {
+                        Affichage_Generale.Ecart_X = SourisEtat.X - (int)Affichage_Generale.Pos_Panneau.X;
+                        Affichage_Generale.Ecart_Y = SourisEtat.Y - (int)Affichage_Generale.Pos_Panneau.Y;
+                        acquisition_ecart = false;
+                        Affichage_Generale.deplacement_en_cours = true;
+                    }
+                    // Calcul du delta c'est tout pourri ! faut le refaire gnark !
+                    
+                }
+
+                if ((Affichage_Generale.deplacement_en_cours) & (SourisEtat.RightButton == ButtonState.Pressed) & (OldSourisEtat.RightButton == ButtonState.Pressed))
+                {
+                    Affichage_Generale.Pos_Panneau = new Vector2(SourisEtat.X - Affichage_Generale.Ecart_X, SourisEtat.Y - Affichage_Generale.Ecart_Y);
+                }
+                else
+                {
+                    acquisition_ecart = true;
+                    Affichage_Generale.deplacement_en_cours = false;
+                    Affichage_Generale.Ecart_X = 0;
+                    Affichage_Generale.Ecart_Y = 0;
+                }
                 Affichage_Generale.Afficher_Message(spriteBatch);
             }
 
@@ -180,6 +206,7 @@ namespace Gestion_Graphique
             float ratioWidth = (float)Largeur / (float)Circuit_Largeur;
             float ratioHeight = (float)Hauteur / (float)Circuit_Hauteur;
 
+            OldSourisEtat = SourisEtat;
             SourisEtat = Mouse.GetState();
             // On affiche dans l'ordre les sprites
             if (Affichage_Sprite_Circuit)

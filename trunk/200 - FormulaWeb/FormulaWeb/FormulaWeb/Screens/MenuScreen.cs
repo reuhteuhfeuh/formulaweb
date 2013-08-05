@@ -5,6 +5,7 @@
 // XNA Community Game Platform
 // Copyright (C) Microsoft Corporation. All rights reserved.
 // 20130719 - Ajout menuLeft et menuRight pour défilement des langues et des jeux
+// 20130805 - Ajout de la gestion défilement avec pageup et pagedown, les gachettes du pad et le scroll de la souris
 //-----------------------------------------------------------------------------
 #endregion
 
