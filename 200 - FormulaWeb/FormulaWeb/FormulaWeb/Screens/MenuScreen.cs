@@ -38,6 +38,8 @@ namespace FormulaWeb
         InputAction menuCancel;
         InputAction menuLeft;
         InputAction menuRight;
+        InputAction menuDefilUp;
+        InputAction menuDefilDown;
 
         #endregion
 
@@ -92,6 +94,14 @@ namespace FormulaWeb
             menuRight = new InputAction(
                 new Buttons[] { Buttons.DPadRight, Buttons.LeftThumbstickRight },
                 new Keys[] { Keys.Right },
+                true);
+            menuDefilUp = new InputAction(
+                new Buttons[] { Buttons.LeftTrigger },
+                new Keys[] { Keys.PageUp },
+                true);
+            menuDefilDown = new InputAction(
+                new Buttons[] { Buttons.RightTrigger },
+                new Keys[] { Keys.PageDown },
                 true);
         }
 
@@ -171,6 +181,11 @@ namespace FormulaWeb
             {
                 OnMenuRightEntry(selectedEntry, playerIndex);
             }
+
+            if ((menuDefilUp.Evaluate(input, ControllingPlayer, out playerIndex)) | (input.CurrentMouseStates.ScrollWheelValue > input.LastMouseStates.ScrollWheelValue ))
+            {
+                OnMenuDefilUpEntry(selectedEntry, playerIndex);
+            }
         }
 
 
@@ -190,6 +205,16 @@ namespace FormulaWeb
         protected virtual void OnMenuRightEntry(int entryIndex, PlayerIndex playerIndex)
         {
             menuEntries[entryIndex].OnMenuRightEntry(playerIndex);
+        }
+
+        protected virtual void OnMenuDefilUpEntry(int entryIndex, PlayerIndex playerIndex)
+        {
+            menuEntries[entryIndex].OnMenuDefilUpEntry(playerIndex);
+        }
+
+        protected virtual void OnMenuDefilDownEntry(int entryIndex, PlayerIndex playerIndex)
+        {
+            menuEntries[entryIndex].OnMenuDefilDownEntry(playerIndex);
         }
 
 
