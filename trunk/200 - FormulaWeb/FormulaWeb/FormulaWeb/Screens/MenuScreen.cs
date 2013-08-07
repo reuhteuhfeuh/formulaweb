@@ -33,6 +33,7 @@ namespace FormulaWeb
         int selectedEntry = 0;
         string menuTitle;
 
+
         InputAction menuUp;
         InputAction menuDown;
         InputAction menuSelect;
@@ -45,7 +46,6 @@ namespace FormulaWeb
         #endregion
 
         #region Properties
-
 
         /// <summary>
         /// Gets the list of menu entries, so derived classes can add
@@ -349,5 +349,22 @@ namespace FormulaWeb
 
 
         #endregion
+
+        public void Set_String_Left()
+        {
+            MenuEntry menu = menuEntries[selectedEntry];
+            menu.selectedChoix--;
+            if (menu.selectedChoix < 0) menu.selectedChoix = menu.nbchoix;
+            menu.Text = menu.choix_menu[menu.selectedChoix];
+        }
+
+        public void Set_String_Right()
+        {
+            MenuEntry menu = menuEntries[selectedEntry];
+            menu.selectedChoix++;
+            if (menu.selectedChoix > menu.nbchoix) menu.selectedChoix = 0;
+            menu.Text = menu.choix_menu[menu.selectedChoix];
+        }
+
     }
 }

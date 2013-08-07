@@ -21,6 +21,7 @@ namespace Gestion_Graphique
 
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
         SpriteBatch spriteBatch;
+        
 
         // Création du content manager 
         ContentManager content;

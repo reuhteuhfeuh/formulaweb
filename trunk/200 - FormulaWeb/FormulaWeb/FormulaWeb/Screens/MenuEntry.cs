@@ -44,6 +44,13 @@ namespace FormulaWeb
         /// each frame in Update.
         /// </summary>
         Vector2 position;
+
+        // Gestion du défilement de string pour les menu optionnels
+        public string[] choix_menu { get; set; }
+        public int selectedChoix { get; set; }
+        public int nbchoix { get; set; }
+        public string action { get; set; }
+        public string variable { get; set; }
   
         bool traduction = true;
 
