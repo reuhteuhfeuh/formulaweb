@@ -66,31 +66,34 @@ namespace FormulaWeb
         public string affichage_dependance_valeur { get; set; }
 
         // Gestion de la traduction
-        bool traduction = true;
-        bool chgt_lang = false;
-        string chgt_lang_choix = "FR" ;
+        public bool traduction { get; set; }
+        public bool chgt_lang { get; set; }
+        public string chgt_lang_choix { get; set; }
 
         #endregion
 
         #region Properties
 
+        /*
         public bool Chgt_lang
         {
             get { return chgt_lang; }
             set { chgt_lang = value; }
-        }
+        }*/
 
+        /*
         public string Chgt_lang_choix
         {
             get { return chgt_lang_choix; }
             set { chgt_lang_choix = value; }
-        }
+        }*/
 
+        /*
         public bool Traduction
         {
             get { return traduction; }
             set { traduction = value; }
-        }
+        }*/
 
         public string centrage { get; set; } //Center ou Left
         /// <summary>
@@ -175,6 +178,8 @@ namespace FormulaWeb
             this.text = text;
             traduction = true;
             affichage = true;
+            chgt_lang_choix = "FR";
+            chgt_lang = false;
         }
 
 
@@ -275,7 +280,7 @@ namespace FormulaWeb
             // On donne la dimension de la traduction
             ScreenManager screenManager = screen.ScreenManager;
             string text_traduit;
-            if (Traduction)
+            if (traduction)
             {
                 return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
             }

@@ -77,9 +77,9 @@ namespace FormulaWeb
         {
             string affichage_langage = langagemenulangage.Get_libelle_langage(langagemenulangage.langage_en_cours);
             languageMenuEntry.Text = affichage_langage;
-            languageMenuEntry.Traduction = false;
-            languageMenuEntry.Chgt_lang = true;
-            languageMenuEntry.Chgt_lang_choix = affichage_langage;      
+            languageMenuEntry.traduction = false;
+            languageMenuEntry.chgt_lang = true;
+            languageMenuEntry.chgt_lang_choix = affichage_langage;      
         }
 
         #region Handle Input
