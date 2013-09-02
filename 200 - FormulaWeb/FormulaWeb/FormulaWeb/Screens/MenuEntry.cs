@@ -53,6 +53,7 @@ namespace FormulaWeb
         public string variable { get; set; }
   
         bool traduction = true;
+        public bool affichage { get; set; }
 
         bool chgt_lang = false;
         string chgt_lang_choix = "FR" ;
@@ -161,6 +162,7 @@ namespace FormulaWeb
         {
             this.text = text;
             traduction = true;
+            affichage = true;
         }
 
 
@@ -243,6 +245,7 @@ namespace FormulaWeb
 
             Vector2 origin = new Vector2(0, font.LineSpacing / 2);
 
+            if (affichage)
             spriteBatch.DrawString(font, text_traduit, position, color, 0,
                                    origin, scale, SpriteEffects.None, 0);
         }
