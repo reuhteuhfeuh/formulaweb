@@ -144,17 +144,26 @@ namespace FormulaWeb
             }
 
             // Test position souris et recherche si positionnement sur un menu entry pour la passe en IsSelected
-            // On recupère les coordonnées de la souris
-            Vector2 pos_souris = new Vector2(input.CurrentMouseStates.X, input.CurrentMouseStates.Y);
-            // on teste la position par rapport à une tolérance autour de la position Y des menu
-            foreach (MenuEntry menutest in menuEntries)
+            // On regarde d'abords s'il y a eu mouvement de souris ou non, si pas de mouvement alors on ignore la mouvement
+            if ((input.CurrentMouseStates.X == input.LastMouseStates.X) & (input.CurrentMouseStates.Y == input.LastMouseStates.Y))
             {
-                float limit_sup = menutest.Position.Y*1.05f;
-                float limit_inf = menutest.Position.Y * 0.95f;
-                if ( (pos_souris.Y > limit_inf) & (pos_souris.Y < limit_sup))
+                // on ignore pour le moment, on ne mets pas à jour le menu
+            }
+            else
+            {
+                // On recupère les coordonnées de la souris
+                Vector2 pos_souris = new Vector2(input.CurrentMouseStates.X, input.CurrentMouseStates.Y);
+                // on teste la position par rapport à une tolérance autour de la position Y des menu
+
+                foreach (MenuEntry menutest in menuEntries)
                 {
-                    // langage_en_cours = code_langage_dispo.FindIndex(lang => lang == Code_Langage);
-                    selectedEntry = menuEntries.FindIndex(menu => menu == menutest);
+                    float limit_sup = menutest.Position.Y * 1.05f;
+                    float limit_inf = menutest.Position.Y * 0.95f;
+                    if ((pos_souris.Y > limit_inf) & (pos_souris.Y < limit_sup))
+                    {
+                        // langage_en_cours = code_langage_dispo.FindIndex(lang => lang == Code_Langage);
+                        selectedEntry = menuEntries.FindIndex(menu => menu == menutest);
+                    }
                 }
             }
 
@@ -366,5 +375,10 @@ namespace FormulaWeb
             menu.Text = menu.choix_menu[menu.selectedChoix];
         }
 
+        public string Get_String()
+        {
+            MenuEntry menu = menuEntries[selectedEntry];
+            return menu.choix_menu[menu.selectedChoix];
+        }
     }
 }
