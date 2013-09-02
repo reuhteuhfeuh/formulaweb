@@ -45,6 +45,14 @@ namespace FormulaWeb
         /// </summary>
         Vector2 position;
 
+        /// <summary>
+        /// Ces données sont essentielles à la traduction et à la génération
+        /// optionnelles des lignes de menus
+        /// <remarks>
+        /// Données ajoutées dans le cadre du developpement de formulaWeb
+        /// </remarks>
+        /// </summary>
+        
         // Gestion du défilement de string pour les menu optionnels
         public string[] choix_menu { get; set; }
         public int selectedChoix { get; set; }
@@ -52,9 +60,13 @@ namespace FormulaWeb
         public string action { get; set; }
         public string variable { get; set; }
   
-        bool traduction = true;
+        // Gestion de l'affichage optionnel
         public bool affichage { get; set; }
+        public string affichage_dependance { get; set; }
+        public string affichage_dependance_valeur { get; set; }
 
+        // Gestion de la traduction
+        bool traduction = true;
         bool chgt_lang = false;
         string chgt_lang_choix = "FR" ;
 
@@ -212,11 +224,6 @@ namespace FormulaWeb
             SpriteBatch spriteBatch = screenManager.SpriteBatch;
             SpriteFont font = screenManager.Font;
 
-            /*if (chgt_lang)
-            {
-                screenManager.langScreenManager.set_Langage(chgt_lang_choix);
-                Chgt_lang = false ;
-            }*/
 
             // Traduction en live pour bien prendre en compte les changements de langue.
             string text_traduit;
