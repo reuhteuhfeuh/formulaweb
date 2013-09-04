@@ -74,26 +74,7 @@ namespace FormulaWeb
 
         #region Properties
 
-        /*
-        public bool Chgt_lang
-        {
-            get { return chgt_lang; }
-            set { chgt_lang = value; }
-        }*/
-
-        /*
-        public string Chgt_lang_choix
-        {
-            get { return chgt_lang_choix; }
-            set { chgt_lang_choix = value; }
-        }*/
-
-        /*
-        public bool Traduction
-        {
-            get { return traduction; }
-            set { traduction = value; }
-        }*/
+ 
 
         public string centrage { get; set; } //Center ou Left
         /// <summary>
@@ -257,7 +238,7 @@ namespace FormulaWeb
 
             Vector2 origin = new Vector2(0, font.LineSpacing / 2);
 
-            if (affichage)
+            //if (affichage)
             spriteBatch.DrawString(font, text_traduit, position, color, 0,
                                    origin, scale, SpriteEffects.None, 0);
         }
