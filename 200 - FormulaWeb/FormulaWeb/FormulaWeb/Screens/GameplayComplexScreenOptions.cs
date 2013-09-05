@@ -313,6 +313,48 @@ namespace FormulaWeb
             return true;
         }
 
+        bool traitement_Repertoire(MenuEntry ligne_menu)
+        {
+            Traceur_menu_option.Trace("INFO", "Action Listing_Repertoire");
+
+            // on récupère les info sur l'affichage de la ligne de menu
+            string tag_menu_affichage = Recherche_liste_menu("tag_menu_affichage");
+            string tag_menu_affichage_dependance = Recherche_liste_menu("tag_menu_affichage_dependance");
+            string tag_menu_affichage_dependance_valeur = Recherche_liste_menu("tag_menu_affichage_dependance_valeur");
+
+
+            // on récupère les infos nécessaire pour l'action
+            return true;
+        }
+
+        bool traitement_Nombre(MenuEntry ligne_menu)
+        {
+            Traceur_menu_option.Trace("INFO", "Action Listing_Nombre");
+
+            // on récupère les info sur l'affichage de la ligne de menu
+            string tag_menu_affichage = Recherche_liste_menu("tag_menu_affichage");
+            string tag_menu_affichage_dependance = Recherche_liste_menu("tag_menu_affichage_dependance");
+            string tag_menu_affichage_dependance_valeur = Recherche_liste_menu("tag_menu_affichage_dependance_valeur");
+
+
+            // on récupère les infos nécessaire pour l'action
+            return true;
+        }
+
+        bool traitement_Fichier(MenuEntry ligne_menu)
+        {
+            Traceur_menu_option.Trace("INFO", "Action Listing_Fichier");
+
+            // on récupère les info sur l'affichage de la ligne de menu
+            string tag_menu_affichage = Recherche_liste_menu("tag_menu_affichage");
+            string tag_menu_affichage_dependance = Recherche_liste_menu("tag_menu_affichage_dependance");
+            string tag_menu_affichage_dependance_valeur = Recherche_liste_menu("tag_menu_affichage_dependance_valeur");
+
+
+            // on récupère les infos nécessaire pour l'action
+            return true;
+        }
+
         public override void Update(GameTime gameTime, bool otherScreenHasFocus,
                                                bool coveredByOtherScreen)
         {
