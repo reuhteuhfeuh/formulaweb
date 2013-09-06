@@ -196,7 +196,8 @@ namespace FormulaWeb
                     break;
 
                 case "Listing_nombre":
-                    Traceur_menu_option.Trace("INfO", "Action Listing_nombre");
+                    if (traitement_Nombre(ligne)) MenuEntries.Add(ligne);
+                    else ligne.affichage = false; 
                     break;
 
                 case "Listing_fichiers":
@@ -336,8 +337,69 @@ namespace FormulaWeb
             string tag_menu_affichage_dependance = Recherche_liste_menu("tag_menu_affichage_dependance");
             string tag_menu_affichage_dependance_valeur = Recherche_liste_menu("tag_menu_affichage_dependance_valeur");
 
-
             // on récupère les infos nécessaire pour l'action
+            string action_listing_nombre = Recherche_liste_menu("action_listing_nombre");
+            string action_selection = Recherche_liste_menu("action_selection");
+            string action_variable = Recherche_liste_menu("action_variable");
+
+            // on vérifie la bonne présence des infos
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage = false;
+            }
+            else ligne_menu.affichage = true;
+            if (action_listing_nombre == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_listing_nombre n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_selection == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_selection n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_variable == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_variable n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+
+            // on travaille les info au besoin
+            string[] liste_choix ;
+            string[] liste_separateur = new string[] { "-" };
+            string[] liste_choix_exterieur = action_listing_nombre.Split(liste_separateur, StringSplitOptions.RemoveEmptyEntries);
+            Int32 debut = Convert.ToInt32(liste_choix_exterieur[0]);
+            Int32 fin = Convert.ToInt32(liste_choix_exterieur[1]);
+            liste_choix = new string[(fin - debut) + 1];
+
+            Int32 index = 0;
+            for (Int32 i = debut; i < fin+1; i++)
+            {
+                liste_choix[index] = i.ToString();
+                index++;
+            }
+
+            // on fournis les info à la ligne de menu
+            ligne_menu.traduction = false;
+            ligne_menu.choix_menu = liste_choix;
+            ligne_menu.nbchoix = (fin - debut);
+            ligne_menu.Text = liste_choix[0];
+            ligne_menu.action = action_selection;
+            ligne_menu.variable = action_variable;
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage_dependance = tag_menu_affichage_dependance;
+                ligne_menu.affichage_dependance_valeur = tag_menu_affichage_dependance_valeur;
+            }
+
+            // on ajoute la gestion du défilement dans le menu sur la ligne de menu :
+            ligne_menu.MenuLeft_Selected += stringleftentrySelected;
+            ligne_menu.MenuRight_Selected += stringrightentrySelected;
+            ligne_menu.MenuDefilUpEntry_Selected += stringleftentrySelected;
+            ligne_menu.MenuDefilDownEntry_Selected += stringrightentrySelected;
+
+            liste_menu_option.Add(ligne_menu);
+
             return true;
         }
 
