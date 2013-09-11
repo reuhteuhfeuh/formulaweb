@@ -60,7 +60,7 @@ namespace FormulaWeb
         Traceur.Traceur Moteur_Trace;
 
         // Declaration des chemins acces
-        String Acces_Circuit = ".\\Ressources\\Plateaux\\Circuit_FDE\\";
+        String Acces_Circuit = ".\\Ressources\\Plateaux\\FormuleDe\\";
 
        /* Vector2 playerPosition = new Vector2(100, 100);
         Vector2 enemyPosition = new Vector2(100, 100);*/
@@ -136,7 +136,7 @@ namespace FormulaWeb
                 string Fichier_Image_Circuit;
                 string Access_XML;
                 Moteur_Son.Ecouter_musique("Song_01");
-                Access_XML = Acces_Circuit + "Zandvoort_01";
+                Access_XML = Acces_Circuit + "Zandvoort 01";
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit_Zandvoort_N1_Officiel_002.xml");
 
@@ -150,7 +150,7 @@ namespace FormulaWeb
                 }
 
                 Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);//, this);
-                Moteur_Graphique.Set_Acces_Image(Acces_Circuit + "Zandvoort_01" + "\\zandvoort1_neu_avec_notation.jpg");
+                Moteur_Graphique.Set_Acces_Image(Acces_Circuit + "Zandvoort 01" + "\\zandvoort1_neu_avec_notation.jpg");
                 Moteur_Graphique.Charger_Image_Circuit();
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Plateau.Get_Ratio_Voiture());
 
