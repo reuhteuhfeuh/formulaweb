@@ -29,6 +29,7 @@ namespace FormulaWeb
         Gestion_Regles.Regles Regle_jeu;
         Traceur.Traceur Traceur_menu_option;
         string chemin_acces_ressources = ".\\Ressources\\Jeux\\";
+        string chemin_acces_ressources_base = ".\\Ressources\\";
         ScreenManager screenmanagergameplay;
 
 
@@ -103,7 +104,6 @@ namespace FormulaWeb
                                     traitement_menu.balise = lectureXML_Menuoption.Name;
                                     traitement_menu.valeur = lectureXML_Menuoption.InnerText;
                                     liste_menu.Add(traitement_menu);
-
                                     if (lectureXML_Menuoption.Name == "tag_end")
                                     {
                                         Traitement_Menu();
@@ -184,15 +184,13 @@ namespace FormulaWeb
             switch (action)
             {
                 case "Listing_string" :
-
-                    // on ajoute la ligne de menu ... au menu :)
                     if (traitement_String(ligne)) MenuEntries.Add(ligne);
                     else ligne.affichage = false;                 
-
                     break;
                   
                 case "Listing_repertoire" :
-                    Traceur_menu_option.Trace("INfO", "Action Listing_repertoire");
+                    if (traitement_Repertoire(ligne)) MenuEntries.Add(ligne);
+                    else ligne.affichage = false; 
                     break;
 
                 case "Listing_nombre":
@@ -325,6 +323,69 @@ namespace FormulaWeb
 
 
             // on récupère les infos nécessaire pour l'action
+            string action_repertoire = Recherche_liste_menu("action_repertoire");
+            string action_selection = Recherche_liste_menu("action_selection");
+            string action_variable = Recherche_liste_menu("action_variable");
+            string separateur = Recherche_liste_menu("action_listing_string_separateur");
+
+            // on vérifie la bonne présence des infos
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage = false;
+            }
+            else ligne_menu.affichage = true;
+
+            if (action_repertoire == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_repertoire n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_selection == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_selection n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_variable == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_variable n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+
+            // on fournis les info à la ligne de menu
+            ligne_menu.traduction = false;
+            //string[] liste_repertoire;
+            try
+            {
+                ligne_menu.choix_menu = Directory.GetDirectories(chemin_acces_ressources_base + action_repertoire + "\\" + Regle_jeu.Get_code_jeu());
+                //ligne_menu.choix_menu = 
+            }
+            catch
+            {
+                Traceur_menu_option.Trace("ERREUR", "Impossible de lister les repertoire dans " + chemin_acces_ressources_base + action_repertoire + "\\" + Regle_jeu.Get_code_jeu());
+                return false;
+            }
+
+            ligne_menu.action = action_selection;
+            ligne_menu.variable = action_variable;
+            ligne_menu.nbchoix = ligne_menu.choix_menu.Count()-1;
+            for (int i = 0; i < ligne_menu.nbchoix+1; i++)
+            {
+                ligne_menu.choix_menu[i] = ligne_menu.choix_menu[i].Replace(chemin_acces_ressources_base + action_repertoire + "\\" + Regle_jeu.Get_code_jeu()+"\\", "");
+            }
+            ligne_menu.Text = ligne_menu.choix_menu[0];
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage_dependance = tag_menu_affichage_dependance;
+                ligne_menu.affichage_dependance_valeur = tag_menu_affichage_dependance_valeur;
+            }
+
+            // on ajoute la gestion du défilement dans le menu sur la ligne de menu :
+            ligne_menu.MenuLeft_Selected += stringleftentrySelected;
+            ligne_menu.MenuRight_Selected += stringrightentrySelected;
+            ligne_menu.MenuDefilUpEntry_Selected += stringleftentrySelected;
+            ligne_menu.MenuDefilDownEntry_Selected += stringrightentrySelected;
+
+            liste_menu_option.Add(ligne_menu);
             return true;
         }
 
