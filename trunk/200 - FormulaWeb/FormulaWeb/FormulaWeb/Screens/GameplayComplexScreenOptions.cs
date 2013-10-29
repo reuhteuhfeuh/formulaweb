@@ -199,7 +199,8 @@ namespace FormulaWeb
                     break;
 
                 case "Listing_fichiers":
-                    Traceur_menu_option.Trace("INfO", "Action Listing_fichiers");
+                    if (traitement_Fichier(ligne)) MenuEntries.Add(ligne);
+                    else ligne.affichage = false; 
                     break;
 
                 default :
@@ -475,6 +476,67 @@ namespace FormulaWeb
 
 
             // on récupère les infos nécessaire pour l'action
+            string action_menu_sous_repertoire = Recherche_liste_menu("action_menu_sous_repertoire");
+            string action_menu_fichier_filtre = Recherche_liste_menu("action_menu_fichier_filtre");
+            string action_menu_fichier_extension = Recherche_liste_menu("action_menu_fichier_extension");
+            string action_selection = Recherche_liste_menu("action_selection");
+            string action_variable = Recherche_liste_menu("action_variable");
+
+            if (action_menu_sous_repertoire == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_menu_sous_repertoire n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_menu_fichier_filtre == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_menu_fichier_filtre n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_menu_fichier_extension == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_menu_fichier_extension n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_selection == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_selection n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+            if (action_variable == "")
+            {
+                Traceur_menu_option.Trace("ERREUR", "action_variable n'a pas été fournis, menu d'option non pris en compte");
+                return false;
+            }
+
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage = false;
+            }
+
+            // on fournis les info à la ligne de menu
+            ligne_menu.choix_menu = Directory.GetFiles(chemin_acces_ressources + "\\" + Regle_jeu.Get_code_jeu() + "\\" + action_menu_sous_repertoire, action_menu_fichier_filtre + "*." + action_menu_fichier_extension);
+            ligne_menu.nbchoix = ligne_menu.choix_menu.Count() - 1;
+            for (int i = 0; i < ligne_menu.nbchoix + 1; i++)
+            {
+                ligne_menu.choix_menu[i] = ligne_menu.choix_menu[i].Replace(chemin_acces_ressources + "\\" + Regle_jeu.Get_code_jeu() + "\\" + action_menu_sous_repertoire + "\\", "");
+            }
+            ligne_menu.Text = ligne_menu.choix_menu[0];
+            ligne_menu.traduction = false;
+            ligne_menu.action = action_selection;
+            ligne_menu.variable = action_variable;
+            if (tag_menu_affichage == "false")
+            {
+                ligne_menu.affichage_dependance = tag_menu_affichage_dependance;
+                ligne_menu.affichage_dependance_valeur = tag_menu_affichage_dependance_valeur;
+            }
+
+            // on ajoute la gestion du défilement dans le menu sur la ligne de menu :
+            ligne_menu.MenuLeft_Selected += stringleftentrySelected;
+            ligne_menu.MenuRight_Selected += stringrightentrySelected;
+            ligne_menu.MenuDefilUpEntry_Selected += stringleftentrySelected;
+            ligne_menu.MenuDefilDownEntry_Selected += stringrightentrySelected;
+
+            liste_menu_option.Add(ligne_menu);
             return true;
         }
 
