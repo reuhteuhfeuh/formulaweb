@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+	<niveau_trace>ALL</niveau_trace>
+	<langage_defaut>FR</langage_defaut>
+</Config>
