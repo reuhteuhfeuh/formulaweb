@@ -11,6 +11,8 @@ namespace Gestion_Regles
 {
     public class Regles
     {
+
+
         public struct description_jeu
         {
             public string jeu_dispo;        // libelle du jeu
@@ -33,56 +35,26 @@ namespace Gestion_Regles
         public Int32 Nombre_Joueurs { get; set; }
 
         // Declaration des variables standards
-        // Declaration des Int32
-        public Int32 Caracteristique_Int32_01 { get; set; }
-        public Int32 Caracteristique_Int32_02 { get; set; }
-        public Int32 Caracteristique_Int32_03 { get; set; }
-        public Int32 Caracteristique_Int32_04 { get; set; }
-        public Int32 Caracteristique_Int32_05 { get; set; }
-        public Int32 Caracteristique_Int32_06 { get; set; }
-        public Int32 Caracteristique_Int32_07 { get; set; }
-        public Int32 Caracteristique_Int32_08 { get; set; }
-        public Int32 Caracteristique_Int32_09 { get; set; }
-        public Int32 Caracteristique_Int32_10 { get; set; }
-        public Int32 Caracteristique_Int32_11 { get; set; }
-        public Int32 Caracteristique_Int32_12 { get; set; }
-        public Int32 Caracteristique_Int32_13 { get; set; }
-        public Int32 Caracteristique_Int32_14 { get; set; }
-        public Int32 Caracteristique_Int32_15 { get; set; }
-        public Int32 Caracteristique_Int32_16 { get; set; }
-        public Int32 Caracteristique_Int32_17 { get; set; }
-        public Int32 Caracteristique_Int32_18 { get; set; }
-        public Int32 Caracteristique_Int32_19 { get; set; }
-        public Int32 Caracteristique_Int32_20 { get; set; }
 
-        // Declaration des string
-        public String Caracteristique_String_01 { get; set; }
-        public String Caracteristique_String_02 { get; set; }
-        public String Caracteristique_String_03 { get; set; }
-        public String Caracteristique_String_04 { get; set; }
-        public String Caracteristique_String_05 { get; set; }
-        public String Caracteristique_String_06 { get; set; }
-        public String Caracteristique_String_07 { get; set; }
-        public String Caracteristique_String_08 { get; set; }
-        public String Caracteristique_String_09 { get; set; }
-        public String Caracteristique_String_10 { get; set; }
-        public String Caracteristique_String_11 { get; set; }
-        public String Caracteristique_String_12 { get; set; }
-        public String Caracteristique_String_13 { get; set; }
-        public String Caracteristique_String_14 { get; set; }
-        public String Caracteristique_String_15 { get; set; }
+        // Un dictionnaire par typologie.
+        // Dictionnaire Int32
+        Dictionary<String, Int32> Caracteristique_Int32 = new Dictionary<String, Int32>();
+        // Dictionnaire String
+        Dictionary<String, String> Caracteristique_String = new Dictionary<String, String>();
+        // Dictionnaire Bool
+        Dictionary<String, Boolean> Caracteristique_Bool = new Dictionary<String, Boolean>();
 
-        // Declaration des bool
-        public bool Caracteristique_Bool_01 { get; set; }
-        public bool Caracteristique_Bool_02 { get; set; }
-        public bool Caracteristique_Bool_03 { get; set; }
-        public bool Caracteristique_Bool_04 { get; set; }
-        public bool Caracteristique_Bool_05 { get; set; }
-        public bool Caracteristique_Bool_06 { get; set; }
-        public bool Caracteristique_Bool_07 { get; set; }
-        public bool Caracteristique_Bool_08 { get; set; }
-        public bool Caracteristique_Bool_09 { get; set; }
-        public bool Caracteristique_Bool_10 { get; set; }
+        public bool Injection_donnees(String selection, String variable, String valeur)
+        {
+
+            return true;
+        }
+        // A créer fonction delegate qui declenche Stockage
+        
+
+
+        
+
       
 
         public void Initialisation( Traceur.Traceur tra)
