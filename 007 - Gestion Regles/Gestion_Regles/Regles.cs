@@ -46,6 +46,31 @@ namespace Gestion_Regles
 
         public bool Injection_donnees(String selection, String variable, String valeur)
         {
+            if (selection == "Stockage")
+            {
+                if (variable.Contains("String"))
+                {
+                    try
+                    {
+                        Caracteristique_String.Add(variable, valeur);
+                    }
+                    catch
+                    {
+                        Trace_Regles.Trace("Erreur", "Impossible de réaliser : " + selection + " de " + valeur + " sur " + variable);
+                    }
+                }
+                if (variable.Contains("Int32"))
+                {
+                    try
+                    {
+                        Caracteristique_Int32.Add(variable, Convert.ToInt32(valeur));
+                    }
+                    catch
+                    {
+                        Trace_Regles.Trace("Erreur", "Impossible de réaliser : " + selection + " de " + valeur + " sur " + variable);
+                    }
+                }
+            }
             // on traite la variable selection
             // on appelle un delegate avec selection pour faire valeur sur variable
 

@@ -561,14 +561,14 @@ namespace FormulaWeb
                 // pour chaque ligne on va récupérer les infos pour les fournir à la gestion de règle.
                 // on regarde si l'action est à prendre en compte ou non
                 Int32 dependance = Convert.ToInt32(menu.affichage_dependance);
-                if (((menu.affichage) || (menu.affichage_dependance == MenuEntries[dependance].Text)) && menu.action != null)
+                if (((menu.affichage) || (menu.affichage_dependance_valeur == MenuEntries[dependance].Text)) && menu.action != null)
                 {
                     string action_selection = menu.action;
                     string action_variable = menu.variable;
                     string action_valeur = menu.choix_menu[menu.selectedChoix];
 
                     // A créer dans Gestion_Regles une fonction avec en paramètre action_selection, action_variable, action_valeur
-                    // Regle_jeu.Injection_donnees(action_selection, action_variable, action_valeur);
+                    Regle_jeu.Injection_donnees(action_selection, action_variable, action_valeur);
 
                 }
 
