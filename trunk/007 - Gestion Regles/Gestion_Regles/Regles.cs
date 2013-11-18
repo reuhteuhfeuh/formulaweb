@@ -46,7 +46,12 @@ namespace Gestion_Regles
 
         public bool Injection_donnees(String selection, String variable, String valeur)
         {
+            // on traite la variable selection
+            // on appelle un delegate avec selection pour faire valeur sur variable
 
+            // on traite la variable variable
+
+            // on applique la selection de valeur à la variable
             return true;
         }
         // A créer fonction delegate qui declenche Stockage
