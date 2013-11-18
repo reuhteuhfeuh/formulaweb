@@ -26,17 +26,13 @@ namespace Gestion_Plateau
         private Case[] Case_Plateau;
         private bool Mode_debug = false;
 
-        // Declaration des Int64
-        public Int64 Caracteristique_Int64_01 { get; set; }
-        public Int64 Caracteristique_Int64_02 { get; set; }
-        public Int64 Caracteristique_Int64_03 { get; set; }
-        public Int64 Caracteristique_Int64_04 { get; set; }
-        public Int64 Caracteristique_Int64_05 { get; set; }
-        public Int64 Caracteristique_Int64_06 { get; set; }
-        public Int64 Caracteristique_Int64_07 { get; set; }
-        public Int64 Caracteristique_Int64_08 { get; set; }
-        public Int64 Caracteristique_Int64_09 { get; set; }
-        public Int64 Caracteristique_Int64_10 { get; set; }
+        // Un dictionnaire par typologie.
+        // Dictionnaire Int32
+        Dictionary<String, Int32> Caracteristique_Int32 = new Dictionary<String, Int32>();
+        // Dictionnaire String
+        Dictionary<String, String> Caracteristique_String = new Dictionary<String, String>();
+        // Dictionnaire Bool
+        Dictionary<String, Boolean> Caracteristique_Bool = new Dictionary<String, Boolean>();
 
         // Declaration des Int32
         public Int32 Caracteristique_Int32_01 { get; set; }
@@ -103,8 +99,8 @@ namespace Gestion_Plateau
         ////////////////////
         // Accesseurs GET //
         ////////////////////
-        public string Get_Nom_Circuit() { return Nom_Plateau; }
-        public string Get_Image_Circuit() { return Chemin_Access_Image; }
+        public string Get_Nom_Plateau() { return Nom_Plateau; }
+        public string Get_Image_Plateau() { return Chemin_Access_Image; }
         public string Get_Version_Gestion() { return Version; }
         public Int32 Get_Classement(Int32 Numero_Case) { return Case_Plateau[Numero_Case].Case_Classement; }
         public Int32 Get_Coordonnees_X(Int32 Numero_Case) { return Case_Plateau[Numero_Case].Coord_X; }

@@ -32,9 +32,6 @@ namespace FormulaWeb
         ContentManager content;
         SpriteFont gameFont;
 
-        // Création du graphique manager, lien avec la carte graphique
-        // GraphicsDeviceManager graphics ;//= ScreenManager.gra
-
         // Création du sprite Batch objet pour dessiner sur l'écran de jeu
         SpriteBatch spriteBatch; 
 
@@ -60,10 +57,7 @@ namespace FormulaWeb
         Traceur.Traceur Moteur_Trace;
 
         // Declaration des chemins acces
-        String Acces_Circuit = ".\\Ressources\\Plateaux\\FormuleDe\\";
-
-       /* Vector2 playerPosition = new Vector2(100, 100);
-        Vector2 enemyPosition = new Vector2(100, 100);*/
+        String Acces_Plateau = ".\\Ressources\\Plateaux\\";
 
         Random random = new Random();
 
@@ -116,6 +110,8 @@ namespace FormulaWeb
                 Moteur_Trace = ScreenManager.loggerScreenManager;
                 //graphics = ScreenManager.Game.GraphicsDevice;
 
+                Moteur_Trace.Trace("INFO", "Initialisation moteur règle");
+
                 // A real game would probably have more content than this sample, so
                 // it would take longer to load. We simulate that by delaying for a
                 // while, giving you a chance to admire the beautiful loading screen.
@@ -136,13 +132,15 @@ namespace FormulaWeb
                 string Fichier_Image_Circuit;
                 string Access_XML;
                 Moteur_Son.Ecouter_musique("Song_01");
-                Access_XML = Acces_Circuit + "Bolbec";
+
+                Acces_Plateau = Acces_Plateau + "\\" + Moteur_Regle.Get_code_jeu() + "\\" ;
+                Access_XML = Acces_Plateau + "Bolbec";
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit.xml");
 
                 if (Moteur_Plateau.Lecture_Fichier_XML() == "Chargementxmlok")
                 {
-                    Fichier_Image_Circuit = Moteur_Plateau.Get_Image_Circuit();
+                    Fichier_Image_Circuit = Moteur_Plateau.Get_Image_Plateau();
                 }
                 else
                 {
@@ -150,11 +148,11 @@ namespace FormulaWeb
                 }
 
                 Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);//, this);
-                Moteur_Graphique.Set_Acces_Image(Acces_Circuit + "Bolbec" + "\\Bolbec.png");
+                Moteur_Graphique.Set_Acces_Image(Acces_Plateau + "Bolbec" + "\\Bolbec.png");
                 Moteur_Graphique.Charger_Image_Circuit();
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Plateau.Get_Ratio_Voiture());
 
-                Moteur_Graphique.Set_Message_Principal("Viendez tous au masters 2013, NORTH MEN TEAM EN FORCE !!!!");
+                Moteur_Graphique.Set_Message_Principal("Viendez tous au masters 2014, NORTH MEN TEAM EN FORCE !!!!");
 
                 Moteur_Vehicule.Set_Numero_Case(1);
                 Moteur_Graphique.Set_Position_Voiture(Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()), Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()));
@@ -279,23 +277,7 @@ namespace FormulaWeb
 
                 Moteur_Graphique.Set_Angle_Voiture(Math.Atan2(Moteur_Plateau.Get_Coordonnees_Y(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_Y(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case())), Moteur_Plateau.Get_Coordonnees_X(Moteur_Vehicule.Get_Numero_Case()) - Moteur_Plateau.Get_Coordonnees_X(Moteur_Plateau.Get_Case_EnFace(Moteur_Vehicule.Get_Numero_Case()))));
                 Moteur_Graphique.SourisEtat = EtatSouris;
-                /*Vector2 thumbstick = gamePadState.ThumbSticks.Left;
 
-                movement.X += thumbstick.X;
-                movement.Y -= thumbstick.Y;
-
-                if (input.TouchState.Count > 0)
-                {
-                    Vector2 touchPosition = input.TouchState[0].Position;
-                    Vector2 direction = touchPosition - playerPosition;
-                    direction.Normalize();
-                    movement += direction;
-                }
-
-                if (movement.Length() > 1)
-                    movement.Normalize();
-
-                playerPosition += movement * 8f;*/
             }
         }
 
@@ -309,9 +291,8 @@ namespace FormulaWeb
             ScreenManager.GraphicsDevice.Clear(ClearOptions.Target,
                                                Color.CornflowerBlue, 0, 0);
 
-
-
             // Affichage de la partie NonFixe
+            // Reste à gérer une caméra différente pour pouvoir faire des rotations, zooms, etc ...
             spriteBatch.Begin();
             Moteur_Graphique.AffichageNonFixe();
             spriteBatch.End();
