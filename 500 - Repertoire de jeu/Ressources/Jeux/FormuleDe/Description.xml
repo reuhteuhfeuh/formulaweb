@@ -2,4 +2,44 @@
 <Description>
 	<libelle>Formule de</libelle>
 	<code_jeu>FormuleDe</code_jeu>
+	<menu_option>true</menu_option>
+	<menu_option_jeu>
+		<tag_menu>type_jeu</tag_menu>
+		<tag_menu_numero>0</tag_menu_numero>
+		<action_menu>Listing_string</action_menu>
+		<action_listing_string>Reseau;Local</action_listing_string>
+		<action_listing_string_separateur>;</action_listing_string_separateur>
+		<action_selection>Stockage</action_selection>
+		<action_variable>Caracteristique_String_01</action_variable>
+		<tag_end>true</tag_end>	
+	</menu_option_jeu>		
+	<menu_option_jeu>
+		<tag_menu>choix_circuit</tag_menu>
+		<tag_menu_numero>2</tag_menu_numero>
+		<tag_menu_affichage>false</tag_menu_affichage>
+		<tag_menu_affichage_dependance>0</tag_menu_affichage_dependance>
+		<tag_menu_affichage_dependance_valeur>Local</tag_menu_affichage_dependance_valeur>
+		<tag_menu_traduction>false</tag_menu_traduction>
+		<action_menu>Listing_repertoire</action_menu>
+		<action_repertoire>Plateaux</action_repertoire>
+		<action_selection>Stockage</action_selection>
+		<action_variable>Caracteristique_String_Plateau</action_variable>
+		<tag_end>true</tag_end>	
+	</menu_option_jeu>
+	<menu_option_jeu>
+		<tag_menu>nombre_joueur</tag_menu>
+		<tag_menu_numero>3</tag_menu_numero>
+		<tag_menu_affichage>false</tag_menu_affichage>
+		<tag_menu_affichage_dependance>0</tag_menu_affichage_dependance>
+		<tag_menu_affichage_dependance_valeur>Local</tag_menu_affichage_dependance_valeur>
+		<tag_menu_traduction>false</tag_menu_traduction>		
+		<action_menu>Listing_nombre</action_menu>
+		<action_listing_nombre>1-10</action_listing_nombre>
+		<action_selection>Stockage</action_selection>
+		<action_variable>Caracteristique_Int32_Nombre_Joueurs</action_variable>	
+		<tag_end>true</tag_end>			
+	</menu_option_jeu>
+
+	<!-- se rajouterons d'office dans le menu 'Lancer le jeu' et 'Retour'-->
+	
 </Description>
