@@ -31,8 +31,17 @@ namespace Gestion_Regles
 
         string code_jeux_choisi { get; set; }
 
-        // Declaration des variables communes
-        public Int32 Nombre_Joueurs { get; set; }
+        public string Get_plateau()
+        {
+            try
+            {
+                return Caracteristique_String["Caracteristique_String_Plateau"];
+            }
+            catch (KeyNotFoundException)
+            {
+                return code_jeux_choisi;
+            }
+        }
 
         // Declaration des variables standards
 
@@ -43,6 +52,14 @@ namespace Gestion_Regles
         Dictionary<String, String> Caracteristique_String = new Dictionary<String, String>();
         // Dictionnaire Bool
         Dictionary<String, Boolean> Caracteristique_Bool = new Dictionary<String, Boolean>();
+
+        public bool Purge_Regle()
+        {
+            Caracteristique_Bool.Clear();
+            Caracteristique_Int32.Clear();
+            Caracteristique_String.Clear();
+            return true;
+        }
 
         public bool Injection_donnees(String selection, String variable, String valeur)
         {
@@ -64,6 +81,17 @@ namespace Gestion_Regles
                     try
                     {
                         Caracteristique_Int32.Add(variable, Convert.ToInt32(valeur));
+                    }
+                    catch
+                    {
+                        Trace_Regles.Trace("Erreur", "Impossible de réaliser : " + selection + " de " + valeur + " sur " + variable);
+                    }
+                }
+                if (variable.Contains("Bool"))
+                {
+                    try
+                    {
+                        Caracteristique_Bool.Add(variable, Convert.ToBoolean(valeur));
                     }
                     catch
                     {

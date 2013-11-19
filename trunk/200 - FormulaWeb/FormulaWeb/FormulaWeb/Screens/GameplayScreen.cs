@@ -134,7 +134,7 @@ namespace FormulaWeb
                 Moteur_Son.Ecouter_musique("Song_01");
 
                 Acces_Plateau = Acces_Plateau + "\\" + Moteur_Regle.Get_code_jeu() + "\\" ;
-                Access_XML = Acces_Plateau + "Bolbec";
+                Access_XML = Acces_Plateau + Moteur_Regle.Get_plateau();
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit.xml");
 
@@ -147,8 +147,8 @@ namespace FormulaWeb
                     // Echec du chargement du fichier XML
                 }
 
-                Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);//, this);
-                Moteur_Graphique.Set_Acces_Image(Acces_Plateau + "Bolbec" + "\\Bolbec.png");
+                Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);
+                Moteur_Graphique.Set_Acces_Image(Acces_Plateau + Moteur_Regle.Get_plateau() + "\\Plateau.png");
                 Moteur_Graphique.Charger_Image_Circuit();
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Plateau.Get_Ratio_Voiture());
 
@@ -175,6 +175,7 @@ namespace FormulaWeb
         public override void Unload()
         {
             content.Unload();
+            Moteur_Regle.Purge_Regle();
         }
 
 

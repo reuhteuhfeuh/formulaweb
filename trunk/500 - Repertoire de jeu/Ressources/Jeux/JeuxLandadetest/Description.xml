@@ -50,7 +50,7 @@
 		<action_menu>Listing_nombre</action_menu>
 		<action_listing_nombre>1-10</action_listing_nombre>
 		<action_selection>Stockage</action_selection>
-		<action_variable>Nombre_Joueurs</action_variable>	
+		<action_variable>Caracteristique_Int32_Nombre_Joueurs</action_variable>	
 		<tag_end>true</tag_end>			
 	</menu_option_jeu>
 	<menu_option_jeu>
