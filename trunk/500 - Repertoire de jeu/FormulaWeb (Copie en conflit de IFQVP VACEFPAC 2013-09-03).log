@@ -1,0 +1,38 @@
+02/09/2013 23:03:33 : Info : Initialisation Traceur !
+02/09/2013 23:03:33 : Info : .\Ressources\Langages\FR.xml
+02/09/2013 23:03:33 : Info : fin du traitement de .\Ressources\Langages\EN.xml
+02/09/2013 23:03:33 : Info : fin du traitement de .\Ressources\Langages\FR.xml
+02/09/2013 23:03:33 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
+02/09/2013 23:03:33 : Info : initialisation Règles de jeu
+02/09/2013 23:03:33 : Info : Langage chargé : FR
+02/09/2013 23:03:33 : Info : Sound Machine initialisé !
+02/09/2013 23:04:25 : INFO : Traitement menu Optionnel : type_jeu
+02/09/2013 23:04:25 : INFO : Action Listing_string
+02/09/2013 23:04:25 : INFO : Traitement menu Optionnel : blahblah4_le_retour
+02/09/2013 23:04:25 : INFO : Action Listing_string
+02/09/2013 23:04:25 : INFO : Traitement menu Optionnel : choix_circuit
+02/09/2013 23:04:25 : INfO : Action Listing_repertoire
+02/09/2013 23:04:25 : INFO : Traitement menu Optionnel : nombre_joueur
+02/09/2013 23:04:25 : INfO : Action Listing_nombre
+02/09/2013 23:04:25 : INFO : Traitement menu Optionnel : blahblah_fichiers_xml
+02/09/2013 23:04:25 : INfO : Action Listing_fichiers
+02/09/2013 23:05:16 : INFO : Traitement menu Optionnel : type_jeu
+02/09/2013 23:05:16 : INFO : Action Listing_string
+02/09/2013 23:05:16 : INFO : Traitement menu Optionnel : blahblah4_le_retour
+02/09/2013 23:05:16 : INFO : Action Listing_string
+02/09/2013 23:05:16 : INFO : Traitement menu Optionnel : choix_circuit
+02/09/2013 23:05:16 : INfO : Action Listing_repertoire
+02/09/2013 23:05:16 : INFO : Traitement menu Optionnel : nombre_joueur
+02/09/2013 23:05:16 : INfO : Action Listing_nombre
+02/09/2013 23:05:16 : INFO : Traitement menu Optionnel : blahblah_fichiers_xml
+02/09/2013 23:05:16 : INfO : Action Listing_fichiers
+02/09/2013 23:06:32 : INFO : Traitement menu Optionnel : type_jeu
+02/09/2013 23:06:32 : INFO : Action Listing_string
+02/09/2013 23:06:32 : INFO : Traitement menu Optionnel : blahblah4_le_retour
+02/09/2013 23:06:32 : INFO : Action Listing_string
+02/09/2013 23:06:32 : INFO : Traitement menu Optionnel : choix_circuit
+02/09/2013 23:06:32 : INfO : Action Listing_repertoire
+02/09/2013 23:06:32 : INFO : Traitement menu Optionnel : nombre_joueur
+02/09/2013 23:06:32 : INfO : Action Listing_nombre
+02/09/2013 23:06:32 : INFO : Traitement menu Optionnel : blahblah_fichiers_xml
+02/09/2013 23:06:32 : INfO : Action Listing_fichiers
