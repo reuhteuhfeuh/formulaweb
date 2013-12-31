@@ -340,7 +340,7 @@ namespace FormulaWeb
             //string[] liste_repertoire;
             try
             {
-                ligne_menu.choix_menu = Directory.GetDirectories(chemin_acces_ressources_base + action_repertoire + "\\" + Regle_jeu.Get_code_jeu());
+                ligne_menu.choix_menu = Directory.GetDirectories(chemin_acces_ressources + Regle_jeu.Get_code_jeu() + "\\" + action_repertoire + "\\");
                 //ligne_menu.choix_menu = 
             }
             catch
@@ -354,7 +354,7 @@ namespace FormulaWeb
             ligne_menu.nbchoix = ligne_menu.choix_menu.Count()-1;
             for (int i = 0; i < ligne_menu.nbchoix+1; i++)
             {
-                ligne_menu.choix_menu[i] = ligne_menu.choix_menu[i].Replace(chemin_acces_ressources_base + action_repertoire + "\\" + Regle_jeu.Get_code_jeu()+"\\", "");
+                ligne_menu.choix_menu[i] = ligne_menu.choix_menu[i].Replace(chemin_acces_ressources + Regle_jeu.Get_code_jeu() + "\\" + action_repertoire + "\\", "");
             }
             ligne_menu.Text = ligne_menu.choix_menu[0];
             if (tag_menu_affichage == "false")

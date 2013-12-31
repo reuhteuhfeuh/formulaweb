@@ -34,57 +34,6 @@ namespace Gestion_Plateau
         // Dictionnaire Bool
         Dictionary<String, Boolean> Caracteristique_Bool = new Dictionary<String, Boolean>();
 
-        // Declaration des Int32
-        public Int32 Caracteristique_Int32_01 { get; set; }
-        public Int32 Caracteristique_Int32_02 { get; set; }
-        public Int32 Caracteristique_Int32_03 { get; set; }
-        public Int32 Caracteristique_Int32_04 { get; set; }
-        public Int32 Caracteristique_Int32_05 { get; set; }
-        public Int32 Caracteristique_Int32_06 { get; set; }
-        public Int32 Caracteristique_Int32_07 { get; set; }
-        public Int32 Caracteristique_Int32_08 { get; set; }
-        public Int32 Caracteristique_Int32_09 { get; set; }
-        public Int32 Caracteristique_Int32_10 { get; set; }
-        public Int32 Caracteristique_Int32_11 { get; set; }
-        public Int32 Caracteristique_Int32_12 { get; set; }
-        public Int32 Caracteristique_Int32_13 { get; set; }
-        public Int32 Caracteristique_Int32_14 { get; set; }
-        public Int32 Caracteristique_Int32_15 { get; set; }
-        public Int32 Caracteristique_Int32_16 { get; set; }
-        public Int32 Caracteristique_Int32_17 { get; set; }
-        public Int32 Caracteristique_Int32_18 { get; set; }
-        public Int32 Caracteristique_Int32_19 { get; set; }
-        public Int32 Caracteristique_Int32_20 { get; set; }
-
-        // Declaration des string
-        public String Caracteristique_String_01 { get; set; }
-        public String Caracteristique_String_02 { get; set; }
-        public String Caracteristique_String_03 { get; set; }
-        public String Caracteristique_String_04 { get; set; }
-        public String Caracteristique_String_05 { get; set; }
-        public String Caracteristique_String_06 { get; set; }
-        public String Caracteristique_String_07 { get; set; }
-        public String Caracteristique_String_08 { get; set; }
-        public String Caracteristique_String_09 { get; set; }
-        public String Caracteristique_String_10 { get; set; }
-        public String Caracteristique_String_11 { get; set; }
-        public String Caracteristique_String_12 { get; set; }
-        public String Caracteristique_String_13 { get; set; }
-        public String Caracteristique_String_14 { get; set; }
-        public String Caracteristique_String_15 { get; set; }
-
-        // Declaration des bool
-        public bool Caracteristique_Bool_01 { get; set; }
-        public bool Caracteristique_Bool_02 { get; set; }
-        public bool Caracteristique_Bool_03 { get; set; }
-        public bool Caracteristique_Bool_04 { get; set; }
-        public bool Caracteristique_Bool_05 { get; set; }
-        public bool Caracteristique_Bool_06 { get; set; }
-        public bool Caracteristique_Bool_07 { get; set; }
-        public bool Caracteristique_Bool_08 { get; set; }
-        public bool Caracteristique_Bool_09 { get; set; }
-        public bool Caracteristique_Bool_10 { get; set; }
-
         //----------------------//
         // Accesseurs publiques //
         //----------------------//
@@ -167,7 +116,7 @@ namespace Gestion_Plateau
                         }
                         if (lectureXML_Niveau_1.Name == "Circuit_Ratio_Voiture")
                         {
-                            Ratio_Voiture = double.Parse(lectureXML_Niveau_1.InnerText);
+                            //Ratio_Voiture = double.Parse(lectureXML_Niveau_1.InnerText);
                         }
 
                         // on parcout le noeud Circuit_Case

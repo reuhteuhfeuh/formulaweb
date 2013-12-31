@@ -48,9 +48,9 @@ namespace Gestion_Plateau
         // Accesseurs GET //
         ////////////////////
         public string Get_Case_Adjacente() { return Case_Adjacente; }
-        public Int32 Get_Case_Gauche() { return Case_Gauche; }
-        public Int32 Get_Case_Droite() { return Case_Droite; }
-        public Int32 Get_Case_EnFace() { return Case_EnFace; }
+        public Int32 Get_Case_Gauche() { if (Case_Gauche == 0) return Case_Numero; else return Case_Gauche; }
+        public Int32 Get_Case_Droite() { if (Case_Droite == 0) return Case_Numero; else return Case_Droite; }
+        public Int32 Get_Case_EnFace() { if (Case_EnFace == 0) return Case_Numero; else return Case_EnFace; }
         public string Get_Case_Muret() { return Case_Muret; }
 
 

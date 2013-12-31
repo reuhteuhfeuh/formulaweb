@@ -57,7 +57,7 @@ namespace FormulaWeb
         Traceur.Traceur Moteur_Trace;
 
         // Declaration des chemins acces
-        String Acces_Plateau = ".\\Ressources\\Plateaux\\";
+        String Acces_Plateau;
 
         Random random = new Random();
 
@@ -132,8 +132,8 @@ namespace FormulaWeb
                 string Fichier_Image_Circuit;
                 string Access_XML;
                 Moteur_Son.Ecouter_musique("Song_01");
-
-                Acces_Plateau = Acces_Plateau + "\\" + Moteur_Regle.Get_code_jeu() + "\\" ;
+                //= ".\\Ressources\\Plateaux\\";
+                Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\" ;
                 Access_XML = Acces_Plateau + Moteur_Regle.Get_plateau();
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit.xml");
