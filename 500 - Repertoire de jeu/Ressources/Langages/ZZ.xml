@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Langage>
+	<Code_Langage>ZZ</Code_Langage>
+	<Description_Langage>ZouZou</Description_Langage>
+	<Numero_Revision>DEV</Numero_Revision>
+	<Nom_Traducteur>RTF</Nom_Traducteur>
+	<Chargement>Z_Chargement ...</Chargement>
+	<Titre_Menu_Principal>Z_FoRmUlaWeB ... !</Titre_Menu_Principal>
+	<Titre_Menu_Selection_Jeu>Z_Selection du jeu</Titre_Menu_Selection_Jeu>
+	<Titre_Menu_Option>Z_Option</Titre_Menu_Option>
+	<Titre_Menu_Option_Langage>Z_Choix de la langue</Titre_Menu_Option_Langage>
+	<Menu_Jouer>Z_Jouer</Menu_Jouer>
+	<Menu_Options>Z_Options</Menu_Options>
+	<Menu_Options_Langage>Z_choix langue</Menu_Options_Langage>
+	<Menu_Retour>Z_Retour</Menu_Retour>
+	<Menu_Quitter>Z_Quitter</Menu_Quitter>
+	<Menu_Quitter_Validation>Z_Voulez-vous quitter le jeu ?</Menu_Quitter_Validation>
+	<Menu_Quitter_Validation_Ligne1>Z_Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
+	<Menu_Quitter_Validation_Ligne2>Z_Echap = Retour au jeu</Menu_Quitter_Validation_Ligne2>
+	<Menu_Jeu_Pause>Z_Pause !</Menu_Jeu_Pause>
+	<Menu_Jeu_Pause_Reprendre>Z_Reprendre le jeu</Menu_Jeu_Pause_Reprendre>
+</Langage>

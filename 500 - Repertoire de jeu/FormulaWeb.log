@@ -1,0 +1,15 @@
+2013/12/31 08:56:04 : Info : Initialisation Traceur !
+2013/12/31 08:56:04 : Info : .\Ressources\Langages\FR.xml
+2013/12/31 08:56:04 : Info : fin du traitement de .\Ressources\Langages\EN.xml
+2013/12/31 08:56:04 : Info : fin du traitement de .\Ressources\Langages\FR.xml
+2013/12/31 08:56:04 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
+2013/12/31 08:56:04 : Info : initialisation Règles de jeu
+2013/12/31 08:56:04 : Info : Langage chargé : FR
+2013/12/31 08:56:04 : Info : Sound Machine initialisé !
+2013/12/31 08:56:06 : INFO : Traitement menu Optionnel : type_jeu
+2013/12/31 08:56:06 : INFO : Action Listing_string
+2013/12/31 08:56:06 : INFO : Traitement menu Optionnel : choix_circuit
+2013/12/31 08:56:06 : INFO : Action Listing_Repertoire
+2013/12/31 08:56:06 : INFO : Traitement menu Optionnel : nombre_joueur
+2013/12/31 08:56:06 : INFO : Action Listing_Nombre
+2013/12/31 08:56:10 : INFO : Initialisation moteur règle
