@@ -64,14 +64,14 @@ namespace FormulaWeb
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-                backgroundTexture = content.Load<Texture2D>("background");
+                backgroundTexture = content.Load<Texture2D>("Menu//background");
             }
         }
 
         public override void Chargement_background(string Nom_Complet_Acces_Fichier)
         {
             if (Nom_Complet_Acces_Fichier == "ORIGINAL")
-                backgroundTexture = content.Load<Texture2D>("background");
+                backgroundTexture = content.Load<Texture2D>("Menu//background");
             else
                 backgroundTexture = LoadTexture(Nom_Complet_Acces_Fichier);
         }

@@ -99,9 +99,9 @@ namespace Gestion_Graphique
             Sprite_Circuit.Init(spriteBatch, content, game);
             Sprite_Voiture_1.Init(spriteBatch, content, game);
 
-            Affichage_Generale.Set_Font("Panneau_Affichage");
-            Sprite_Souris.Set_Image("Pointeur_Souris");
-            Sprite_Voiture_1.Set_Image("FWEB_Voiture_001");
+            Affichage_Generale.Set_Font("Police\\Panneau_Affichage");
+            Sprite_Souris.Set_Image("Sprite\\Pointeur_Souris");
+            Sprite_Voiture_1.Set_Image("Sprite\\FWEB_Voiture_001");
         }
 
         public bool Set_Langage_Affichage(Gestion_Langage.Langage lang)

@@ -74,7 +74,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Song_01.wma">
+    <Content Include="Content\Menu\background.png" />
+    <Content Include="Content\Musique\Song_01.wma">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.ico">
@@ -122,34 +123,36 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="Content\background.xnb">
+    <None Include="Content\Menu\background.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\blank.xnb">
+    <None Include="Content\Menu\blank.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\FWEB_Voiture_001.xnb">
+    <None Include="Content\Menu\gradient.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\gamefont.xnb">
+    <None Include="Content\Police\gamefont.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\gradient.xnb">
+    <None Include="Content\Police\menufont.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\menufont.xnb">
+    <None Include="Content\Police\Panneau_Affichage.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Panneau_Affichage.xnb">
+    <None Include="Content\Sprite\FWEB_Voiture_001.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Panneau_LCD.xnb">
+    <None Include="Content\Sprite\Panneau_Affichage.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Pointeur_Souris.xnb">
+    <None Include="Content\Sprite\Panneau_LCD.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Song_01.xnb" />
+    <None Include="Content\Sprite\Pointeur_Souris.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
