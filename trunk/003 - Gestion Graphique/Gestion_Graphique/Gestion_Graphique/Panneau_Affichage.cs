@@ -55,7 +55,7 @@ namespace Gestion_Graphique
             game = gam;
             //graphics = new GraphicsDeviceManager(game);
             content = game.Content;
-            Panneau_LCD = content.Load<Texture2D>("Panneau_LCD");
+            Panneau_LCD = content.Load<Texture2D>("Sprite\\Panneau_LCD");
             Pos_Panneau = new Vector2(10, 20);
             Rect_Panneau = new Rectangle();
             deplacement_en_cours = false ;

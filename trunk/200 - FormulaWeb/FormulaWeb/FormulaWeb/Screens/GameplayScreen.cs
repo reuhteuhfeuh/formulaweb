@@ -102,7 +102,7 @@ namespace FormulaWeb
                 if (content == null)
                     content = new ContentManager(ScreenManager.Game.Services, "Content");
 
-                gameFont = content.Load<SpriteFont>("gamefont");
+                gameFont = content.Load<SpriteFont>("Police\\gamefont");
 
                 GraphicsDevice gra = ScreenManager.Game.GraphicsDevice;
                 Moteur_Son = ScreenManager.sonScreenManager;
@@ -136,7 +136,7 @@ namespace FormulaWeb
                 Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\" ;
                 Access_XML = Acces_Plateau + Moteur_Regle.Get_plateau();
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
-                Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Circuit.xml");
+                Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Plateau.xml");
 
                 if (Moteur_Plateau.Lecture_Fichier_XML() == "Chargementxmlok")
                 {
