@@ -53,6 +53,19 @@ namespace Gestion_Regles
         // Dictionnaire Bool
         Dictionary<String, Boolean> Caracteristique_Bool = new Dictionary<String, Boolean>();
 
+        public String Get_String(String Recherche)
+        {
+            try
+            {
+                return Caracteristique_String[Recherche];
+            }
+            catch (KeyNotFoundException)
+            {
+                Trace_Regles.Trace("Erreur", "Impossible de charger " + Recherche + " dans Caracteristique_String");
+                return "QUEDALLE";
+            }
+        }
+
         public bool Purge_Regle()
         {
             Caracteristique_Bool.Clear();
