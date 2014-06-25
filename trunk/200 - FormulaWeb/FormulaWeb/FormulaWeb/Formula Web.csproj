@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game.cs" />
+    <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScreenFactory.cs" />
@@ -82,6 +83,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Icon.png" />
+    <Content Include="SDL.dll" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -108,6 +110,10 @@
     <ProjectReference Include="..\..\..\007 - Gestion Regles\Gestion_Regles\Gestion_Regles.csproj">
       <Project>{6b787769-6d68-4afc-848d-031565801316}</Project>
       <Name>Gestion_Regles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\008 - Gestion Reseau\Gestion_Reseau\Gestion_Reseau\Gestion_Reseau.csproj">
+      <Project>{be128bc4-3880-4ae7-9f90-4d4b5caf72e2}</Project>
+      <Name>Gestion_Reseau</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
       <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
@@ -153,8 +159,16 @@
     <None Include="Content\Sprite\Pointeur_Souris.xnb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets" Condition="Exists('..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Activez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est le suivant : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

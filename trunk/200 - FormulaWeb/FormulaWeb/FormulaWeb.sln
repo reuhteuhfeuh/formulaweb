@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula Web", "FormulaWeb\Formula Web.csproj", "{FDD7D8E4-1837-4B1D-9773-2C5EF8BFBE3A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{8DA5E141-1F4E-43D9-97A2-BE54CE379E6E} = {8DA5E141-1F4E-43D9-97A2-BE54CE379E6E}
@@ -26,12 +28,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Son", "..\..\006 - 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Traceur", "..\..\400 - Traceur\Traceur\Traceur.csproj", "{FEBD5730-E4A2-4910-A105-E7058BE4EB60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormulaWebServ", "..\..\600 - Serveur\FormulaWebServ\FormulaWebServ\FormulaWebServ.csproj", "{709AE61D-2962-4494-9F04-C71188A5B73F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula_Web_Serv", "..\..\600 - Serveur\FormulaWebServ\FormulaWebServ\Formula_Web_Serv.csproj", "{709AE61D-2962-4494-9F04-C71188A5B73F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Regles", "..\..\007 - Gestion Regles\Gestion_Regles\Gestion_Regles.csproj", "{6B787769-6D68-4AFC-848D-031565801316}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FEBD5730-E4A2-4910-A105-E7058BE4EB60} = {FEBD5730-E4A2-4910-A105-E7058BE4EB60}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_Reseau", "..\..\008 - Gestion Reseau\Gestion_Reseau\Gestion_Reseau\Gestion_Reseau.csproj", "{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -154,6 +158,16 @@ Global
 		{6B787769-6D68-4AFC-848D-031565801316}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6B787769-6D68-4AFC-848D-031565801316}.Release|x86.ActiveCfg = Release|Any CPU
 		{6B787769-6D68-4AFC-848D-031565801316}.Release|x86.Build.0 = Release|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BE128BC4-3880-4AE7-9F90-4D4B5CAF72E2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

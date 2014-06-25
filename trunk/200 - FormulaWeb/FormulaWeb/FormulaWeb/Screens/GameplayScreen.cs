@@ -53,6 +53,9 @@ namespace FormulaWeb
         // Création du moteur regle
         Gestion_Regles.Regles Moteur_Regle;
 
+        // Création du moteur reseau
+        Gestion_Reseau.Gestion_Reseau Moteur_Reseau;
+
         // Création du traceur
         Traceur.Traceur Moteur_Trace;
 
@@ -131,9 +134,26 @@ namespace FormulaWeb
             {
                 string Fichier_Image_Circuit;
                 string Access_XML;
-                Moteur_Son.Ecouter_musique("Song_01");
-                //= ".\\Ressources\\Plateaux\\";
-                Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\" ;
+                Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);
+
+
+                // Recherche si jeu Online ou Local
+                if (Moteur_Regle.Get_String("ModeDeJeu") == "Reseau")
+                {
+                    // Initialisation du moteur réseau coté joueur
+
+                    // Récupération des données de la partie souhaitée
+                }
+                else
+                {
+                    Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
+                    Moteur_Son.Ecouter_musique("Chargement");
+                }
+
+
+                
+
+                
                 Access_XML = Acces_Plateau + Moteur_Regle.Get_plateau();
                 Moteur_Plateau.Set_Chemin_Acces(Access_XML);
                 Moteur_Plateau.Set_Nom_Fichier_XML("Definition_Plateau.xml");
@@ -147,7 +167,7 @@ namespace FormulaWeb
                     // Echec du chargement du fichier XML
                 }
 
-                Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);
+                
                 Moteur_Graphique.Set_Acces_Image(Acces_Plateau + Moteur_Regle.Get_plateau() + "\\Plateau.png");
                 Moteur_Graphique.Charger_Image_Circuit();
                 Moteur_Graphique.Set_Ratio_Voiture(Moteur_Plateau.Get_Ratio_Voiture());
