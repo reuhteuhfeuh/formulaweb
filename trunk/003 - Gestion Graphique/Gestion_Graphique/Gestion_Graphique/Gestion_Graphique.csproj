@@ -43,10 +43,8 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
     <Compile Include="Graphique.cs" />
     <Compile Include="Panneau_Affichage.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sprite.cs" />
   </ItemGroup>

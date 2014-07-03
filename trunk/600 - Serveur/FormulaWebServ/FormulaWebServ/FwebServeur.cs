@@ -49,23 +49,71 @@ namespace FormulaWebServ
             Int32 port_tcp_jeu = (Int32)port;
             Console.WriteLine("Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
 
-            TcpListener SFWEBTCP = new TcpListener(Dns.GetHostEntry("localhost").AddressList[0],port_tcp_jeu); //new TcpClient(port_udp_jeu);
+            TcpListener SFWEBTCP = new TcpListener(IPAddress.Any,port_tcp_jeu); //new TcpClient(port_udp_jeu);
             SFWEBTCP.Start();
             while (true)
             {
+                // On test s'il y a un message en entrée
+                if (SFWEBTCP.Pending())
+                {
+                    // On lance un thread sur la connexion
+                    Thread connexion = new Thread(new ParameterizedThreadStart (Traitement_Connexion));
+                    connexion.Start(SFWEBTCP);
+                }
+            }
+        }
+
+        static void Traitement_Connexion(object msg)
+        {
+            TcpListener MessageEnEntree = (TcpListener)msg;
+            TcpClient Message = MessageEnEntree.AcceptTcpClient();
+            //MessageEnEntree.AcceptTcpClient();
+            while (true)
+            {
+                NetworkStream stream = Message.GetStream();
+                int i;
+                // Buffer for reading data
+                byte[] bytes = new byte[1024];
+                string data = "";
+
+                // Loop to receive all the data sent by the client.
+                i = stream.Read(bytes, 0, bytes.Length);
+
+                while (i != 0)
+                {
+                    // Translate data bytes to a ASCII string.
+                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                    Console.WriteLine(String.Format("Received: {0}", data));
+
+                    // Process the data sent by the client.
+                    data = data.ToUpper();
+
+                    //byte[] string_msg = System.Text.Encoding.ASCII.GetBytes(data);
+
+                    /*
+                    // Send back a response.
+                    stream.Write(msg, 0, msg.Length);
+                    Console.WriteLine(String.Format("Sent: {0}", data));
+
+                    i = stream.Read(bytes, 0, bytes.Length);
+                    */
+                }
+                Console.WriteLine("Message reçu par le serveur : " +data);
+
 
             }
+            
         }
 
         static void Ecoute_Reseau_parametrage(object port)
         {
             Int32 port_tcp_param = (Int32)port;
             Console.WriteLine("Le serveur parametrage se met en mode ecoute ... sur le port " + port_tcp_param.ToString());
-            TcpListener SFWEBTCPPARAM = new TcpListener(Dns.GetHostEntry("localhost").AddressList[0],port_tcp_param);
+            TcpListener SFWEBTCPPARAM = new TcpListener(IPAddress.Any, port_tcp_param);
             SFWEBTCPPARAM.Start();
             while (true)
             {
-
+                
             }
         }
     }

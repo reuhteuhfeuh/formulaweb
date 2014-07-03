@@ -63,8 +63,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Traceur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

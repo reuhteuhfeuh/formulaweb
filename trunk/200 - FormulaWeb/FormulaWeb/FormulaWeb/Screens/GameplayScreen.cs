@@ -141,13 +141,13 @@ namespace FormulaWeb
                 if (Moteur_Regle.Get_String("ModeDeJeu") == "Reseau")
                 {
                     // Initialisation du moteur réseau coté joueur
-
+                    Moteur_Reseau.Initialisation();
                     // Récupération des données de la partie souhaitée
                 }
                 else
                 {
                     Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
-                    Moteur_Son.Ecouter_musique("Chargement");
+                    Moteur_Son.Ecouter_musique("Song_01");
                 }
 
 
