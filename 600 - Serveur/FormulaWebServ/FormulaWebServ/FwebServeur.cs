@@ -18,9 +18,10 @@ namespace FormulaWebServ
         private static Int32 port_param = 12590;
         private static string Version = "0.1";
         private static SqlConnection cnx;
-        
- 
 
+
+
+        #region Initialisation
 
         static void Main(string[] args)
         {           
@@ -43,6 +44,10 @@ namespace FormulaWebServ
             SFWEB.Start(port_reseau);
             SFWEBPARAM.Start(port_param);
         }
+
+        #endregion
+
+        #region ecouteclient
 
         static void Ecoute_Reseau(object port)
         {
@@ -68,42 +73,41 @@ namespace FormulaWebServ
             TcpListener MessageEnEntree = (TcpListener)msg;
             TcpClient Message = MessageEnEntree.AcceptTcpClient();
             //MessageEnEntree.AcceptTcpClient();
-            while (true)
+            //Message.C
+            while (Message.Connected)
             {
                 NetworkStream stream = Message.GetStream();
                 int i;
                 // Buffer for reading data
                 byte[] bytes = new byte[1024];
                 string data = "";
+                string reception = "";
 
-                // Loop to receive all the data sent by the client.
-                i = stream.Read(bytes, 0, bytes.Length);
-
-                while (i != 0)
+                try
                 {
-                    // Translate data bytes to a ASCII string.
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine(String.Format("Received: {0}", data));
+                    while (stream.DataAvailable)
+                    {
+                        i = stream.Read(bytes, 0, bytes.Length);
+                        data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                        Console.WriteLine(String.Format("Received: {0}", data));
+                        reception = data.ToUpper();
+                        // Traitement du message
 
-                    // Process the data sent by the client.
-                    data = data.ToUpper();
-
-                    //byte[] string_msg = System.Text.Encoding.ASCII.GetBytes(data);
-
-                    /*
-                    // Send back a response.
-                    stream.Write(msg, 0, msg.Length);
-                    Console.WriteLine(String.Format("Sent: {0}", data));
-
-                    i = stream.Read(bytes, 0, bytes.Length);
-                    */
+                        // Envoi message de retour
+                    }
                 }
-                Console.WriteLine("Message reçu par le serveur : " +data);
-
-
+                catch
+                {
+                    // Connexion perdue !!!
+                    Console.WriteLine("Client perdu ...");
+                    MessageEnEntree.Stop();
+                }
             }
-            
         }
+
+        #endregion ecouteclient
+
+        #region ecouteAdmin
 
         static void Ecoute_Reseau_parametrage(object port)
         {
@@ -116,5 +120,7 @@ namespace FormulaWebServ
                 
             }
         }
+
+        #endregion ecouteAdmin
     }
 }
