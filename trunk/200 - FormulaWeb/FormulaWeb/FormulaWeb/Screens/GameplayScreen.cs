@@ -90,6 +90,7 @@ namespace FormulaWeb
             Moteur_Plateau = new Gestion_Plateau.Plateau();
             Moteur_Vehicule = new Gestion_Vehicule.Vehicule();
             Moteur_Graphique = new Gestion_Graphique.Graphique();
+            Moteur_Reseau = new Gestion_Reseau.Gestion_Reseau();
 
 
         }
@@ -138,18 +139,28 @@ namespace FormulaWeb
 
 
                 // Recherche si jeu Online ou Local
-                if (Moteur_Regle.Get_String("ModeDeJeu") == "Reseau")
+                if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
                 {
+                    // A Ajouter un pop up avec la saisie des données login/pass
+
+
                     // Initialisation du moteur réseau coté joueur
                     Moteur_Reseau.Initialisation();
-                    // Récupération des données de la partie souhaitée
+                    Moteur_Regle.Purge_Regle();
+
+                    // A remplacer par des retours d'informations du serveur :
+                    Moteur_Regle.set_Jeu_Reseau("Formule de", "FormuleDe", false);
+                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_ModeDeJeu", "Reseau");
+                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_Plateau", "Zandvoort 01");
+
                 }
                 else
                 {
-                    Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
-                    Moteur_Son.Ecouter_musique("Song_01");
+
                 }
 
+                Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
+                Moteur_Son.Ecouter_musique("Song_01");
 
                 
 
@@ -194,8 +205,14 @@ namespace FormulaWeb
         /// </summary>
         public override void Unload()
         {
-            content.Unload();
+            
+            
+            if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
+            {
+                Moteur_Reseau.Fermeture();
+            }
             Moteur_Regle.Purge_Regle();
+            content.Unload();
         }
 
 
@@ -214,6 +231,15 @@ namespace FormulaWeb
         {
             base.Update(gameTime, otherScreenHasFocus, false);
 
+            // Connexion au serveur si besoin
+            if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
+            {
+                // Envoi des infos au serveur
+                Moteur_Reseau.Envoi_Message("Update " + gameTime);
+
+                // Reception des infos du serveur
+            }
+
             // Gradually fade in or out depending on whether we are covered by the pause screen.
             if (coveredByOtherScreen)
                 pauseAlpha = Math.Min(pauseAlpha + 1f / 32, 1);
@@ -230,6 +256,8 @@ namespace FormulaWeb
                 Moteur_Graphique.Set_Langage_Affichage(ScreenManager.langScreenManager);
             }
         }
+
+
 
 
         /// <summary>

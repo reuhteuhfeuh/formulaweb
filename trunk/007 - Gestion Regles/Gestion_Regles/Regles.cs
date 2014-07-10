@@ -71,6 +71,7 @@ namespace Gestion_Regles
             Caracteristique_Bool.Clear();
             Caracteristique_Int32.Clear();
             Caracteristique_String.Clear();
+            liste_jeu.Clear();
             return true;
         }
 
@@ -193,6 +194,13 @@ namespace Gestion_Regles
                 }
             }
             //nombre_jeu = jeu_en_cours;
+        }
+
+        public bool set_Jeu_Reseau(string lib, string cod, bool opt)
+        {
+            liste_jeu.Add(new description_jeu() { jeu_dispo = lib, jeu_dispo_code = cod, jeu_menu_option = opt });
+            jeu_en_cours = 0;
+            return true;
         }
 
         public string Get_libelle_jeu(int pos_jeu)
