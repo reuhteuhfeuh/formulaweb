@@ -35,7 +35,10 @@ namespace Gestion_Reseau
 
         public void Fermeture()
         {
-            ClientJeu.Close();
+            Byte[] data = System.Text.Encoding.ASCII.GetBytes("DECONNEXION");
+            Message.Write(data, 0, data.Length);
+           
+            //ClientJeu.
         }
 
         public void Envoi_Message(string msg)

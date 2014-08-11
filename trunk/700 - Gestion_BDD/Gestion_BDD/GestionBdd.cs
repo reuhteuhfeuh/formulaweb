@@ -58,7 +58,7 @@ namespace Gestion_BDD
                 Bdd_log.Trace("INFO", "Serveur SQL Inacessible depuis le serveur du jeu");
             }*/
 
-        }
+        //}
 
         
     }

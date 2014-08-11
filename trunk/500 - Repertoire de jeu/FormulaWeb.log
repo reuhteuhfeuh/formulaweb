@@ -1,13 +1,14 @@
-10/07/2014 14:43:52 : Info : Initialisation Traceur !
-10/07/2014 14:43:52 : Info : .\Ressources\Langages\FR.xml
-10/07/2014 14:43:52 : Info : fin du traitement de .\Ressources\Langages\EN.xml
-10/07/2014 14:43:52 : Info : fin du traitement de .\Ressources\Langages\FR.xml
-10/07/2014 14:43:52 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
-10/07/2014 14:43:52 : Info : initialisation Règles de jeu
-10/07/2014 14:43:52 : Info : Langage chargé : FR
-10/07/2014 14:43:58 : INFO : Traitement menu Optionnel : type_jeu
-10/07/2014 14:43:58 : INFO : Action Listing_string
-10/07/2014 14:43:58 : INFO : Traitement menu Optionnel : choix_circuit
-10/07/2014 14:43:58 : INFO : Action Listing_Repertoire
-10/07/2014 14:43:58 : INFO : Traitement menu Optionnel : nombre_joueur
-10/07/2014 14:43:58 : INFO : Action Listing_Nombre
+2014/08/11 09:16:36 : Info : Initialisation Traceur !
+2014/08/11 09:16:36 : Info : .\Ressources\Langages\FR.xml
+2014/08/11 09:16:36 : Info : fin du traitement de .\Ressources\Langages\EN.xml
+2014/08/11 09:16:36 : Info : fin du traitement de .\Ressources\Langages\FR.xml
+2014/08/11 09:16:36 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
+2014/08/11 09:16:36 : Info : initialisation Règles de jeu
+2014/08/11 09:16:36 : Info : Langage chargé : FR
+2014/08/11 09:16:44 : INFO : Traitement menu Optionnel : type_jeu
+2014/08/11 09:16:44 : INFO : Action Listing_string
+2014/08/11 09:16:44 : INFO : Traitement menu Optionnel : choix_circuit
+2014/08/11 09:16:44 : INFO : Action Listing_Repertoire
+2014/08/11 09:16:44 : INFO : Traitement menu Optionnel : nombre_joueur
+2014/08/11 09:16:44 : INFO : Action Listing_Nombre
+2014/08/11 09:16:52 : INFO : Initialisation moteur règle
