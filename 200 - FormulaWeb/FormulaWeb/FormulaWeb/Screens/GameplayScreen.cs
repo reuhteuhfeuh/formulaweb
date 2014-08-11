@@ -235,7 +235,7 @@ namespace FormulaWeb
             if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
             {
                 // Envoi des infos au serveur
-                Moteur_Reseau.Envoi_Message("Update " + gameTime);
+                Moteur_Reseau.Envoi_Message("Update " + gameTime.TotalGameTime);
 
                 // Reception des infos du serveur
             }
