@@ -8,12 +8,11 @@ using Traceur;
 using System.Net;
 using System.Net.Sockets;
 
-
-
 namespace FormulaWebServ
 {
     public static class FwebServeur
     {
+        #region Variable
         private static Int32 port_reseau = 12546;
         //private static Int32 port_param = 12590;
         private static string Version = "0.1";
@@ -22,7 +21,9 @@ namespace FormulaWebServ
 
         private static List<Socket> Client_connecte = new List<Socket>();
 
+        #endregion
 
+        #region Main
         static void Main(string[] args)
         {           
             Serv_log = new Traceur.Traceur();
@@ -37,6 +38,7 @@ namespace FormulaWebServ
             //SFWEBPARAM.Start(port_param);
         }
 
+        #endregion
 
         #region Initialisation
 
@@ -80,8 +82,7 @@ namespace FormulaWebServ
 
         #endregion
 
-        #region ecouteclient
-
+        #region ecoute_Client
         static void Ecoute_Reseau(object port)
             {
                 Int32 port_tcp_jeu = (Int32)port;
@@ -163,7 +164,7 @@ namespace FormulaWebServ
 
         #endregion ecouteclient
 
-            #region ecouteAdmin
+        #region ecoute_Admin
 
             static void Ecoute_Reseau_parametrage(object port)
             {

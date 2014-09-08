@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Sockets;
+using Traceur;
 
 namespace Gestion_Reseau
 {
@@ -14,8 +15,10 @@ namespace Gestion_Reseau
         private Int16 PortJeu;
         TcpClient ClientJeu;
         NetworkStream Message;
+        public Traceur.Traceur tracereseau { get; set; }
         public Boolean Initialisation()
         {
+            tracereseau.Trace("INFO", "Initialisation Gestion Reseau");
             ServeurJeu = "Localhost";
             PortJeu = 12546;
 
