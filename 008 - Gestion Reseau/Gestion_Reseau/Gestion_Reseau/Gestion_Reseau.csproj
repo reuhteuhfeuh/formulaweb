@@ -48,6 +48,12 @@
   <ItemGroup>
     <Content Include="SDL.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
+      <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
+      <Name>Traceur</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\..\200 - FormulaWeb\FormulaWeb\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets" Condition="Exists('..\..\..\200 - FormulaWeb\FormulaWeb\packages\MonoGame.Binaries.3.2.0\build\net40\MonoGame.Binaries.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
