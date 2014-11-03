@@ -81,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FwebServeur.cs" />
+    <Compile Include="Gestion_Metier.cs" />
+    <Compile Include="Gestion_Partie.cs" />
+    <Compile Include="Gestion_Connexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
