@@ -145,7 +145,9 @@ namespace FormulaWeb
 
 
                     // Initialisation du moteur réseau coté joueur
+                    Moteur_Reseau.tracereseau = Moteur_Trace;
                     Moteur_Reseau.Initialisation();
+                    
                     Moteur_Regle.Purge_Regle();
 
                     // A remplacer par des retours d'informations du serveur :
@@ -235,7 +237,7 @@ namespace FormulaWeb
             if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
             {
                 // Envoi des infos au serveur
-                Moteur_Reseau.Envoi_Message("Update " + gameTime.TotalGameTime);
+                Moteur_Reseau.Ecriture_Message_Socket("Update " + gameTime.TotalGameTime);
 
                 // Reception des infos du serveur
             }

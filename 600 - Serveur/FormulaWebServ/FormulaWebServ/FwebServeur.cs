@@ -18,6 +18,7 @@ namespace FormulaWebServ
         private static string Version = "0.1";
 
         private static Traceur.Traceur Serv_log ;
+        private static Gestion_Metier Serveur;
 
         // private static List<Socket> Client_connecte = new List<Socket>();
         // private static List<Gestion_Partie> Partie_EnCours = new List<Gestion_Partie>();
@@ -28,11 +29,11 @@ namespace FormulaWebServ
 
         #region Main
         static void Main(string[] args)
-        {           
+        {
+            Serveur = new Gestion_Metier();
             Serv_log = new Traceur.Traceur();
             Serv_log.Init("FormulaWebServeur.log",true);
-            Serv_log.Trace("Initialisation du serveur FWeb version "+Version,"Log");
-            Serv_log.Trace("Lancement tache surveillance deco", "Log");
+            Serv_log.Trace("LOG","Initialisation du serveur FWeb version "+Version);            
             Thread Surveillance = new Thread(Surveillance_connexion);
             Thread SFWEB = new Thread(new ParameterizedThreadStart (Ecoute_Reseau));
             //Thread SFWEBPARAM = new Thread(new ParameterizedThreadStart (Ecoute_Reseau_parametrage));
@@ -44,15 +45,13 @@ namespace FormulaWebServ
 
         #endregion
 
-        #region Initialisation
 
-
-        #endregion
 
         #region Detection_Deconnexion
 
         static void Surveillance_connexion()
         {
+            Serv_log.Trace("LOG", "Lancement tache surveillance connexion");
             Console.WriteLine("Lancement boucle de detection dc");
             while (true)
             {
@@ -73,20 +72,6 @@ namespace FormulaWebServ
                                 Joueur.deconnexion();
                             }
                         }
-                        /*
-                        foreach (Socket surveillance_socket in Client_connecte)
-                        {
-                            try
-                            {
-                                surveillance_socket.Send(ASCIIEncoding.ASCII.GetBytes("Test_dc"));
-                            }
-                            catch
-                            {
-                                Console.WriteLine("Detection deconnection du client : " + surveillance_socket.LocalEndPoint.ToString());
-                                surveillance_socket.Close();
-                                Client_connecte.Remove(surveillance_socket);
-                            }
-                        }*/
                     }
                 }
                 catch
@@ -102,18 +87,19 @@ namespace FormulaWebServ
         #region ecoute_Client
         static void Ecoute_Reseau(object port)
         {
+            Serv_log.Trace("LOG", "Lancement tache Ecoute Reseau");
             Int32 port_tcp_jeu = (Int32)port;
+            Serv_log.Trace("LOG", "Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
             Console.WriteLine("Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
-
-            TcpListener SFWEBTCP = new TcpListener(IPAddress.Any,port_tcp_jeu); //new TcpClient(port_udp_jeu);
+            TcpListener SFWEBTCP = new TcpListener(IPAddress.Parse("127.0.0.1"),port_tcp_jeu);
             SFWEBTCP.Start();
             while (true)
             {
                 // On test s'il y a un message en entrée
                 Socket client_entree = SFWEBTCP.AcceptSocket();
-                //if (SFWEBTCP.Pending())
                 if (client_entree.Connected)
                 {
+                    Serv_log.Trace("INFO", "Connexion reçue depuis IP " + client_entree.RemoteEndPoint.ToString());
                     Console.WriteLine(" Une connexion en entrée ");
                     // On lance un thread sur la connexion
                     Thread connexion = new Thread(new ParameterizedThreadStart (Traitement_Connexion));
@@ -127,28 +113,48 @@ namespace FormulaWebServ
 
         static void Traitement_Connexion(object msg)
         {
-            //TcpListener MessageEnEntree = (TcpListener)msg;
-            //TcpClient Message = MessageEnEntree.AcceptTcpClient();
             Gestion_Connexion joueur_encours = (Gestion_Connexion)msg;
-            Socket client_encours = joueur_encours.socket_joueur;
-
-            while (client_encours.Connected)
+            Serv_log.Trace("INFO", "Connexion en cours");
+            // Gestion de la connexion login // pass et partie en cours.
+            if (Ecriture_Message_Socket(joueur_encours.socket_joueur, "DEMANDE_AUTHENTIFICATION"))
             {
-                //NetworkStream stream = Message.GetStream();
-                int i;
-                // Buffer for reading data
+                Serv_log.Trace("INFO", "Envoi demande authentification");
+                bool cnx = true;
+                while (cnx)
+                {
+                    // On a envoyé la demande au client on attend sa réponse
+                    if (joueur_encours.socket_joueur.Available > 0)
+                    {
+                        string retour = Lecture_Message_Socket(joueur_encours.socket_joueur);
+                        Console.WriteLine(retour);
+                        Serv_log.Trace("INFO", "On a recu : " + retour);
+                        Ecriture_Message_Socket(joueur_encours.socket_joueur,"BANDE OF COUILLE");
+                        cnx = false;
+                    }
+                    else
+                    {
+                        //Serv_log.Trace("INFO", "On a pas réussi");
+                    }
+                }
+            }
+            else
+            {
+                // On a envoyé et ca na pas marché on cloture la connexion
+                Serv_log.Trace("INFO", "Ca Couille à l'envoi de connexion ....");
+                joueur_encours.deconnexion();
+                Thread.CurrentThread.Abort();
+            }
+
+            while (joueur_encours.socket_joueur.Connected)
+            {
+                string data = "";
+                /*int i;
                 byte[] bytes = new byte[1024];
                 string data = "";
-                string reception = "";
-
-                //try
-                //{
-                if (client_encours.Available > 0)
+                string reception = "";*/
+                if (joueur_encours.socket_joueur.Available > 0)
                 {
-                    i = client_encours.Receive(bytes, bytes.Length, 0);
-                    data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
-                    Console.WriteLine(String.Format("Received: {0}", data));
-                    reception = data.ToUpper();
+                    data = Lecture_Message_Socket(joueur_encours.socket_joueur);
                     // Traitement du message
 
                     switch (data)
@@ -158,27 +164,14 @@ namespace FormulaWebServ
                             joueur_encours.deconnexion();
                             Thread.CurrentThread.Abort();
                             break;
-
-
-
+                        case "CONNEXION" :
+                            Serv_log.Trace("INFO", "Connexion du jouer X");
+                            break;
                     }
-                        
-
                     data = "";
                 }
-                // Envoi message de retour
-                /*try
-                {
-                    //client_encours.Send( byte[]envoi = new byte {0,0,0},0,3);
-                    client_encours.Send(ASCIIEncoding.ASCII.GetBytes("OK"));
-                }
-                catch
-                {
-                    Console.WriteLine("Ca a merdé !");
-                }*/
             }
             Console.WriteLine("Client perdu ... Message.Connected");
-            //Client_connecte.Remove(client_encours);
             Thread.CurrentThread.Abort();
         }
 
@@ -199,5 +192,33 @@ namespace FormulaWebServ
             }
 
         #endregion ecouteAdmin
+
+        #region Fonctions
+            static string Lecture_Message_Socket(Socket Socket_a_lire)
+            {
+                int i;
+                byte[] bytes = new byte[1024];
+                string data = "";
+                i = Socket_a_lire.Receive(bytes, bytes.Length, 0);
+                data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
+                Console.WriteLine(String.Format("Received: {0}", data));
+                return data.ToUpper();
+            }
+
+            static bool Ecriture_Message_Socket(Socket Socket_a_ecrire, string Message)
+            {
+                try
+                {
+                    Socket_a_ecrire.Send(ASCIIEncoding.ASCII.GetBytes(Message));
+                    Console.Write("Envoi du message :" + Message);
+                    return true;
+                }
+                catch
+                {
+                    Console.WriteLine("Impossible d'envoyer le message suivant : "+Message);
+                    return false;
+                }
+            }
+        #endregion
     }
 }

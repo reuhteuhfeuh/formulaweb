@@ -12,5 +12,8 @@ namespace FormulaWebServ
     public class Gestion_Partie
     {
         Gestion_Metier Metier ; //= new Gestion_Metier.Gestion_Metier();
+
+
+
     }
 }
