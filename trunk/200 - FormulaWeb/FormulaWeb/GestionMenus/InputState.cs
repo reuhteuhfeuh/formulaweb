@@ -67,7 +67,8 @@ namespace FormulaWeb
                 LastGamePadStates[i] = CurrentGamePadStates[i];
                 LastMouseStates = CurrentMouseStates;
 
-                CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex)i);
+                //CurrentKeyboardStates[i] = Keyboard.GetState((PlayerIndex)i);
+                CurrentKeyboardStates[i] = Keyboard.GetState();
                 CurrentGamePadStates[i] = GamePad.GetState((PlayerIndex)i);
                 
 

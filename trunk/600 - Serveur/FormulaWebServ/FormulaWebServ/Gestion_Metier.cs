@@ -9,6 +9,19 @@ namespace FormulaWebServ
 {
     public class Gestion_Metier
     {
-        Int64 cacabeurk= 332;
+        //Int64 cacabeurk= 332;
+
+        public bool Verification_Connexion(string Log, string Pass)
+        {
+            if (Log=="RTF" & Pass=="prout")
+            //Il faut ajouter l'injection dans la base de log des tentatives de connexions
+            {
+                return true;
+            }
+            else
+            {   
+                return false;
+            }
+        }
     }
 }

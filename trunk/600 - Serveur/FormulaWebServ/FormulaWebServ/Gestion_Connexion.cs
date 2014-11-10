@@ -13,6 +13,7 @@ namespace FormulaWebServ
     {
         // Listing des variables de la classe
         public Socket socket_joueur { get; set; }
+        //public TcpClient client_joueur { get; set; }
         public Gestion_Partie partie { get; set; }
 
         // Listing des fonctions
