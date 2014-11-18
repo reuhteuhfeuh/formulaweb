@@ -56,6 +56,7 @@
     <Compile Include="Screens\OptionsMenuScreen.cs" />
     <Compile Include="Screens\PauseMenuScreen.cs" />
     <Compile Include="Screens\PlayerIndexEventArgs.cs" />
+    <Compile Include="Screens\ReseauLoginPass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">

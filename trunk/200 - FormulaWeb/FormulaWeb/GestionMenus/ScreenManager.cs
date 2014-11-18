@@ -44,8 +44,9 @@ namespace FormulaWeb
         Texture2D blankTexture;
         Gestion_Langage.Langage LangScreenManager;
 
+        public Gestion_Reseau.Reseau ReseauScreenManager { get; set; }
         public Gestion_Regles.Regles regleScreenManager { get; set; }
-        public Gestion_Son.SoundMachine sonScreenManager {get; set;}
+        public Gestion_Son.SoundMachine sonScreenManager { get; set; }
         public Traceur.Traceur loggerScreenManager { get; set; }
         public GameScreen Background { get; set; }
 

@@ -20,6 +20,8 @@ namespace FormulaWebServ
         private static Traceur.Traceur Serv_log ;
         private static Gestion_Metier Serveur;
 
+        private static String[] separateur = new string []{"#;;#"};
+
         // private static List<Socket> Client_connecte = new List<Socket>();
         // private static List<Gestion_Partie> Partie_EnCours = new List<Gestion_Partie>();
 
@@ -120,14 +122,44 @@ namespace FormulaWebServ
             {
                 Serv_log.Trace("INFO", "Envoi demande authentification");
                 bool cnx = true;
+                Int16 nb_Tentative = 0 ;
                 while (cnx)
                 {
+                    
                     // On a envoyé la demande au client on attend sa réponse
                     if (joueur_encours.socket_joueur.Available > 0)
                     {
                         string retour = Lecture_Message_Socket(joueur_encours.socket_joueur);
                         Console.WriteLine(retour);
                         Serv_log.Trace("INFO", "On a recu : " + retour);
+                        String[] msgrcu = retour.Split(separateur, StringSplitOptions.None);
+                        if (msgrcu[0] == "DEMANDE_AUTHENTIFICATION")
+                        {
+                            Serv_log.Trace("INFO", "Demande d'identification de " + msgrcu[1]);
+                            if (Serveur.Verification_Connexion(msgrcu[1], msgrcu[2]))
+                            {
+                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Valide");
+                                Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_OK");
+                                cnx = false;
+                            }
+                            else
+                            {
+                                nb_Tentative++;
+                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Invalide");
+                                Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_NOK");
+                                cnx = true;
+                            }
+
+                            if (nb_Tentative == 3)
+                            {
+                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Invalide, trois tentatives fermeture de la connexion");
+                                Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_NOK_DC");
+                                joueur_encours.deconnexion();
+                                Joueur_Connecte.Remove(joueur_encours);
+                                Thread.CurrentThread.Abort();
+                            }
+
+                        }
                         Ecriture_Message_Socket(joueur_encours.socket_joueur,"BANDE OF COUILLE");
                         cnx = false;
                     }
