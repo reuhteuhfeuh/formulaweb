@@ -54,7 +54,7 @@ namespace FormulaWeb
         Gestion_Regles.Regles Moteur_Regle;
 
         // Création du moteur reseau
-        Gestion_Reseau.Gestion_Reseau Moteur_Reseau;
+        Gestion_Reseau.Reseau Moteur_Reseau;
 
         // Création du traceur
         Traceur.Traceur Moteur_Trace;
@@ -72,7 +72,7 @@ namespace FormulaWeb
 
         #region Initialization
 
-
+        public bool test = false;
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -90,7 +90,9 @@ namespace FormulaWeb
             Moteur_Plateau = new Gestion_Plateau.Plateau();
             Moteur_Vehicule = new Gestion_Vehicule.Vehicule();
             Moteur_Graphique = new Gestion_Graphique.Graphique();
-            Moteur_Reseau = new Gestion_Reseau.Gestion_Reseau();
+            Moteur_Reseau = new Gestion_Reseau.Reseau();
+
+            
 
 
         }
@@ -116,6 +118,25 @@ namespace FormulaWeb
 
                 Moteur_Trace.Trace("INFO", "Initialisation moteur règle");
 
+                if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
+                {
+                    // A Ajouter un pop up avec la saisie des données login/pass
+
+
+                    // Initialisation du moteur réseau coté joueur
+                    Moteur_Reseau.tracereseau = Moteur_Trace;
+                    test = true;
+                    //Initialisation_Reseau();
+                    
+                    Moteur_Regle.Purge_Regle();
+
+                    // A remplacer par des retours d'informations du serveur :
+                    Moteur_Regle.set_Jeu_Reseau("Formule de", "FormuleDe", false);
+                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_ModeDeJeu", "Reseau");
+                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_Plateau", "Zandvoort 01");
+
+                }
+
                 // A real game would probably have more content than this sample, so
                 // it would take longer to load. We simulate that by delaying for a
                 // while, giving you a chance to admire the beautiful loading screen.
@@ -138,28 +159,6 @@ namespace FormulaWeb
                 Moteur_Graphique.Initialize(/*graphics, */spriteBatch, content, ScreenManager.Game);
 
 
-                // Recherche si jeu Online ou Local
-                if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
-                {
-                    // A Ajouter un pop up avec la saisie des données login/pass
-
-
-                    // Initialisation du moteur réseau coté joueur
-                    Moteur_Reseau.tracereseau = Moteur_Trace;
-                    Moteur_Reseau.Initialisation();
-                    
-                    Moteur_Regle.Purge_Regle();
-
-                    // A remplacer par des retours d'informations du serveur :
-                    Moteur_Regle.set_Jeu_Reseau("Formule de", "FormuleDe", false);
-                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_ModeDeJeu", "Reseau");
-                    Moteur_Regle.Injection_donnees("Stockage", "Caracteristique_String_Plateau", "Zandvoort 01");
-
-                }
-                else
-                {
-
-                }
 
                 Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
                 Moteur_Son.Ecouter_musique("Song_01");
@@ -259,9 +258,6 @@ namespace FormulaWeb
             }
         }
 
-
-
-
         /// <summary>
         /// Lets the game respond to player input. Unlike the Update method,
         /// this will only be called when the gameplay screen is active.
@@ -286,7 +282,11 @@ namespace FormulaWeb
             // on PC if they are playing with a keyboard and have no gamepad at all!
             bool gamePadDisconnected = !gamePadState.IsConnected &&
                                        input.GamePadWasConnected[playerIndex];
-
+            /*
+            if (test)
+            {
+                ScreenManager.AddScreen(new ReseauLoginPass(), ControllingPlayer);
+            }*/
             PlayerIndex player;
             if (pauseAction.Evaluate(input, ControllingPlayer, out player) || gamePadDisconnected)
             {

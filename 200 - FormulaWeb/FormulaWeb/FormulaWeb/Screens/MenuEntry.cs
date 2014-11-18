@@ -67,6 +67,8 @@ namespace FormulaWeb
 
         // Gestion de la traduction
         public bool traduction { get; set; }
+        public bool traduction_partielle { get; set; }
+        public string complement_affichage { get; set; }
         public bool chgt_lang { get; set; }
         public string chgt_lang_choix { get; set; }
 
@@ -217,6 +219,10 @@ namespace FormulaWeb
             if (traduction)
             {
                 text_traduit = screenManager.langScreenManager.Get_Traduction(text);
+                if (traduction_partielle)
+                {
+                    text_traduit = text_traduit + ' ' + complement_affichage;
+                }
             }
             else
             {

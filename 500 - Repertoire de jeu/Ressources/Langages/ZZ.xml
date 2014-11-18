@@ -14,6 +14,9 @@
 	<Menu_Options_Langage>Z_choix langue</Menu_Options_Langage>
 	<Menu_Retour>Z_Retour</Menu_Retour>
 	<Menu_Quitter>Z_Quitter</Menu_Quitter>
+	<Menu_Jeu_Saisie_Login_Pass>Z_Saisie Identifiants</Menu_Jeu_Saisie_Login_Pass>
+	<Reseau_Identifiant>Z_Identifiant</Reseau_Identifiant>
+	<Reseau_Motdepasse>Z_Mot de Passe</Reseau_Motdepasse>
 	<Menu_Quitter_Validation>Z_Voulez-vous quitter le jeu ?</Menu_Quitter_Validation>
 	<Menu_Quitter_Validation_Ligne1>Z_Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
 	<Menu_Quitter_Validation_Ligne2>Z_Echap = Retour au jeu</Menu_Quitter_Validation_Ligne2>

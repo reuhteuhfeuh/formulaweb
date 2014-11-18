@@ -566,15 +566,21 @@ namespace FormulaWeb
                     string action_selection = menu.action;
                     string action_variable = menu.variable;
                     string action_valeur = menu.choix_menu[menu.selectedChoix];
-
-                    // A créer dans Gestion_Regles une fonction avec en paramètre action_selection, action_variable, action_valeur
                     Regle_jeu.Injection_donnees(action_selection, action_variable, action_valeur);
 
                 }
 
             }
-            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex,
-                               new GameplayScreen());
+
+            // Si on est sur un jeu réseau on pop
+            if (Regle_jeu.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
+            {
+                ScreenManager.AddScreen(new ReseauLoginPass(), e.PlayerIndex);
+            }
+            else
+            {
+                LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen());
+            }
         }
     }
 }

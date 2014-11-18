@@ -10,7 +10,7 @@ using Traceur;
 
 namespace Gestion_Reseau
 {
-    public class Gestion_Reseau
+    public class Reseau
     {
         private String ServeurJeu;
         private static Int32 PortJeu;
@@ -20,6 +20,8 @@ namespace Gestion_Reseau
         static private Boolean Connecte;
         public Traceur.Traceur tracereseau { get; set; }
 
+        private static String separateur = "#;;#";
+
         /*Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         
         static IPHostEntry iHost = Dns.GetHostEntry("localhost");
@@ -27,11 +29,8 @@ namespace Gestion_Reseau
         static IPAddress[] addr = iHost.AddressList;
         IPEndPoint ipep = new IPEndPoint(addr[0] , PortJeu);*/
         Socket sock ;
-        
-        
-        
 
-        public Boolean Initialisation()
+        public Boolean Initialisation(string log, string pas)
         {            
             tracereseau.Trace("INFO", "Initialisation Gestion Reseau");
             ServeurJeu = "localhost";
@@ -68,14 +67,19 @@ namespace Gestion_Reseau
                             //tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
                             if (retour_connexion == "DEMANDE_AUTHENTIFICATION")
                             {
-                                Ecriture_Message_Socket("LOGIN:RTF;PASS:prout");
+                                Ecriture_Message_Socket("DEMANDE_AUTHENTIFICATION#;;#RTF#;;#prout");
                             }
-                            if (retour_connexion == "AUTHEN_OK")
+                            if (retour_connexion == "AUTHENTIFICATION_OK")
                             {
                                 cnx_serveur = true;
                                 cnx_valide = false;
                             }
-                            if (retour_connexion == "AUTHEN_NOK")
+                            if (retour_connexion == "AUTHENTIFICATION_NOK")
+                            {
+                                cnx_serveur = false;
+                                cnx_valide = true;
+                            }
+                            if (retour_connexion == "AUTHENTIFICATION_NOK_DC")
                             {
                                 cnx_serveur = false;
                                 cnx_valide = false;
@@ -84,10 +88,15 @@ namespace Gestion_Reseau
                     }
                     catch
                     {
-                        tracereseau.Trace("INFO", "TIME OUT sur le serveur");
+                        //tracereseau.Trace("INFO", "TIME OUT sur le serveur");
                     }
 
                 }
+                if (cnx_valide == false)
+                {
+                    return false;
+                }
+
                 tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
                 Thread Reseau = new Thread(cnx_srv);
                 Reseau.Start();

@@ -1,9 +1,6 @@
-2014/11/10 09:32:34 : INFO : Serveur SQL Inacessible passage au log sur fichier
-2014/11/10 09:32:34 : LOG : Initialisation du serveur FWeb version 0.1
-2014/11/10 09:32:34 : LOG : Lancement tache surveillance connexion
-2014/11/10 09:32:34 : LOG : Lancement tache Ecoute Reseau
-2014/11/10 09:32:34 : LOG : Le serveur se met en mode ecoute ... sur le port 12546
-2014/11/10 09:32:39 : INFO : Connexion reçue depuis IP 127.0.0.1:54371
-2014/11/10 09:32:39 : INFO : Connexion en cours
-2014/11/10 09:32:39 : INFO : Envoi demande authentification
-2014/11/10 09:32:39 : INFO : On a recu : CONNEXION_CLIENTLOGIN:RTF;PASS:PROUT
+2014/11/18 10:30:26 : INFO : Serveur SQL Inacessible passage au log sur fichier
+2014/11/18 10:30:26 : LOG : Initialisation du serveur FWeb version 0.1
+2014/11/18 10:30:26 : LOG : Lancement tache Ecoute Reseau
+2014/11/18 10:30:26 : LOG : Le serveur se met en mode ecoute ... sur le port 12546
+ : Lancement tache surveillance connexion
+2014/11/18 10:30:26 : LOG : Le serveur se met en mode ecoute ... sur le port 12546

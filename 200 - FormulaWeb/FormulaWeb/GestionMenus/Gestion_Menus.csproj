@@ -82,6 +82,10 @@
       <Project>{6b787769-6d68-4afc-848d-031565801316}</Project>
       <Name>Gestion_Regles</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\008 - Gestion Reseau\Gestion_Reseau\Gestion_Reseau\Gestion_Reseau.csproj">
+      <Project>{be128bc4-3880-4ae7-9f90-4d4b5caf72e2}</Project>
+      <Name>Gestion_Reseau</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
       <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
       <Name>Traceur</Name>

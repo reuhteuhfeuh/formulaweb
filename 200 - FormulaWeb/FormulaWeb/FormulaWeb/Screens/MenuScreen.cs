@@ -33,6 +33,7 @@ namespace FormulaWeb
         int selectedEntry = 0;
         string menuTitle;
 
+        public Boolean traduction_partielle;
 
         InputAction menuUp;
         InputAction menuDown;
@@ -42,6 +43,44 @@ namespace FormulaWeb
         InputAction menuRight;
         InputAction menuDefilUp;
         InputAction menuDefilDown;
+
+        InputAction MenuA;
+        InputAction MenuB;
+        InputAction MenuC;
+        InputAction MenuD;
+        InputAction MenuE;
+        InputAction MenuF;
+        InputAction MenuG;
+        InputAction MenuH;
+        InputAction MenuI;
+        InputAction MenuJ;
+        InputAction MenuK;
+        InputAction MenuL;
+        InputAction MenuM;
+        InputAction MenuN;
+        InputAction MenuO;
+        InputAction MenuP;
+        InputAction MenuQ;
+        InputAction MenuR;
+        InputAction MenuS;
+        InputAction MenuT;
+        InputAction MenuU;
+        InputAction MenuV;
+        InputAction MenuW;
+        InputAction MenuX;
+        InputAction MenuY;
+        InputAction MenuZ;
+        InputAction Menu0;
+        InputAction Menu1;
+        InputAction Menu2;
+        InputAction Menu3;
+        InputAction Menu4;
+        InputAction Menu5;
+        InputAction Menu6;
+        InputAction Menu7;
+        InputAction Menu8;
+        InputAction Menu9;
+        InputAction MenuBack;
 
         #endregion
 
@@ -104,6 +143,46 @@ namespace FormulaWeb
                 new Buttons[] { Buttons.RightTrigger },
                 new Keys[] { Keys.PageDown },
                 true);
+
+                MenuA = new InputAction( new Buttons[] {},new Keys[] { Keys.A }, true);
+                MenuB = new InputAction( new Buttons[] {},new Keys[] { Keys.B }, true);
+                MenuC = new InputAction( new Buttons[] {},new Keys[] { Keys.C }, true);
+                MenuD = new InputAction( new Buttons[] {},new Keys[] { Keys.D }, true);
+                MenuE = new InputAction( new Buttons[] {},new Keys[] { Keys.E }, true);
+                MenuF = new InputAction( new Buttons[] {},new Keys[] { Keys.F }, true);
+                MenuG = new InputAction( new Buttons[] {},new Keys[] { Keys.G }, true);
+                MenuH = new InputAction( new Buttons[] {},new Keys[] { Keys.H }, true);
+                MenuI = new InputAction( new Buttons[] {},new Keys[] { Keys.I }, true);
+                MenuJ = new InputAction( new Buttons[] {},new Keys[] { Keys.J }, true);
+                MenuK = new InputAction( new Buttons[] {},new Keys[] { Keys.K }, true);
+                MenuL = new InputAction( new Buttons[] {},new Keys[] { Keys.L }, true);
+                MenuM = new InputAction( new Buttons[] {},new Keys[] { Keys.M }, true);
+                MenuN = new InputAction( new Buttons[] {},new Keys[] { Keys.N }, true);
+                MenuO = new InputAction( new Buttons[] {},new Keys[] { Keys.O }, true);
+                MenuP = new InputAction( new Buttons[] {},new Keys[] { Keys.P }, true);
+                MenuQ = new InputAction( new Buttons[] {},new Keys[] { Keys.Q }, true);
+                MenuR = new InputAction( new Buttons[] {},new Keys[] { Keys.R }, true);
+                MenuS = new InputAction( new Buttons[] {},new Keys[] { Keys.S }, true);
+                MenuT = new InputAction( new Buttons[] {},new Keys[] { Keys.T }, true);
+                MenuU = new InputAction( new Buttons[] {},new Keys[] { Keys.U }, true);
+                MenuV = new InputAction( new Buttons[] {},new Keys[] { Keys.V }, true);
+                MenuW = new InputAction( new Buttons[] {},new Keys[] { Keys.W }, true);
+                MenuX = new InputAction( new Buttons[] {},new Keys[] { Keys.X }, true);
+                MenuY = new InputAction( new Buttons[] {},new Keys[] { Keys.Y }, true);
+                MenuZ = new InputAction( new Buttons[] {},new Keys[] { Keys.Z }, true);
+                Menu0 = new InputAction( new Buttons[] {},new Keys[] { Keys.D0, Keys.NumPad0 }, true);
+                Menu1 = new InputAction( new Buttons[] {},new Keys[] { Keys.D1, Keys.NumPad1 }, true);
+                Menu2 = new InputAction( new Buttons[] {},new Keys[] { Keys.D2, Keys.NumPad2 }, true);
+                Menu3 = new InputAction( new Buttons[] {},new Keys[] { Keys.D3, Keys.NumPad3 }, true);
+                Menu4 = new InputAction( new Buttons[] {},new Keys[] { Keys.D4, Keys.NumPad4 }, true);
+                Menu5 = new InputAction( new Buttons[] {},new Keys[] { Keys.D5, Keys.NumPad5 }, true);
+                Menu6 = new InputAction( new Buttons[] {},new Keys[] { Keys.D6, Keys.NumPad6 }, true);
+                Menu7 = new InputAction( new Buttons[] {},new Keys[] { Keys.D7, Keys.NumPad7 }, true);
+                Menu8 = new InputAction( new Buttons[] {},new Keys[] { Keys.D8, Keys.NumPad8 }, true);
+                Menu9 = new InputAction( new Buttons[] {},new Keys[] { Keys.D9, Keys.NumPad9 }, true);
+                MenuBack = new InputAction(new Buttons[] { }, new Keys[] { Keys.Back }, true);
+
+
         }
 
 
@@ -124,6 +203,48 @@ namespace FormulaWeb
             // us which player actually provided the input. We pass that through to
             // OnSelectEntry and OnCancel, so they can tell which player triggered them.
             PlayerIndex playerIndex;
+
+            if (traduction_partielle)
+            {
+                if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "A"; }
+                if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "A"; }
+                if (MenuB.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "B"; }
+                if (MenuC.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "C"; }
+                if (MenuD.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "D"; }
+                if (MenuE.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "E"; }
+                if (MenuF.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "F"; }
+                if (MenuG.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "G"; }
+                if (MenuH.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "H"; }
+                if (MenuI.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "I"; }
+                if (MenuJ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "J"; }
+                if (MenuK.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "K"; }
+                if (MenuL.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "L"; }
+                if (MenuM.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "M"; }
+                if (MenuN.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "N"; }
+                if (MenuO.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "O"; }
+                if (MenuP.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "P"; }
+                if (MenuQ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Q"; }
+                if (MenuR.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "R"; }
+                if (MenuS.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "S"; }
+                if (MenuT.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "T"; }
+                if (MenuU.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "U"; }
+                if (MenuV.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "V"; }
+                if (MenuW.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "W"; }
+                if (MenuX.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "X"; }
+                if (MenuY.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Y"; }
+                if (MenuZ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Z"; }
+                if (Menu0.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "0"; }
+                if (Menu1.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "1"; }
+                if (Menu2.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "2"; }
+                if (Menu3.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "3"; }
+                if (Menu4.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "4"; }
+                if (Menu5.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "5"; }
+                if (Menu6.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "6"; }
+                if (Menu7.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "7"; }
+                if (Menu8.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "8"; }
+                if (Menu9.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "9"; }
+
+            }
 
             // Move to the previous menu entry?
             if (menuUp.Evaluate(input, ControllingPlayer, out playerIndex))
