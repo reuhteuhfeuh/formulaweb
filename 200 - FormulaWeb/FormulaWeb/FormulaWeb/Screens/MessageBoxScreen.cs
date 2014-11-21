@@ -118,7 +118,6 @@ namespace FormulaWeb
                 // Raise the accepted event, then exit the message box.
                 if (Accepted != null)
                     Accepted(this, new PlayerIndexEventArgs(playerIndex));
-
                 ExitScreen();
             }
             else if (menuCancel.Evaluate(input, ControllingPlayer, out playerIndex))
@@ -126,7 +125,6 @@ namespace FormulaWeb
                 // Raise the cancelled event, then exit the message box.
                 if (Cancelled != null)
                     Cancelled(this, new PlayerIndexEventArgs(playerIndex));
-
                 ExitScreen();
             }
         }

@@ -81,6 +81,10 @@ namespace FormulaWeb
         InputAction Menu8;
         InputAction Menu9;
         InputAction MenuBack;
+        InputAction MenuCapsLock;
+        InputAction MenuShift;
+
+
 
         #endregion
 
@@ -181,6 +185,10 @@ namespace FormulaWeb
                 Menu8 = new InputAction( new Buttons[] {},new Keys[] { Keys.D8, Keys.NumPad8 }, true);
                 Menu9 = new InputAction( new Buttons[] {},new Keys[] { Keys.D9, Keys.NumPad9 }, true);
                 MenuBack = new InputAction(new Buttons[] { }, new Keys[] { Keys.Back }, true);
+                MenuCapsLock = new InputAction(new Buttons[] { }, new Keys[] { Keys.CapsLock }, false);
+                MenuShift = new InputAction(new Buttons[] { }, new Keys[] { Keys.LeftShift, Keys.RightShift}, false);
+
+
 
 
         }
@@ -206,33 +214,65 @@ namespace FormulaWeb
 
             if (traduction_partielle)
             {
-                if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "A"; }
-                if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "A"; }
-                if (MenuB.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "B"; }
-                if (MenuC.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "C"; }
-                if (MenuD.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "D"; }
-                if (MenuE.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "E"; }
-                if (MenuF.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "F"; }
-                if (MenuG.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "G"; }
-                if (MenuH.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "H"; }
-                if (MenuI.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "I"; }
-                if (MenuJ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "J"; }
-                if (MenuK.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "K"; }
-                if (MenuL.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "L"; }
-                if (MenuM.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "M"; }
-                if (MenuN.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "N"; }
-                if (MenuO.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "O"; }
-                if (MenuP.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "P"; }
-                if (MenuQ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Q"; }
-                if (MenuR.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "R"; }
-                if (MenuS.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "S"; }
-                if (MenuT.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "T"; }
-                if (MenuU.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "U"; }
-                if (MenuV.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "V"; }
-                if (MenuW.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "W"; }
-                if (MenuX.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "X"; }
-                if (MenuY.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Y"; }
-                if (MenuZ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Z"; }
+                if (MenuCapsLock.Evaluate(input, ControllingPlayer, out playerIndex) || MenuShift.Evaluate(input, ControllingPlayer, out playerIndex) )
+                {
+                    if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "A"; }
+                    if (MenuB.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "B"; }
+                    if (MenuC.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "C"; }
+                    if (MenuD.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "D"; }
+                    if (MenuE.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "E"; }
+                    if (MenuF.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "F"; }
+                    if (MenuG.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "G"; }
+                    if (MenuH.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "H"; }
+                    if (MenuI.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "I"; }
+                    if (MenuJ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "J"; }
+                    if (MenuK.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "K"; }
+                    if (MenuL.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "L"; }
+                    if (MenuM.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "M"; }
+                    if (MenuN.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "N"; }
+                    if (MenuO.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "O"; }
+                    if (MenuP.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "P"; }
+                    if (MenuQ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Q"; }
+                    if (MenuR.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "R"; }
+                    if (MenuS.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "S"; }
+                    if (MenuT.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "T"; }
+                    if (MenuU.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "U"; }
+                    if (MenuV.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "V"; }
+                    if (MenuW.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "W"; }
+                    if (MenuX.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "X"; }
+                    if (MenuY.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Y"; }
+                    if (MenuZ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "Z"; }
+                }
+                else
+                {
+                    if (MenuA.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "a"; }
+                    if (MenuB.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "b"; }
+                    if (MenuC.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "c"; }
+                    if (MenuD.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "d"; }
+                    if (MenuE.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "e"; }
+                    if (MenuF.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "f"; }
+                    if (MenuG.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "g"; }
+                    if (MenuH.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "h"; }
+                    if (MenuI.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "i"; }
+                    if (MenuJ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "j"; }
+                    if (MenuK.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "k"; }
+                    if (MenuL.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "l"; }
+                    if (MenuM.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "m"; }
+                    if (MenuN.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "n"; }
+                    if (MenuO.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "o"; }
+                    if (MenuP.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "p"; }
+                    if (MenuQ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "q"; }
+                    if (MenuR.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "r"; }
+                    if (MenuS.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "s"; }
+                    if (MenuT.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "t"; }
+                    if (MenuU.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "u"; }
+                    if (MenuV.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "v"; }
+                    if (MenuW.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "w"; }
+                    if (MenuX.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "x"; }
+                    if (MenuY.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "y"; }
+                    if (MenuZ.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "z"; }
+                }
+
                 if (Menu0.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "0"; }
                 if (Menu1.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "1"; }
                 if (Menu2.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "2"; }
@@ -243,7 +283,41 @@ namespace FormulaWeb
                 if (Menu7.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "7"; }
                 if (Menu8.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "8"; }
                 if (Menu9.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "9"; }
-
+                /*if (Menua.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "a"; }
+                if (Menub.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "b"; }
+                if (Menuc.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "c"; }
+                if (Menud.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "d"; }
+                if (Menue.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "e"; }
+                if (Menuf.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "f"; }
+                if (Menug.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "g"; }
+                if (Menuh.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "h"; }
+                if (Menui.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "i"; }
+                if (Menuj.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "j"; }
+                if (Menuk.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "k"; }
+                if (Menul.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "l"; }
+                if (Menum.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "m"; }
+                if (Menun.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "n"; }
+                if (Menuo.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "o"; }
+                if (Menup.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "p"; }
+                if (Menuq.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "q"; }
+                if (Menur.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "r"; }
+                if (Menus.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "s"; }
+                if (Menut.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "t"; }
+                if (Menuu.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "u"; }
+                if (Menuv.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "v"; }
+                if (Menuw.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "w"; }
+                if (Menux.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "x"; }
+                if (Menuy.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "y"; }
+                if (Menuz.Evaluate(input, ControllingPlayer, out playerIndex)) { menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage + "z"; }
+                */
+                // cas du retour chariot
+                if (MenuBack.Evaluate(input, ControllingPlayer, out playerIndex)) 
+                {
+                    if (menuEntries[selectedEntry].complement_affichage.Length > 0)
+                    {
+                        menuEntries[selectedEntry].complement_affichage = menuEntries[selectedEntry].complement_affichage.Substring(0,menuEntries[selectedEntry].complement_affichage.Length-1) ;
+                    }
+                }
             }
 
             // Move to the previous menu entry?

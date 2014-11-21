@@ -30,26 +30,21 @@ namespace Gestion_Reseau
         IPEndPoint ipep = new IPEndPoint(addr[0] , PortJeu);*/
         Socket sock ;
 
-        public Boolean Initialisation(string log, string pas)
-        {            
+        public string Initialisation(string log, string pas)
+        {
             tracereseau.Trace("INFO", "Initialisation Gestion Reseau");
             ServeurJeu = "localhost";
             PortJeu = 12546;
            
             try
             {
-                //sock.Blocking = true;
-                
-                
-                //sock.Connect(ipep);
-
                 ClientJeu = new TcpClient(ServeurJeu, PortJeu);
                 Message = ClientJeu.GetStream();
                 sock = ClientJeu.Client ;
                 // Message.
                 ClientJeu.ReceiveTimeout = 5000;
                 ClientJeu.SendTimeout = 5000;
-                Ecriture_Message_Socket("CONNEXION_CLIENT");
+                //Ecriture_Message_Socket("CONNEXION_CLIENT");
                 // boucle d'attente du message retour du serveur
                 bool cnx_valide = true ;
                 bool cnx_serveur = false ;
@@ -62,12 +57,12 @@ namespace Gestion_Reseau
                         retour_connexion = Lecture_Message_Socket();
                         if (retour_connexion.Length > 0)
                         {
-                            Console.WriteLine("C'est le bordel : " + retour_connexion);
+                            //Console.WriteLine("C'est le bordel : " + retour_connexion);
                             tracereseau.Trace("INFO", "Sent from Serveur : " + retour_connexion);
                             //tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
                             if (retour_connexion == "DEMANDE_AUTHENTIFICATION")
                             {
-                                Ecriture_Message_Socket("DEMANDE_AUTHENTIFICATION#;;#RTF#;;#prout");
+                                Ecriture_Message_Socket("DEMANDE_AUTHENTIFICATION#;;#" + log + "#;;#" + pas + "");
                             }
                             if (retour_connexion == "AUTHENTIFICATION_OK")
                             {
@@ -77,7 +72,7 @@ namespace Gestion_Reseau
                             if (retour_connexion == "AUTHENTIFICATION_NOK")
                             {
                                 cnx_serveur = false;
-                                cnx_valide = true;
+                                cnx_valide = false;
                             }
                             if (retour_connexion == "AUTHENTIFICATION_NOK_DC")
                             {
@@ -94,19 +89,19 @@ namespace Gestion_Reseau
                 }
                 if (cnx_valide == false)
                 {
-                    return false;
+                    return retour_connexion;
                 }
 
                 tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
                 Thread Reseau = new Thread(cnx_srv);
                 Reseau.Start();
                 tracereseau.Trace("INFO", "Thread Reseau lancé");
-                return true;
+                return retour_connexion;
             }
             catch
             {
                 tracereseau.Trace("INFO", "A priori ca couille sur la connexion socket");
-                return false;
+                return "SERVEUR_NON_JOIGNABLE";
             }
         }
 
@@ -150,7 +145,18 @@ namespace Gestion_Reseau
             i = sock.Receive(bytes, bytes.Length, 0);
             data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
             Console.WriteLine(String.Format("Received: {0}", data));
-            return data.ToUpper();
+            return data;
+        }
+
+        public string Chargement_donnees_serveur()
+        {
+            // On demande au serveur les données partie
+            // et on renseigne le moteur de regle.
+            // Si aucune partie est en ecours alors on se deconnecte
+
+
+
+            return "CHARGEMENT_DONNEES_OK";
         }
 
         public bool Ecriture_Message_Socket(string Message)

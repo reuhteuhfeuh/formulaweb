@@ -92,7 +92,7 @@ namespace FormulaWebServ
             Serv_log.Trace("LOG", "Lancement tache Ecoute Reseau");
             Int32 port_tcp_jeu = (Int32)port;
             Serv_log.Trace("LOG", "Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
-            Console.WriteLine("Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
+            //Console.WriteLine("Le serveur se met en mode ecoute ... sur le port " + port_tcp_jeu.ToString());
             TcpListener SFWEBTCP = new TcpListener(IPAddress.Parse("127.0.0.1"),port_tcp_jeu);
             SFWEBTCP.Start();
             while (true)
@@ -138,18 +138,18 @@ namespace FormulaWebServ
                             Serv_log.Trace("INFO", "Demande d'identification de " + msgrcu[1]);
                             if (Serveur.Verification_Connexion(msgrcu[1], msgrcu[2]))
                             {
-                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Valide");
+                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + " Valide");
                                 Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_OK");
                                 cnx = false;
                             }
                             else
                             {
                                 nb_Tentative++;
-                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Invalide");
+                                Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + " Invalide");
                                 Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_NOK");
                                 cnx = true;
                             }
-
+                            /*
                             if (nb_Tentative == 3)
                             {
                                 Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + "Invalide, trois tentatives fermeture de la connexion");
@@ -157,16 +157,19 @@ namespace FormulaWebServ
                                 joueur_encours.deconnexion();
                                 Joueur_Connecte.Remove(joueur_encours);
                                 Thread.CurrentThread.Abort();
-                            }
+                            }*/
 
                         }
-                        Ecriture_Message_Socket(joueur_encours.socket_joueur,"BANDE OF COUILLE");
+                        //Ecriture_Message_Socket(joueur_encours.socket_joueur,"BANDE OF COUILLE");
                         cnx = false;
                     }
                     else
                     {
                         //Serv_log.Trace("INFO", "On a pas réussi");
                     }
+
+                    // Donc c'est bien le joueur est connecté mais a-t-il une partie à rejoindre ??
+
                 }
             }
             else
@@ -234,7 +237,7 @@ namespace FormulaWebServ
                 i = Socket_a_lire.Receive(bytes, bytes.Length, 0);
                 data = System.Text.Encoding.ASCII.GetString(bytes, 0, i);
                 Console.WriteLine(String.Format("Received: {0}", data));
-                return data.ToUpper();
+                return data;
             }
 
             static bool Ecriture_Message_Socket(Socket Socket_a_ecrire, string Message)

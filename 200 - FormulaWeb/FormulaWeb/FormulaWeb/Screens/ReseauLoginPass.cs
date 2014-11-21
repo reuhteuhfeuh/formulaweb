@@ -47,6 +47,7 @@ namespace FormulaWeb
             // Add entries to the menu.
             MenuEntries.Add(loginGameMenuEntry);
             MenuEntries.Add(passGameMenuEntry);
+            MenuEntries.Add(connectedGameMenuEntry);
 
             loginGameMenuEntry.traduction_partielle = true;
             passGameMenuEntry.traduction_partielle = true;
@@ -59,23 +60,6 @@ namespace FormulaWeb
 
         #region Handle Input
 
-        /*public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                       bool coveredByOtherScreen)
-        {
-
-        }*/
-        /*
-        public override void HandleInput(GameTime gameTime, InputState input)
-        {
-            PlayerIndex playerIndex;
-
-            // Move to the previous menu entry?
-            if (menuA.Evaluate(input, ControllingPlayer, out playerIndex))
-            {
-                
-            }
-        }*/
-
 
         /// <summary>
         /// Event handler for when the Quit Game menu entry is selected.
@@ -84,6 +68,61 @@ namespace FormulaWeb
         {
             // ScreenManager.ReseauScreenManager.Initialisation(MenuEntries.IndexOf
             // Initialisation Reseau
+            // MenuEntries[MenuEntries.IndexOf(loginGameMenuEntry)];
+            string login = "";
+            string pass = "";
+            bool validation_cnx = false;
+            foreach (MenuEntry menu in MenuEntries)
+            {
+                if (menu.Text == "Reseau_Identifiant")
+                {
+                    login = menu.complement_affichage;
+                }
+                if (menu.Text == "Reseau_Motdepasse")
+                {
+                    pass = menu.complement_affichage;
+                }
+            }
+
+            bool TryConnexion = true ;
+
+            while (TryConnexion)
+            {
+                ScreenManager.ReseauScreenManager.tracereseau = ScreenManager.loggerScreenManager;
+                ScreenManager.loggerScreenManager.Trace("INFO", "CNX " + login + " " + pass);
+                string retour_cnx = ScreenManager.ReseauScreenManager.Initialisation(login, pass);
+                switch (retour_cnx)
+                {
+                    case "AUTHENTIFICATION_OK" :
+                        validation_cnx = true;
+                        TryConnexion = false;
+                        break;
+                    
+                    case "AUTHENTIFICATION_NOK":
+                        validation_cnx = false;
+                        TryConnexion = false;
+                        break;
+
+
+                    default :
+                        break;
+                }
+
+            }
+
+
+
+
+
+            // quand tout est ok et validé 
+            if (validation_cnx) LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen());
+            else
+            {
+                // pop up dtc la cnx bye bye
+                MessageBoxScreen cnxrefused = new MessageBoxScreen("Reseau_Cnx_Refusee", false);
+                ScreenManager.AddScreen(cnxrefused, e.PlayerIndex);
+                //LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(), new MainMenuScreen());
+            }
         }
 
 

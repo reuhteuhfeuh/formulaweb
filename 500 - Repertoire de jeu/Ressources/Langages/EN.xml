@@ -17,6 +17,8 @@
 	<Menu_Jeu_Saisie_Login_Pass>Login Information</Menu_Jeu_Saisie_Login_Pass>
 	<Reseau_Identifiant>Login</Reseau_Identifiant>
 	<Reseau_Motdepasse>Pass</Reseau_Motdepasse>	
+	<Reseau_Connexion>Connect</Reseau_Connexion>
+	<Reseau_Cnx_Refusee>Login refused</Reseau_Cnx_Refusee>
 	<Menu_Quitter_Validation>Left the game ?</Menu_Quitter_Validation>
 	<Menu_Quitter_Validation_Ligne1>Boutton A, Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
 	<Menu_Quitter_Validation_Ligne2>Boutton B, Echap = return to game</Menu_Quitter_Validation_Ligne2>

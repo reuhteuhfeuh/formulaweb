@@ -269,7 +269,14 @@ namespace FormulaWeb
             string text_traduit;
             if (traduction)
             {
-                return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
+                if (traduction_partielle)
+                {
+                    return (int)screen.ScreenManager.Font.MeasureString((text_traduit = screenManager.langScreenManager.Get_Traduction(text)+' ' + complement_affichage)).X;
+                }
+                else
+                {
+                    return (int)screen.ScreenManager.Font.MeasureString(text_traduit = screenManager.langScreenManager.Get_Traduction(text)).X;
+                }
             }
             else
             {

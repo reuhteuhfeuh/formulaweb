@@ -163,7 +163,10 @@ namespace FormulaWeb
                 Acces_Plateau = ".\\Ressources\\Jeux\\" + Moteur_Regle.Get_code_jeu() + "\\Plateaux\\";
                 Moteur_Son.Ecouter_musique("Song_01");
 
-                
+                if (Moteur_Regle.Get_String("Caracteristique_String_ModeDeJeu") == "Reseau")
+                {
+                    Moteur_Reseau.Chargement_donnees_serveur();
+                }
 
                 
                 Access_XML = Acces_Plateau + Moteur_Regle.Get_plateau();

@@ -33,6 +33,7 @@ namespace FormulaWeb
         Gestion_Son.SoundMachine Musique;
         Traceur.Traceur logger;
         Gestion_Regles.Regles regles;
+        Gestion_Reseau.Reseau reseau;
         
 
         /// <summary>
@@ -48,6 +49,7 @@ namespace FormulaWeb
             Lang.tracelangage = logger;
             Lang.listing_langage();
             //Lang.listing_langage();
+            reseau = new Gestion_Reseau.Reseau();
             Musique = new Gestion_Son.SoundMachine();
             regles = new Gestion_Regles.Regles();
             regles.Initialisation(logger);
@@ -109,6 +111,7 @@ namespace FormulaWeb
             screenManager.sonScreenManager = Musique;
             screenManager.loggerScreenManager = logger;
             screenManager.regleScreenManager = regles;
+            screenManager.ReseauScreenManager = reseau;
             Components.Add(screenManager);
 
             
