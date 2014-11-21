@@ -1,13 +1,25 @@
-2014/11/18 10:30:12 : Info : Initialisation Traceur !
-2014/11/18 10:30:12 : Info : .\Ressources\Langages\FR.xml
-2014/11/18 10:30:12 : Info : fin du traitement de .\Ressources\Langages\EN.xml
-2014/11/18 10:30:12 : Info : fin du traitement de .\Ressources\Langages\FR.xml
-2014/11/18 10:30:12 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
-2014/11/18 10:30:12 : Info : initialisation Règles de jeu
-2014/11/18 10:30:12 : Info : Langage chargé : FR
-2014/11/18 10:30:25 : INFO : Traitement menu Optionnel : type_jeu
-2014/11/18 10:30:25 : INFO : Action Listing_string
-2014/11/18 10:30:25 : INFO : Traitement menu Optionnel : choix_circuit
-2014/11/18 10:30:25 : INFO : Action Listing_Repertoire
-2014/11/18 10:30:25 : INFO : Traitement menu Optionnel : nombre_joueur
-2014/11/18 10:30:25 : INFO : Action Listing_Nombre
+2014/11/20 13:33:16 : Info : Initialisation Traceur !
+2014/11/20 13:33:16 : Info : .\Ressources\Langages\FR.xml
+2014/11/20 13:33:16 : Info : fin du traitement de .\Ressources\Langages\EN.xml
+2014/11/20 13:33:16 : Info : fin du traitement de .\Ressources\Langages\FR.xml
+2014/11/20 13:33:16 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
+2014/11/20 13:33:16 : Info : initialisation Règles de jeu
+2014/11/20 13:33:16 : Info : Langage chargé : FR
+2014/11/20 13:33:23 : INFO : Traitement menu Optionnel : type_jeu
+2014/11/20 13:33:23 : INFO : Action Listing_string
+2014/11/20 13:33:23 : INFO : Traitement menu Optionnel : choix_circuit
+2014/11/20 13:33:23 : INFO : Action Listing_Repertoire
+2014/11/20 13:33:23 : INFO : Traitement menu Optionnel : nombre_joueur
+2014/11/20 13:33:23 : INFO : Action Listing_Nombre
+2014/11/20 13:33:33 : INFO : CNX GFD AZERTY
+2014/11/20 13:33:33 : INFO : Initialisation Gestion Reseau
+2014/11/20 13:33:34 : INFO : Entree dans la boucle de validation login/pass
+2014/11/20 13:33:34 : INFO : Sent from Serveur : DEMANDE_AUTHENTIFICATION
+2014/11/20 13:33:34 : INFO : Sent from Serveur : AUTHENTIFICATION_NOK
+2014/11/20 13:33:54 : INFO : CNX RTF prout
+2014/11/20 13:33:54 : INFO : Initialisation Gestion Reseau
+2014/11/20 13:33:55 : INFO : Entree dans la boucle de validation login/pass
+2014/11/20 13:33:55 : INFO : Sent from Serveur : DEMANDE_AUTHENTIFICATION
+2014/11/20 13:33:55 : INFO : Sent from Serveur : AUTHENTIFICATION_OK
+2014/11/20 13:33:55 : INFO : Initialisation moteur règle
+2014/11/20 13:34:07 : Erreur : Impossible de charger Caracteristique_String_ModeDeJeu dans Caracteristique_String

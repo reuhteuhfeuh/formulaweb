@@ -18,6 +18,8 @@
 	<Menu_Jeu_Saisie_Login_Pass>Saisie Identifiants</Menu_Jeu_Saisie_Login_Pass>
 	<Reseau_Identifiant>Identifiant</Reseau_Identifiant>
 	<Reseau_Motdepasse>Mot de Passe</Reseau_Motdepasse>
+	<Reseau_Connexion>Connexion</Reseau_Connexion>
+	<Reseau_Cnx_Refusee>Identifiants incorrects</Reseau_Cnx_Refusee>
 	<Menu_Quitter_Validation>Voulez-vous quitter le jeu ?</Menu_Quitter_Validation>
 	<Menu_Quitter_Validation_Ligne1>Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
 	<Menu_Quitter_Validation_Ligne2>Echap = Retour au jeu</Menu_Quitter_Validation_Ligne2>

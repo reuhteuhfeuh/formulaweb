@@ -17,6 +17,8 @@
 	<Menu_Jeu_Saisie_Login_Pass>Z_Saisie Identifiants</Menu_Jeu_Saisie_Login_Pass>
 	<Reseau_Identifiant>Z_Identifiant</Reseau_Identifiant>
 	<Reseau_Motdepasse>Z_Mot de Passe</Reseau_Motdepasse>
+	<Reseau_Connexion>Z_Connexion</Reseau_Connexion>
+	<Reseau_Cnx_Refusee>Z_Identifiants incorrects</Reseau_Cnx_Refusee>
 	<Menu_Quitter_Validation>Z_Voulez-vous quitter le jeu ?</Menu_Quitter_Validation>
 	<Menu_Quitter_Validation_Ligne1>Z_Espace, Entree = OK</Menu_Quitter_Validation_Ligne1>
 	<Menu_Quitter_Validation_Ligne2>Z_Echap = Retour au jeu</Menu_Quitter_Validation_Ligne2>

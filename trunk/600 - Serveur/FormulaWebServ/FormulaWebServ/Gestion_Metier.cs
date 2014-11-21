@@ -13,6 +13,7 @@ namespace FormulaWebServ
 
         public bool Verification_Connexion(string Log, string Pass)
         {
+            // A remplacer par un check en base de donnée
             if (Log=="RTF" & Pass=="prout")
             //Il faut ajouter l'injection dans la base de log des tentatives de connexions
             {
@@ -22,6 +23,8 @@ namespace FormulaWebServ
             {   
                 return false;
             }
+
+        //public bool Lien joueur_Partie(Gestion_Partie)
         }
     }
 }
