@@ -18,7 +18,7 @@ namespace FormulaWebServ
         private static string Version = "0.1";
 
         private static Traceur.Traceur Serv_log ;
-        private static Gestion_Metier Serveur;
+        private static Gestion_Metier Serveur_Metier;
 
         private static String[] separateur = new string []{"#;;#"};
 
@@ -32,9 +32,10 @@ namespace FormulaWebServ
         #region Main
         static void Main(string[] args)
         {
-            Serveur = new Gestion_Metier();
+            Serveur_Metier = new Gestion_Metier();
+            Serveur_Metier.Initialisation_Metier();
             Serv_log = new Traceur.Traceur();
-            Serv_log.Init("FormulaWebServeur.log",true);
+            Serv_log.Init("FormulaWebServeur.log",false);
             Serv_log.Trace("LOG","Initialisation du serveur FWeb version "+Version);            
             Thread Surveillance = new Thread(Surveillance_connexion);
             Thread SFWEB = new Thread(new ParameterizedThreadStart (Ecoute_Reseau));
@@ -46,8 +47,6 @@ namespace FormulaWebServ
         }
 
         #endregion
-
-
 
         #region Detection_Deconnexion
 
@@ -136,7 +135,7 @@ namespace FormulaWebServ
                         if (msgrcu[0] == "DEMANDE_AUTHENTIFICATION")
                         {
                             Serv_log.Trace("INFO", "Demande d'identification de " + msgrcu[1]);
-                            if (Serveur.Verification_Connexion(msgrcu[1], msgrcu[2]))
+                            if (Serveur_Metier.Verification_Connexion(msgrcu[1], msgrcu[2]))
                             {
                                 Serv_log.Trace("INFO", "Identification de " + msgrcu[1] + " Valide");
                                 Ecriture_Message_Socket(joueur_encours.socket_joueur, "AUTHENTIFICATION_OK");

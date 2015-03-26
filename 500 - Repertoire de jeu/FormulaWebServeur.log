@@ -1,18 +1,11 @@
-2014/11/20 13:33:32 : INFO : Serveur SQL Inacessible passage au log sur fichier
-2014/11/20 13:33:32 : LOG : Initialisation du serveur FWeb version 0.1
-2014/11/20 13:33:32 : LOG : Lancement tache surveillance connexion
-2014/11/20 13:33:32 : LOG : Lancement tache surveillance connexion
-2014/11/20 13:33:32 : LOG : Lancement tache Ecoute Reseau
-2014/11/20 13:33:32 : LOG : Le serveur se met en mode ecoute ... sur le port 12546
-2014/11/20 13:33:34 : INFO : Connexion reçue depuis IP 127.0.0.1:65178
-2014/11/20 13:33:34 : INFO : Connexion en cours
-2014/11/20 13:33:34 : INFO : Envoi demande authentification
-2014/11/20 13:33:34 : INFO : On a recu : DEMANDE_AUTHENTIFICATION#;;#GFD#;;#AZERTY
-2014/11/20 13:33:34 : INFO : Demande d'identification de GFD
-2014/11/20 13:33:34 : INFO : Identification de GFD Invalide
-2014/11/20 13:33:55 : INFO : Connexion reçue depuis IP 127.0.0.1:65186
-2014/11/20 13:33:55 : INFO : Connexion en cours
-2014/11/20 13:33:55 : INFO : Envoi demande authentification
-2014/11/20 13:33:55 : INFO : On a recu : DEMANDE_AUTHENTIFICATION#;;#RTF#;;#prout
-2014/11/20 13:33:55 : INFO : Demande d'identification de RTF
-2014/11/20 13:33:55 : INFO : Identification de RTF Valide
+2015/03/25 12:39:07 : INFO : Serveur SQL Inacessible passage au log sur fichier
+2015/03/25 12:39:07 : LOG : Initialisation du serveur FWeb version 0.1
+2015/03/25 12:39:07 : LOG : Lancement tache surveillance connexion
+2015/03/25 12:39:07 : LOG : Lancement tache Ecoute Reseau
+2015/03/25 12:39:07 : LOG : Le serveur se met en mode ecoute ... sur le port 12546
+2015/03/25 12:39:11 : INFO : Connexion reçue depuis IP 127.0.0.1:50702
+2015/03/25 12:39:11 : INFO : Connexion en cours
+2015/03/25 12:39:11 : INFO : Envoi demande authentification
+2015/03/25 12:39:11 : INFO : On a recu : DEMANDE_AUTHENTIFICATION#;;#Rtf#;;#Prout
+2015/03/25 12:39:11 : INFO : Demande d'identification de Rtf
+2015/03/25 12:39:11 : INFO : Identification de Rtf Invalide

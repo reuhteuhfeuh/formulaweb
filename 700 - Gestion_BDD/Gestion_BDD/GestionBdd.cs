@@ -5,6 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using Traceur;
+using MongoDB.Bson;
+using MongoDB.Driver;
+
+/*
+using MongoDB.Driver.Builders;
+using MongoDB.Driver.GridFS;
+using MongoDB.Driver.Linq;
+ * */
 
 namespace Gestion_BDD
 {
@@ -21,8 +29,6 @@ namespace Gestion_BDD
             Bdd_log = new Traceur.Traceur();
             Bdd_log.Init("FormulaWebBdd.log", true);
             Bdd_log.Trace("Initialisation du serveur Bdd", "Log");
-
-            
 
             // on initialise la connexion BDD en fonction du type
             switch (Type_DD)

@@ -95,6 +95,10 @@
       <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
       <Name>Traceur</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\700 - Gestion_BDD\Gestion_BDD\Gestion_BDD.csproj">
+      <Project>{e7c74bc3-6256-453f-98cd-be675130188c}</Project>
+      <Name>Gestion_BDD</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SDL.dll" />

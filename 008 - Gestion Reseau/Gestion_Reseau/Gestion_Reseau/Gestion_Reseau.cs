@@ -62,7 +62,7 @@ namespace Gestion_Reseau
                             //tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
                             if (retour_connexion == "DEMANDE_AUTHENTIFICATION")
                             {
-                                Ecriture_Message_Socket("DEMANDE_AUTHENTIFICATION#;;#" + log + "#;;#" + pas + "");
+                                Ecriture_Message_Socket("DEMANDE_AUTHENTIFICATION" + separateur + log + separateur + pas + "");
                             }
                             if (retour_connexion == "AUTHENTIFICATION_OK")
                             {
@@ -87,15 +87,15 @@ namespace Gestion_Reseau
                     }
 
                 }
-                if (cnx_valide == false)
+
+                if (cnx_serveur == true)
                 {
-                    return retour_connexion;
+                    tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
+                    Thread Reseau = new Thread(cnx_srv);
+                    Reseau.Start();
+                    tracereseau.Trace("INFO", "Thread Reseau lancé");
                 }
 
-                tracereseau.Trace("INFO", "Message du serveur : " + retour_connexion);
-                Thread Reseau = new Thread(cnx_srv);
-                Reseau.Start();
-                tracereseau.Trace("INFO", "Thread Reseau lancé");
                 return retour_connexion;
             }
             catch
