@@ -81,9 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FwebServeur.cs" />
-    <Compile Include="Gestion_Metier.cs" />
-    <Compile Include="Gestion_Partie.cs" />
-    <Compile Include="Gestion_Connexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +91,10 @@
     <ProjectReference Include="..\..\..\400 - Traceur\Traceur\Traceur.csproj">
       <Project>{febd5730-e4a2-4910-a105-e7058be4eb60}</Project>
       <Name>Traceur</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\610 - Serveur-Gestion\Serveur-Gestion\Serveur-Gestion.csproj">
+      <Project>{b4a9e683-1a98-4a42-bf83-bac84d3605da}</Project>
+      <Name>Serveur-Gestion</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\..\700 - Gestion_BDD\Gestion_BDD\Gestion_BDD.csproj">
       <Project>{e7c74bc3-6256-453f-98cd-be675130188c}</Project>

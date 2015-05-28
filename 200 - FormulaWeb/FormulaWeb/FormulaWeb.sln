@@ -42,6 +42,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion_BDD", "..\..\700 - 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simulateur_Reseau", "..\..\800 - Simulateur Reseau\Simulateur_Reseau\Simulateur_Reseau.csproj", "{5E503B35-D15E-4BF7-8C01-8B414F08BEDF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serveur-Gestion", "..\..\610 - Serveur-Gestion\Serveur-Gestion\Serveur-Gestion.csproj", "{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -193,6 +195,16 @@ Global
 		{5E503B35-D15E-4BF7-8C01-8B414F08BEDF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5E503B35-D15E-4BF7-8C01-8B414F08BEDF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5E503B35-D15E-4BF7-8C01-8B414F08BEDF}.Release|x86.ActiveCfg = Release|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B4A9E683-1A98-4A42-BF83-BAC84D3605DA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

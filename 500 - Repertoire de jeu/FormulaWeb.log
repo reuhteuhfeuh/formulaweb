@@ -1,21 +1,10 @@
-2015/03/25 12:38:43 : Info : Initialisation Traceur !
-2015/03/25 12:38:43 : Info : .\Ressources\Langages\EN.xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\EN (Copie en conflit de edy lle 2015-01-25).xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\EN.xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\FR (Copie en conflit de edy lle 2015-01-25).xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\FR.xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\ZZ (Copie en conflit de edy lle 2015-01-25).xml
-2015/03/25 12:38:43 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
-2015/03/25 12:38:43 : Info : initialisation Règles de jeu
-2015/03/25 12:38:44 : Info : Langage chargé : FR
-2015/03/25 12:38:58 : INFO : Traitement menu Optionnel : type_jeu
-2015/03/25 12:38:58 : INFO : Action Listing_string
-2015/03/25 12:38:58 : INFO : Traitement menu Optionnel : choix_circuit
-2015/03/25 12:38:58 : INFO : Action Listing_Repertoire
-2015/03/25 12:38:58 : INFO : Traitement menu Optionnel : nombre_joueur
-2015/03/25 12:38:58 : INFO : Action Listing_Nombre
-2015/03/25 12:39:10 : INFO : CNX Rtf Prout
-2015/03/25 12:39:10 : INFO : Initialisation Gestion Reseau
-2015/03/25 12:39:11 : INFO : Entree dans la boucle de validation login/pass
-2015/03/25 12:39:11 : INFO : Sent from Serveur : DEMANDE_AUTHENTIFICATION
-2015/03/25 12:39:11 : INFO : Sent from Serveur : AUTHENTIFICATION_NOK
+25/05/2015 21:05:12 : Info : Initialisation Traceur !
+25/05/2015 21:05:12 : Info : .\Ressources\Langages\EN.xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\EN (Copie en conflit de edy lle 2015-01-25).xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\EN.xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\FR (Copie en conflit de edy lle 2015-01-25).xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\FR.xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\ZZ (Copie en conflit de edy lle 2015-01-25).xml
+25/05/2015 21:05:12 : Info : fin du traitement de .\Ressources\Langages\ZZ.xml
+25/05/2015 21:05:12 : Info : initialisation Règles de jeu
+25/05/2015 21:05:12 : Info : Langage chargé : FR
